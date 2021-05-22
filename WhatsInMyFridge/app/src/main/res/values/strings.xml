@@ -3,4 +3,8 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="fridge">Fridge</string>
+    <string name="cart">Cart</string>
+    <string name="shopping_list">Shopping List</string>
+    <string name="recipes">Recipes</string>
 </resources>
