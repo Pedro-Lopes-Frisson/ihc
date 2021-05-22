@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
+    <TextView
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:text="@string/app_name"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lines"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/editTextTextPersonName">
+
+        <RelativeLayout
+            android:id="@+id/line0"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ListElementHeight"
+            android:clickable="true">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card0"
+                style="@style/CardsHomeScreen"
+                android:layout_height="@dimen/ListElementHeight"
+                android:layout_alignParentRight="true"
+                app:cardElevation="100dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img1"
+                        style="@style/CardsHomeScreen"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:clickable="true"
+                        android:elevation="100dp"
+                        android:src="@drawable/ic_home_black_24dp"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/label1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/img1"
+                        android:backgroundTint="@color/redTransparent"
+                        android:clickable="true"
+                        android:ems="10"
+                        android:foregroundTint="@color/black"
+                        android:gravity="center"
+                        android:text="@string/ola"
+                        android:textColor="@color/black"/>
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card1"
+                style="@style/CardsHomeScreen"
+                android:layout_height="@dimen/ListElementHeight">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img2"
+                        style="@style/CardsHomeScreen"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:clickable="true"
+                        android:elevation="100dp"
+                        android:src="@drawable/ic_home_black_24dp"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/label2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/img2"
+                        android:backgroundTint="@color/redTransparent"
+                        android:clickable="true"
+                        android:ems="10"
+                        android:foregroundTint="@color/black"
+                        android:gravity="center"
+                        android:text="@string/ola"
+                        android:textColor="@color/black"/>
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

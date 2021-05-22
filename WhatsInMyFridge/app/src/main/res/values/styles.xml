@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <style name="CardsHomeScreen">
+        <item name="android:layout_width">160dp</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="background">@color/white</item>
+        <item name="contentPadding">5dp</item>
+        <item name="android:layout_height">@dimen/ListElementHeight</item>
+        <item name="strokeColor">#3e3e3e</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="android:clickable">true</item>
+    </style>
+</resources>

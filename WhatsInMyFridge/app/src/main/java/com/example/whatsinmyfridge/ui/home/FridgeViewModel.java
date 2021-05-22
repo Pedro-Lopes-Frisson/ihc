@@ -1,8 +1,12 @@
 package com.example.whatsinmyfridge.ui.home;
 
+import android.widget.TextView;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+
+import com.example.whatsinmyfridge.R;
 
 public class FridgeViewModel extends ViewModel {
 
@@ -10,7 +14,6 @@ public class FridgeViewModel extends ViewModel {
 
     public FridgeViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
     }
 
     public LiveData<String> getText() {
