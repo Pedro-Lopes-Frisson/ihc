@@ -10,4 +10,5 @@
     <string name="ola">Ola</string>
     <string name="asd">Hello World</string>
     <string name="cereais">Cereais</string>
+    <string name="skyImg">https://www.metoffice.gov.uk/binaries/content/gallery/metofficegovuk/hero-images/weather/cloud/cumulus-cloud.jpg</string>
 </resources>
