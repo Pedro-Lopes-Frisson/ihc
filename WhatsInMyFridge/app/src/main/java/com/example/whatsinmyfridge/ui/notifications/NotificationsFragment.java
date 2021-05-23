@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.whatsinmyfridge.R;
 
-public class ListFragment extends Fragment {
+public class NotificationsFragment extends Fragment {
 
-    private ListViewModel listViewModel;
+    private NotificationsViewModel notificationsViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        listViewModel =
-                new ViewModelProvider(this).get(ListViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_list, container, false);
+        notificationsViewModel =
+                new ViewModelProvider(this).get(NotificationsViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_notifications, container, false);
         final TextView textView = root.findViewById(R.id.text_notifications);
-        listViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

@@ -1,16 +1,16 @@
-package com.example.whatsinmyfridge.ui.notifications;
+package com.example.whatsinmyfridge.ui.dashboard;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ListViewModel extends ViewModel {
+public class DashboardViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public ListViewModel() {
+    public DashboardViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
+        mText.setValue("This is dashboard fragment");
     }
 
     public LiveData<String> getText() {
