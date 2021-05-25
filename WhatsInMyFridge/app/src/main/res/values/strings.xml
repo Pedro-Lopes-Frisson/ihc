@@ -10,10 +10,10 @@
     <string name="ola">Ola</string>
     <string name="asd">Hello World</string>
     <string name="cereais">Cereais</string>
+    <string name="skyImg">https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Ski_Famille_-_Family_Ski_Holidays.jpg/1200px-Ski_Famille_-_Family_Ski_Holidays.jpg</string>
     <string name="title_activity_teste">ScrollingActivity</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
-
         "A material metaphor is the unifying theory of a rationalized space and a system of motion."
         "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
         "technologically advanced and open to imagination and magic.\n"
