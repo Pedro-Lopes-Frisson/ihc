@@ -1,11 +1,13 @@
 package com.example.whatsinmyfridge.ui.recipe;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,6 +20,7 @@ import com.example.whatsinmyfridge.MainActivity;
 import com.example.whatsinmyfridge.ObjectDeclaration.Item;
 import com.example.whatsinmyfridge.R;
 import com.example.whatsinmyfridge.objects.RecipeCard;
+import com.example.whatsinmyfridge.ui.home.FridgeFragment;
 
 import java.util.ArrayList;
 
@@ -28,6 +31,7 @@ public class RecipeFragment extends Fragment {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private ArrayList<Item> itemInsideFridge = new ArrayList<>();
+    private Button button;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -57,6 +61,14 @@ public class RecipeFragment extends Fragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
 
+        button = root.findViewById(R.id.btn_recipe);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(MainActivity.RECIPETAG, "Got this items stored: "+ itemInsideFridge);
+            }
+        });
+
         return root;
     }
     // Secalhar e melhor usar algo mais geral mas so far so good
@@ -64,5 +76,10 @@ public class RecipeFragment extends Fragment {
         this.itemInsideFridge.addAll(itemInsideFridge);
         Log.i(MainActivity.RECIPETAG, "Data received and Stored:\n" + this.itemInsideFridge);
 
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
     }
 }

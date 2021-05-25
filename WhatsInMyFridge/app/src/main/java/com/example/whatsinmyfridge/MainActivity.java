@@ -21,14 +21,15 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements FridgeFragment.TransferData {
     static String TAG = "MainActivity";
-    static String  FRIDGETAG   = "FridgeTag";
-    static String  CARTAG      = "CartTag";
-    static String  LISTTAG     = "ListTag";
-    public static String  RECIPETAG    = "RecipeTag";
+    public static String FRIDGETAG = "FridgeTag";
+    public static String CARTAG = "CartTag";
+    public static String LISTTAG = "ListTag";
+    public static String RECIPETAG = "RecipeTag";
     private FridgeFragment fridgeFragment;
     private RecipeFragment recipeFragment;
     private ListFragment listFragment;
     private CartFragment cartFragment;
+    private FragmentManager fragmentManager = getSupportFragmentManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,35 +44,56 @@ public class MainActivity extends AppCompatActivity implements FridgeFragment.Tr
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
-        FragmentManager fragmentManager = getSupportFragmentManager();
-
-        fridgeFragment = (FridgeFragment) fragmentManager.findFragmentByTag(FRIDGETAG);
-        if (fridgeFragment == null) {
-            fridgeFragment = new FridgeFragment();
-            fragmentManager.beginTransaction().add(R.id.parentFridge, fridgeFragment, FRIDGETAG).commit();
-        }
-
-        recipeFragment = (RecipeFragment) fragmentManager.findFragmentByTag(FRIDGETAG);
-        if (recipeFragment == null) {
-            recipeFragment = new RecipeFragment();
-            fragmentManager.beginTransaction().add(R.id.recipeParent, recipeFragment, RECIPETAG).commit();
-        }
-        listFragment = (ListFragment) fragmentManager.findFragmentByTag(LISTTAG);
-        if (listFragment == null) {
-            listFragment = new ListFragment();
-            fragmentManager.beginTransaction().add(R.id.ListParent, listFragment, LISTTAG).commit();
-        }
-
-        cartFragment = (CartFragment) fragmentManager.findFragmentByTag(CARTAG);
-        if (cartFragment == null) {
-            cartFragment = new CartFragment();
-            fragmentManager.beginTransaction().add(R.id.cartParent, cartFragment, CARTAG).commit();
-        }
 
     }
 
+
     @Override
     public void sendItems(ArrayList<Item> itemsInsideFridge) {
+        // No clue
+        // TODO tudo : (
+        // Feito tenei encontrar a tag quer da maneira como o fabio disse quer de outra maneira
+        // quando fui à fragmentFridge e fiz root.getTag() devolveu FridgeTag
+        // Mas isso é  porque é a default view.......
+        // Iam sry did my best
+        String tag = "android:switcher:" + R.id.nav_view + ":" + 1;
+        recipeFragment = (RecipeFragment) getSupportFragmentManager().findFragmentByTag(tag);
+        // but normally this will always be null
+        recipeFragment = (RecipeFragment) fragmentManager.findFragmentByTag(RECIPETAG);
+        /*
+        int adder = 0;
+        tag = "android:switcher:" + R.id.nav_view + ":" + adder;
+        while (recipeFragment == null && adder < 6) {
+            tag = "android:switcher:" + R.id.nav_view + ":" + adder;
+            Log.i(this.TAG, tag);
+            recipeFragment = (RecipeFragment) getSupportFragmentManager().findFragmentByTag(tag);
+            adder++;
+        }
+        Log.i(this.TAG, "Quitted while loop and " + recipeFragment + " <----     adder was ->" + adder);
+
+        adder = 0;
+        while (recipeFragment == null && adder < 6) {
+            tag = "android:switcher:" + R.id.nav_host_fragment + ":" + adder;
+            Log.i(this.TAG, tag);
+            recipeFragment = (RecipeFragment) getSupportFragmentManager().findFragmentByTag(tag);
+            adder++;
+        }
+        Log.i(this.TAG, "Quitted while loop and " + recipeFragment + " <----     adder was ->" + adder);
+        */
+        /*
+        if (recipeFragment == null) {
+            Log.i(this.TAG, getString(R.string.erro1) + tag);
+            tag = "android:switcher:" + R.id.nav_view + ":" + 2;
+            recipeFragment = (RecipeFragment) getSupportFragmentManager().findFragmentByTag(tag);
+            if (recipeFragment == null) {
+
+                Log.i(this.TAG, getString(R.string.erro1) + tag);
+            }
+            // so we create a new one here
+            recipeFragment = new RecipeFragment(); // No clue if this is viable
+        }
+         */
+        //and then this works
         Log.i(this.TAG, "Received: " + itemsInsideFridge + "!!\nRedirecting to " + this.RECIPETAG);
         recipeFragment.storeItems(itemsInsideFridge);
     }
