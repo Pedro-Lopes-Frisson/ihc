@@ -1,11 +1,13 @@
 package com.example.whatsinmyfridge.ui.home;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.proto.ProtoOutputStream;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,7 +33,14 @@ public class FridgeFragment extends Fragment implements ItemRecViewAdapter.OnCar
     private FridgeViewModel fridgeViewModel;
     private RelativeLayout relativeLayout;
     private RecyclerView recyclerView;
+    private TransferData mCallback ;
     ArrayList<Item> items = new ArrayList<>();
+
+
+
+    public interface TransferData {
+        public void sendItems(ArrayList<Item> itemsInsideFridge);
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -66,13 +75,30 @@ public class FridgeFragment extends Fragment implements ItemRecViewAdapter.OnCar
         GridLayoutManager a = new GridLayoutManager(root.getContext(), 2);
         recyclerView.setLayoutManager(a);
 
-
         return root;
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        if (context instanceof FridgeFragment.TransferData) {
+            mCallback = (TransferData) context;
+        }
+        else {
+            throw new RuntimeException(context.toString()
+                    + " must implement TransferData");
+        }
     }
 
     @Override
     public void onCardClick(int position) {
         items.get(position);
         Toast.makeText(this.getContext(), "Hello " + items, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mCallback = null;
     }
 }

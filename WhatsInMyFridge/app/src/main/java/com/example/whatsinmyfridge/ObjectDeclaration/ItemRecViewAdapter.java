@@ -1,7 +1,6 @@
 package com.example.whatsinmyfridge.ObjectDeclaration;
 
 import android.content.Context;
-import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,15 +8,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.whatsinmyfridge.R;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class ItemRecViewAdapter extends RecyclerView.Adapter<ItemRecViewAdapter.ViewHolder> {
     private ArrayList<Item> items = new ArrayList<>();
@@ -62,7 +58,7 @@ public class ItemRecViewAdapter extends RecyclerView.Adapter<ItemRecViewAdapter.
         void onCardClick(int position);
     }
 
-    // Something important stuff
+    // Some important stuff
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 

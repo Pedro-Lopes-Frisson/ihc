@@ -1,9 +1,11 @@
 package com.example.whatsinmyfridge.ui.recipe;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,6 +14,8 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.whatsinmyfridge.MainActivity;
+import com.example.whatsinmyfridge.ObjectDeclaration.Item;
 import com.example.whatsinmyfridge.R;
 import com.example.whatsinmyfridge.objects.RecipeCard;
 
@@ -23,6 +27,7 @@ public class RecipeFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    private ArrayList<Item> itemInsideFridge = new ArrayList<>();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -53,5 +58,11 @@ public class RecipeFragment extends Fragment {
         mRecyclerView.setAdapter(mAdapter);
 
         return root;
+    }
+    // Secalhar e melhor usar algo mais geral mas so far so good
+    public void storeItems(ArrayList<Item> itemInsideFridge){
+        this.itemInsideFridge.addAll(itemInsideFridge);
+        Log.i(MainActivity.RECIPETAG, "Data received and Stored:\n" + this.itemInsideFridge);
+
     }
 }
