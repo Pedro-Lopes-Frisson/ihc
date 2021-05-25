@@ -1,4 +1,4 @@
-package com.example.whatsinmyfridge.ui.recipe;
+package com.example.whatsinmyfridge.objects;
 
 public class RecipeCard {
     private int mImageResource;
