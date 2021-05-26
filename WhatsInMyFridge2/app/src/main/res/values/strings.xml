@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">WhatsInMyFridge2</string>
+    <string name="fridge">Fridge</string>
+    <string name="cart">Cart</string>
+    <string name="shopping_list">ShoppingList</string>
+    <string name="recipes">Recipes</string>
+    <string name="recipe_image_description">LoremIpsum</string>
+    <string name="recipe_dif">LoremIpsum</string>
+    <string name="clock_icon_description">LoremIpsum</string>
+    <string name="people_icon_description">LoremIpsum</string>
+    <string name="recipe_name">asd</string>
+    <string name="skyImg">https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Ski_Famille_-_Family_Ski_Holidays.jpg/1200px-Ski_Famille_-_Family_Ski_Holidays.jpg</string>
+</resources>
