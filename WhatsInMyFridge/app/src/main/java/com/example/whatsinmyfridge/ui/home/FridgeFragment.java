@@ -36,12 +36,12 @@ public class FridgeFragment extends Fragment implements ItemRecViewAdapter.OnCar
     private RelativeLayout relativeLayout;     // parent layout
     private RecyclerView recyclerView;         // recycler view for data to be displayed on
     private TransferData mCallback;           // store send method
-    ArrayList<Item> items = new ArrayList<>(); // Store static data
     private Button btn;
+    private ArrayList<Item> items = new ArrayList<>();
 
 
     public interface TransferData {
-        public void sendItems(ArrayList<Item> itemsInsideFridge);
+        public ArrayList<Item> sendItems(ArrayList<Item> itemsInsideFridge);
     }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -77,6 +77,8 @@ public class FridgeFragment extends Fragment implements ItemRecViewAdapter.OnCar
         items.add(new Item("Arroz", 809, 5, 1, "Cereal", getString(R.string.skyImg)));
         items.add(new Item("Massa", 1080, 9, 2, "Massa", getString(R.string.skyImg)));
         items.add(new Item("Chocolate", 10, 1, 1, "Sobremesa", getString(R.string.skyImg)));
+        // Set Mutable data inside the fridge view model
+        fridgeViewModel.setItemsInsideFridge(items);
 
         // set up the items view
         ItemRecViewAdapter itemRecViewAdapter = new ItemRecViewAdapter(root.getContext(), this);

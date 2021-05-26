@@ -1,18 +1,45 @@
 package com.example.whatsinmyfridge.ObjectDeclaration;
 
 import android.os.Build;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import androidx.annotation.RequiresApi;
 
 import java.util.Objects;
 
-public class Item {
+public class Item implements Parcelable {
     private String name;
     private int ID;
     private int weight;
     private int weightJump;
     private String type;
     private String Image;
+
+    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
+        public Item createFromParcel(Parcel in) {
+            return new Item(in);
+        }
+
+        public Item[] newArray(int size) {
+            return new Item[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(name);
+        dest.writeInt(ID);
+        dest.writeInt(weight);
+        dest.writeInt(weightJump);
+        dest.writeString(type);
+        dest.writeString(Image);
+    }
 
 
     public Item(String name, int ID, int weight, int weightJump, String type, String im) {
@@ -24,14 +51,18 @@ public class Item {
         this.Image = im;
     }
 
-    public String getImage() {
-        return Image;
+    // Why protected
+    protected Item(Parcel in) {
+        name = in.readString();
+        ID = in.readInt();
+        weight = in.readInt();
+        weightJump = in.readInt();
+        type = in.readString();
+        Image = in.readString();
     }
 
-    public void setImage(String image) {
-        Image = image;
-    }
 
+    // Object specific overrides
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public boolean equals(Object o) {
@@ -51,6 +82,8 @@ public class Item {
         return Objects.hash(name, ID, weight, weightJump, type);
     }
 
+
+    // Getters e setters Obviously bad but who cares
     public String getName() {
         return name;
     }
@@ -87,6 +120,15 @@ public class Item {
         return type;
     }
 
+    public String getImage() {
+        return Image;
+    }
+
+    public void setImage(String image) {
+        Image = image;
+    }
+
+    // Getters Setters end
     @Override
     public String toString() {
         return "Item{" +
