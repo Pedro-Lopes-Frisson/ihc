@@ -111,4 +111,8 @@
     <string name="missing_ingredients">Missing Ingredients</string>
     <string name="search_menu">Search</string>
     <string name="ingredient_description">ingredient_description</string>
+    <string name="spaghetti_bolognese">https://www.kitchensanctuary.com/wp-content/uploads/2019/09/Spaghetti-Bolognese-square-FS-0204.jpg</string>
+    <string name="lasagna">https://www.jessicagavin.com/wp-content/uploads/2017/07/meat-lasagna-1200.jpg</string>
+    <string name="fish_and_chips">https://www.thespruceeats.com/thmb/-Hq2aVGdlH43SB1R-A7UK2dCb6k=/1500x844/smart/filters:no_upscale()/best-fish-and-chips-recipe-434856-Hero-5b61b89346e0fb00500f2141.jpg</string>
+    <string name="baked_cod">https://static01.nyt.com/images/2016/11/01/dining/01COOKING-EMMAS-COD1/01EMMAS-COD1-articleLarge.jpg</string>
 </resources>

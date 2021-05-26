@@ -8,14 +8,14 @@ import com.example.whatsinmyfridge.ObjectDeclaration.Item;
 import java.util.ArrayList;
 
 public class RecipeCard implements Parcelable {
-    private int mImageResource;
+    private String mImageResource;
     private String recipeName;
     private String timeToCook;
     private String difficulty;
     private int xPeople;
     ArrayList<Item> ingredients;
 
-    public RecipeCard(int image, String name, String time, String diff, int x, ArrayList<Item> ing){
+    public RecipeCard(String image, String name, String time, String diff, int x, ArrayList<Item> ing){
         mImageResource = image;
         recipeName = name;
         timeToCook = time;
@@ -25,7 +25,7 @@ public class RecipeCard implements Parcelable {
     }
 
     protected RecipeCard(Parcel in) {
-        mImageResource = in.readInt();
+        mImageResource = in.readString();
         recipeName = in.readString();
         timeToCook = in.readString();
         difficulty = in.readString();
@@ -45,7 +45,7 @@ public class RecipeCard implements Parcelable {
         }
     };
 
-    public int getmImageResource() {
+    public String getmImageResource() {
         return mImageResource;
     }
 
@@ -76,7 +76,7 @@ public class RecipeCard implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(mImageResource);
+        dest.writeString(mImageResource);
         dest.writeString(recipeName);
         dest.writeString(timeToCook);
         dest.writeString(difficulty);

@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.whatsinmyfridge.ObjectDeclaration.Item;
 import com.example.whatsinmyfridge.R;
 import com.example.whatsinmyfridge.databinding.ActivityMainBinding;
@@ -33,7 +34,7 @@ public class RecipePage extends AppCompatActivity {
         RecipeCard recipeCard = intent.getParcelableExtra("Recipe");
 
 
-        int imageRes = recipeCard.getmImageResource();
+        String imageRes = recipeCard.getmImageResource();
         String name = recipeCard.getRecipeName();
         String dif = recipeCard.getDifficulty();
         String time = recipeCard.getTimeToCook();
@@ -41,7 +42,8 @@ public class RecipePage extends AppCompatActivity {
         ArrayList<Item> ing = recipeCard.getIngredients();
 
         ImageView imageView = findViewById(R.id.Recipe_Image);
-        imageView.setImageResource(imageRes);
+        Glide.with(this).asBitmap().load(imageRes).into(imageView);
+        //imageView.setImageResource(imageRes);
 
         TextView recipe_name = findViewById(R.id.Recipe_Name);
         recipe_name.setText(name);

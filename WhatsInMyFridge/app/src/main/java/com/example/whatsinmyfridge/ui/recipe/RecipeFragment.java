@@ -39,27 +39,36 @@ public class RecipeFragment extends Fragment {
         final TextView textView = root.findViewById(R.id.text_notifications);
 
         ArrayList<RecipeCard> recipeCards = new ArrayList<>();
-        ArrayList<Item> bifeComArroz = new ArrayList<Item>();
-        bifeComArroz.add(new Item("Bife de Vaca", 1000, 1.5, 1, "Carne", getString(R.string.skyImg)));
-        bifeComArroz.add(new Item("Arroz", 809, 1, 1, "Cereal", getString(R.string.skyImg)));
-        bifeComArroz.add(new Item("Cebola", 34, 0.5, 1, "Vegetal", getString(R.string.skyImg)));
-        recipeCards.add(new RecipeCard(R.drawable.beef_com_arroz,"Beef with potato", "2h30", "Meddium", 4, bifeComArroz));
-        recipeCards.add(new RecipeCard(R.drawable.beef_com_arroz,"Beef with rice2", "2h30", "Meddium", 4, bifeComArroz)); //Falta arranjar as receitas
-        recipeCards.add(new RecipeCard(R.drawable.beef_com_arroz,"Beef with rice3", "2h30", "Meddium", 4, bifeComArroz));
-        recipeCards.add(new RecipeCard(R.drawable.beef_com_arroz,"Beef with rice4", "2h30", "Meddium", 4, bifeComArroz));
-        recipeCards.add(new RecipeCard(R.drawable.beef_com_arroz,"Beef with rice5", "2h30", "Meddium", 4, bifeComArroz));
-        recipeCards.add(new RecipeCard(R.drawable.beef_com_arroz,"Beef with rice6", "2h30", "Meddium", 4, bifeComArroz));
-        recipeCards.add(new RecipeCard(R.drawable.beef_com_arroz,"Beef with rice7", "2h30", "Meddium", 4, bifeComArroz));
-        recipeCards.add(new RecipeCard(R.drawable.beef_com_arroz,"Beef with rice8", "2h30", "Meddium", 4, bifeComArroz));
-        recipeCards.add(new RecipeCard(R.drawable.beef_com_arroz,"Beef with rice9", "2h30", "Meddium", 4, bifeComArroz));
-        recipeCards.add(new RecipeCard(R.drawable.beef_com_arroz,"Beef with rice10", "2h30", "Meddium", 4, bifeComArroz));
-        recipeCards.add(new RecipeCard(R.drawable.beef_com_arroz,"Beef with rice11", "2h30", "Meddium", 4, bifeComArroz));
-        recipeCards.add(new RecipeCard(R.drawable.beef_com_arroz,"Beef with rice12", "2h30", "Meddium", 4, bifeComArroz));
+        ArrayList<Item> ingredients = new ArrayList<>();
+        ingredients.add(new Item("Steak", 1000, 1.5, 1, "Carne", getString(R.string.skyImg)));
+        ingredients.add(new Item("Rice", 809, 1, 1, "Cereal", getString(R.string.skyImg)));
+        ingredients.add(new Item("Onion", 34, 0.5, 1, "Vegetal", getString(R.string.skyImg)));
+        recipeCards.add(new RecipeCard(getString(R.string.skyImg),"Beef with Rice", "2h30", "Meddium", 4, ingredients));
+        ingredients.clear();
+        ingredients.add(new Item("Cod", 1000, 1.5, 1, "Peixe", getString(R.string.skyImg)));
+        ingredients.add(new Item("Potato", 809, 1, 1, "Cereal", getString(R.string.skyImg)));
+        ingredients.add(new Item("Olive Oil", 34, 0.5, 1, "Vegetal", getString(R.string.skyImg)));
+        recipeCards.add(new RecipeCard(getString(R.string.baked_cod),"Baked Cod with Potato", "1h30", "Difficult", 4, ingredients));
+        ingredients.clear();
+        ingredients.add(new Item("Bream Fish", 1000, 1.5, 1, "Peixe", getString(R.string.skyImg)));
+        ingredients.add(new Item("Potato", 809, 1, 1, "Cereal", getString(R.string.skyImg)));
+        ingredients.add(new Item("Corn Oil", 34, 0.5, 1, "Vegetal", getString(R.string.skyImg)));
+        recipeCards.add(new RecipeCard(getString(R.string.fish_and_chips),"Fish and Chips", "1h00", "Easy", 2, ingredients));
+        ingredients.clear();
+        ingredients.add(new Item("Minced Meat", 1000, 1.5, 1, "Carne", getString(R.string.skyImg)));
+        ingredients.add(new Item("Spaghetti", 809, 1, 1, "Cereal", getString(R.string.skyImg)));
+        ingredients.add(new Item("Salt", 34, 0.5, 1, "Vegetal", getString(R.string.skyImg)));
+        recipeCards.add(new RecipeCard(getString(R.string.spaghetti_bolognese),"Spaghetti Bolognese", "2h", "Meddium", 2, ingredients));
+        ingredients.clear();
+        ingredients.add(new Item("Lasagna Noodles", 1000, 1.5, 1, "Carne", getString(R.string.skyImg)));
+        ingredients.add(new Item("Minced Meat", 809, 1, 1, "Cereal", getString(R.string.skyImg)));
+        ingredients.add(new Item("Cheese", 34, 0.5, 1, "Vegetal", getString(R.string.skyImg)));
+        recipeCards.add(new RecipeCard(getString(R.string.lasagna),"Lasagna", "3h00", "Hard", 6, ingredients));
 
         mRecyclerView = root.findViewById(R.id.recyclerView);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new GridLayoutManager(getContext(), 2);
-        mAdapter = new RecipeAdapter(recipeCards);
+        mAdapter = new RecipeAdapter(recipeCards, root.getContext());
 
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);

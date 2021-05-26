@@ -1,5 +1,6 @@
 package com.example.whatsinmyfridge.ui.recipe;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.whatsinmyfridge.R;
 import com.example.whatsinmyfridge.objects.RecipeCard;
 
@@ -23,6 +25,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
 
     private ArrayList<RecipeCard> mRecipeCards;
     private ArrayList<RecipeCard> mRecipeCardsFull;
+    private Context context;
     private onItemClickListener mListener;
 
     public interface onItemClickListener {
@@ -57,9 +60,10 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
         }
     }
 
-    public RecipeAdapter(ArrayList<RecipeCard> recipeCards){
+    public RecipeAdapter(ArrayList<RecipeCard> recipeCards, Context con){
         mRecipeCards = recipeCards;
         mRecipeCardsFull = new ArrayList<>(recipeCards);
+        context = con;
     }
 
     @NonNull
@@ -74,7 +78,8 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
     @Override
     public void onBindViewHolder(@NonNull @NotNull RecipeViewHolder holder, int position) {
         RecipeCard currentCard = mRecipeCards.get(position);
-        holder.mImageView.setImageResource(currentCard.getmImageResource());
+        Glide.with(context).asBitmap().load(currentCard.getmImageResource()).into(holder.mImageView);
+        //holder.mImageView.setImageResource(currentCard.getmImageResource());
         holder.mTextView.setText(currentCard.getRecipeName());
     }
 
