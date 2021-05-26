@@ -60,11 +60,11 @@ public class MainActivity extends AppCompatActivity implements FridgeFragment.Tr
                     Log.e(TAG, "FDs que miséria!");
                     break;
             }
-            items.add(new Item("Bife de Vaca", 1000, 2, 1, Type.CARNE, getString(R.string.skyImg)));
-            items.add(new Item("Bife de Frango", 1001, 4, 1, Type.CARNE, getString(R.string.skyImg)));
-            items.add(new Item("Arroz", 809, 5, 1, Type.CEREAL, getString(R.string.skyImg)));
-            items.add(new Item("Massa", 1080, 9, 2, Type.CEREAL, getString(R.string.skyImg)));
-            items.add(new Item("Chocolate", 10, 1, 1, Type.SOBREMESA, getString(R.string.skyImg)));
+            items.add(new Item("Bife de Vaca", 1000, 2, 1, "CARNE", getString(R.string.skyImg)));
+            items.add(new Item("Bife de Frango", 1001, 4, 1, "CARNE", getString(R.string.skyImg)));
+            items.add(new Item("Arroz", 809, 5, 1, "CEREAL", getString(R.string.skyImg)));
+            items.add(new Item("Massa", 1080, 9, 2, "CEREAL", getString(R.string.skyImg)));
+            items.add(new Item("Chocolate", 10, 1, 1, "SOBREMESA", getString(R.string.skyImg)));
 
             Bundle bundle = new Bundle();
             bundle.putParcelableArrayList("itemsInsideFridge", items);

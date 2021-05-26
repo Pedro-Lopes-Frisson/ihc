@@ -14,8 +14,8 @@ public class Item implements Parcelable {
     private int ID;
     private double weight;
     private int weightJump;
-    private Type type;               // tyoe se é carne e assim
-    private WeightMeasure weightMeasure; // se e em gramas (Ricardo)
+    private String type = "dasfas";               // tyoe se é carne e assim
+    private String weightMeasure = "asdfasd"; // se e em gramas (Ricardo)
     private String Image;
 
     public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
@@ -28,14 +28,12 @@ public class Item implements Parcelable {
         }
     };
 
-    public Item(String name, int ID, double weight, int weightJump, Type type, String im) {
+    public Item(String name, int ID, double weight, int weightJump, String type, String im) {
         this.name = name;
         this.ID = ID;
         this.weight = weight;
         this.weightJump = weightJump;
-        this.type = type;
         this.Image = im;
-        this.weightMeasure = weightMeasure;
     }
 
     @Override
@@ -49,19 +47,17 @@ public class Item implements Parcelable {
         dest.writeInt(ID);
         dest.writeDouble(weight);
         dest.writeInt(weightJump);
-        dest.writeString(type.name());
-        dest.writeString(weightMeasure.name());
+        dest.writeString(type);
         dest.writeString(Image);
     }
 
 
-    public Item(String name, int ID, int weight, int weightJump, Type type, String im,WeightMeasure weightMeasure) {
+    public Item(String name, int ID, int weight, int weightJump, String type, String im, String weightMeasure) {
         this.name = name;
         this.ID = ID;
         this.weight = weight;
         this.weightJump = weightJump;
         this.type = type;
-        this.Image = im;
         this.weightMeasure = weightMeasure;
     }
 
@@ -71,8 +67,8 @@ public class Item implements Parcelable {
         ID = in.readInt();
         weight = in.readInt();
         weightJump = in.readInt();
-        type = Type.valueOf(in.readString());
-        weightMeasure= WeightMeasure.valueOf(in.readString());
+        type = in.readString();
+        weightMeasure= in.readString();
         Image = in.readString();
     }
 
@@ -134,7 +130,7 @@ public class Item implements Parcelable {
         this.weightJump = weightJump;
     }
 
-    public Type getType() {
+    public String getType() {
         return type;
     }
 
@@ -159,7 +155,7 @@ public class Item implements Parcelable {
                 '}';
     }
 
-    public void setType(Type type) {
+    public void setType(String type) {
         this.type = type;
     }
 

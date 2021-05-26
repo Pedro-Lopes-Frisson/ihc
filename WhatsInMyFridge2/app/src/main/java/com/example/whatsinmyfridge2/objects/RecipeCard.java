@@ -3,8 +3,6 @@ package com.example.whatsinmyfridge2.objects;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.example.whatsinmyfridge2.objects.Item;
-
 import java.util.ArrayList;
 
 public class RecipeCard implements Parcelable {
@@ -13,9 +11,9 @@ public class RecipeCard implements Parcelable {
     private String timeToCook;
     private String difficulty;
     private int xPeople;
-    ArrayList<Item> ingredients;
+    ArrayList<com.example.whatsinmyfridge2.objects.Item> ingredients;
 
-    public RecipeCard(String image, String name, String time, String diff, int x, ArrayList<Item> ing){
+    public RecipeCard(String image, String name, String time, String diff, int x, ArrayList<com.example.whatsinmyfridge2.objects.Item> ing){
         mImageResource = image;
         recipeName = name;
         timeToCook = time;
@@ -24,16 +22,42 @@ public class RecipeCard implements Parcelable {
         ingredients = ing;
     }
 
+
     protected RecipeCard(Parcel in) {
         mImageResource = in.readString();
         recipeName = in.readString();
         timeToCook = in.readString();
         difficulty = in.readString();
         xPeople = in.readInt();
-        ingredients = in.readArrayList(null);
+        if (in.readByte() == 0x01) {
+            ingredients = in.readArrayList(Item.class.getClassLoader());
+        } else {
+            ingredients = null;
+        }
     }
 
-    public static final Creator<RecipeCard> CREATOR = new Creator<RecipeCard>() {
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(mImageResource);
+        dest.writeString(recipeName);
+        dest.writeString(timeToCook);
+        dest.writeString(difficulty);
+        dest.writeInt(xPeople);
+        if (ingredients == null) {
+            dest.writeByte((byte) (0x00));
+        } else {
+            dest.writeByte((byte) (0x01));
+            dest.writeList(ingredients);
+        }
+    }
+
+    @SuppressWarnings("unused")
+    public static final Parcelable.Creator<RecipeCard> CREATOR = new Parcelable.Creator<RecipeCard>() {
         @Override
         public RecipeCard createFromParcel(Parcel in) {
             return new RecipeCard(in);
@@ -44,7 +68,6 @@ public class RecipeCard implements Parcelable {
             return new RecipeCard[size];
         }
     };
-
     public String getmImageResource() {
         return mImageResource;
     }
@@ -53,7 +76,7 @@ public class RecipeCard implements Parcelable {
         return recipeName;
     }
 
-    public ArrayList<Item> getIngredients() {
+    public ArrayList<com.example.whatsinmyfridge2.objects.Item> getIngredients() {
         return ingredients;
     }
 
@@ -69,19 +92,4 @@ public class RecipeCard implements Parcelable {
         return timeToCook;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(mImageResource);
-        dest.writeString(recipeName);
-        dest.writeString(timeToCook);
-        dest.writeString(difficulty);
-        dest.writeInt(xPeople);
-        dest.writeList(ingredients);
-
-    }
 }

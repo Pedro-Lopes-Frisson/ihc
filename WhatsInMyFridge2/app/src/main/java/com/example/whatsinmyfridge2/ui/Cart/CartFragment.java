@@ -15,7 +15,7 @@ public class CartFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_fridge,container,false);
+        View root = inflater.inflate(R.layout.fragment_cart,container,false);
 
 
         return root;

@@ -2,6 +2,7 @@ package com.example.whatsinmyfridge2.ui.ShoppingList;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -31,14 +33,16 @@ public class ShoppingFragment extends Fragment  implements ItemRecViewAdapter.On
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_fridge,container,false);
+        View root = inflater.inflate(R.layout.fragment_list,container,false);
 
 
         Bundle bundle = getArguments(); // PAra ver se ainda funciona
         listCards = bundle.getParcelableArrayList("itemsInsideFridge"); //OI
-        lRecyclerView = root.findViewById(R.id.recyclerView);
-        lLayoutManager = new LinearLayoutManager(getContext());
-        //lLayoutManager = new GridLayoutManager(getContext(), 2);
+        Log.i("SHOPPING", ""+ listCards);
+
+        lRecyclerView = (RecyclerView) root.findViewById(R.id.recyclerView);
+        //lLayoutManager = new LinearLayoutManager(getContext());
+        lLayoutManager = new GridLayoutManager(getContext(), 1);
         ItemRecViewAdapter itemRecViewAdapter = new ItemRecViewAdapter(root.getContext(), this, R.layout.item_line);
         itemRecViewAdapter.setItems(listCards); // Faltava isto
 

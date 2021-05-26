@@ -1,10 +1,11 @@
-package com.example.whatsinmyfridge2.ui.recipe;
+package com.example.whatsinmyfridge2.ui.Recipe;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,7 +35,11 @@ public class RecipePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recipe_page);
         Intent intent = getIntent();
-        RecipeCard recipeCard = intent.getParcelableExtra("Recipe");
+        //  recipeCard = intent.getParcelableExtra("Recipe");
+
+        Bundle b = getIntent().getBundleExtra("bundle");
+        RecipeCard recipeCard = b.getParcelable("options");
+        Log.i("JAVA GOES BRR", ""+recipeCard.getIngredients());
 
 
         String imageRes = recipeCard.getmImageResource(); //yahp

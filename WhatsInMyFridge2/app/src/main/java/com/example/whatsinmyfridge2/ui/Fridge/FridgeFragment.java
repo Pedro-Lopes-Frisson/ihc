@@ -39,9 +39,9 @@ public class FridgeFragment extends Fragment implements ItemRecViewAdapter.OnCar
         relativeLayout = root.findViewById(R.id.parentFridge);
         recyclerView = relativeLayout.findViewById(R.id.ItemRecycler);
 
-        items.add(new Item("Bife de Vaca", 1000, 2, 1, Type.CARNE, getString(R.string.skyImg)));
-        items.add(new Item("Bife de Frango", 1001, 4, 1, Type.CARNE, getString(R.string.skyImg)));
-        items.add(new Item("Arroz", 809, 5, 1, Type.CARNE, getString(R.string.skyImg)));
+        items.add(new Item("Bife de Vaca", 1000, 2, 1, "CARNE", getString(R.string.skyImg)));
+        items.add(new Item("Bife de Frango", 1001, 4, 1, "CARNE", getString(R.string.skyImg)));
+        items.add(new Item("Arroz", 809, 5, 1, "CARNE", getString(R.string.skyImg)));
         //items.add(new Item("Massa", 1080, 9, 2, "Massa", getString(R.string.skyImg)));
         // items.add(new Item("Chocolate", 10, 1, 1, "Sobremesa", getString(R.string.skyImg)));
 
