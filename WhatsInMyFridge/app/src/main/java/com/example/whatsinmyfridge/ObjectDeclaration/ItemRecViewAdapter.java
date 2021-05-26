@@ -76,7 +76,7 @@ public class ItemRecViewAdapter extends RecyclerView.Adapter<ItemRecViewAdapter.
 
         @Override
         public void onClick(View v) {
-            onCardListener.onCardClick(getAdapterPosition());
+            onCardListener.onCardClick(getBindingAdapterPosition());
         }
     }
 }

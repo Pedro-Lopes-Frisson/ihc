@@ -3,6 +3,8 @@ package com.example.whatsinmyfridge.ui.recipe;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,10 +17,12 @@ import com.example.whatsinmyfridge.objects.RecipeCard;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder> {
+public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder> implements Filterable {
 
     private ArrayList<RecipeCard> mRecipeCards;
+    private ArrayList<RecipeCard> mRecipeCardsFull;
     private onItemClickListener mListener;
 
     public interface onItemClickListener {
@@ -55,6 +59,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
 
     public RecipeAdapter(ArrayList<RecipeCard> recipeCards){
         mRecipeCards = recipeCards;
+        mRecipeCardsFull = new ArrayList<>(recipeCards);
     }
 
     @NonNull
@@ -77,4 +82,39 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
     public int getItemCount() {
         return mRecipeCards.size();
     }
+
+    @Override
+    public Filter getFilter() {
+        return exampleFilter;
+    }
+
+    private Filter exampleFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<RecipeCard> filteredList = new ArrayList<>();
+
+            if (constraint == null || constraint.length() == 0){
+                filteredList.addAll(mRecipeCardsFull);
+            }else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+
+                for (RecipeCard recipe : mRecipeCardsFull){
+                    if (recipe.getRecipeName().toLowerCase().contains(filterPattern)){
+                        filteredList.add(recipe);
+                    }
+                }
+            }
+
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            mRecipeCards.clear();
+            mRecipeCards.addAll((List) results.values);
+            notifyDataSetChanged();
+        }
+    };
 }

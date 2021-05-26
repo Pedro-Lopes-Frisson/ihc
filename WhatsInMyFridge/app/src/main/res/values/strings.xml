@@ -109,4 +109,6 @@
     <string name="recipe_image_description">recipe_image</string>
     <string name="available_ingredients">Available Ingredients</string>
     <string name="missing_ingredients">Missing Ingredients</string>
+    <string name="search_menu">Search</string>
+    <string name="ingredient_description">ingredient_description</string>
 </resources>

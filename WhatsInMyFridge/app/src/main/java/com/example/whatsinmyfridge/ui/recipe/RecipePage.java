@@ -2,14 +2,23 @@ package com.example.whatsinmyfridge.ui.recipe;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.whatsinmyfridge.ObjectDeclaration.Item;
 import com.example.whatsinmyfridge.R;
+import com.example.whatsinmyfridge.databinding.ActivityMainBinding;
+import com.example.whatsinmyfridge.databinding.IngredientRowBinding;
+import com.example.whatsinmyfridge.databinding.RecipePageBinding;
 import com.example.whatsinmyfridge.objects.RecipeCard;
 
 import java.util.ArrayList;
@@ -19,10 +28,10 @@ public class RecipePage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recipe_page);
-
+        setContentView(R.layout.recipe_page);
         Intent intent = getIntent();
         RecipeCard recipeCard = intent.getParcelableExtra("Recipe");
+
 
         int imageRes = recipeCard.getmImageResource();
         String name = recipeCard.getRecipeName();
@@ -45,8 +54,6 @@ public class RecipePage extends AppCompatActivity {
 
         TextView recipe_people = findViewById(R.id.person_per_recipe);
         recipe_people.setText(String.valueOf(xPeople));
-
-        LinearLayout available_ing = findViewById(R.id.available_ingredients_cards);
-
     }
+
 }
