@@ -36,7 +36,6 @@ public class RecipeFragment extends Fragment {
         recipeViewModel =
                 new ViewModelProvider(this).get(RecipeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_recipe, container, false);
-        final TextView textView = root.findViewById(R.id.text_notifications);
 
         ArrayList<RecipeCard> recipeCards = new ArrayList<>();
         ArrayList<Item> ingredients = new ArrayList<>();

@@ -6,14 +6,15 @@ import androidx.lifecycle.ViewModel;
 
 public class ListViewModel extends ViewModel {
 
-    private MutableLiveData<String> mText;
+    private MutableLiveData<String> lText;
 
     public ListViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
+        lText = new MutableLiveData<>();
+        lText.setValue("This is Shoppning List fragment");
     }
 
     public LiveData<String> getText() {
-        return mText;
+        return lText;
     }
 }
+
