@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".objects.RecipePage">
+    tools:context=".ui.recipe.RecipePage">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -31,9 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:textAlignment="center"
-            android:text="Falta ir buscar à base de dados"
             android:textStyle="bold"
-            android:textColor="@color/black"
             android:textSize="30sp"
             android:layout_below="@+id/Recipe_Image"
             android:layout_alignParentStart="true"
@@ -56,7 +54,6 @@
             android:gravity="center_horizontal"
             android:text="@string/recipe_dif"
             android:textAlignment="center"
-            android:textColor="@color/black"
             android:textSize="25sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/recipe_dif"
@@ -75,7 +72,6 @@
             android:layout_toStartOf="@+id/dif_text"
             android:layout_toLeftOf="@+id/dif_text"
             android:textAlignment="center"
-            android:textColor="@color/black"
             android:textSize="25sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/clock_icon"
@@ -124,9 +120,52 @@
             app:layout_constraintTop_toBottomOf="@+id/Recipe_Name"
             android:contentDescription="@string/clock_icon_description" />
 
+
+        <TextView
+            android:id="@+id/available_ingredients_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/available_ingredients"
+            android:textAlignment="gravity"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clock_icon"
+            android:gravity="start" />
+
+        <LinearLayout
+            android:id="@+id/available_ingredients_cards"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/available_ingredients_text"
+            tools:layout_editor_absoluteX="0dp"
+            android:orientation="horizontal" />
+
+        <TextView
+            android:id="@+id/missing_ingredients_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:gravity="start"
+            android:text="@string/missing_ingredients"
+            android:textAlignment="gravity"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/available_ingredients_cards"
+            tools:layout_editor_absoluteX="0dp" />
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="30dp" />
+            android:layout_height="wrap_content"
+            android:id="@+id/missing_ingredients_cards"
+            app:layout_constraintTop_toBottomOf="@+id/missing_ingredients_text"
+            tools:layout_editor_absoluteX="0dp"
+            android:orientation="horizontal">
+        </LinearLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -19,16 +19,36 @@ import java.util.ArrayList;
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder> {
 
     private ArrayList<RecipeCard> mRecipeCards;
+    private onItemClickListener mListener;
+
+    public interface onItemClickListener {
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClickListener(onItemClickListener listener){
+        mListener = listener;
+    }
 
     public static class RecipeViewHolder extends RecyclerView.ViewHolder {
 
         public ImageView mImageView;
         public TextView mTextView;
 
-        public RecipeViewHolder(@NonNull @NotNull View itemView) {
+        public RecipeViewHolder(@NonNull @NotNull View itemView, onItemClickListener listener) {
             super(itemView);
             mImageView = itemView.findViewById(R.id.imageView);
             mTextView = itemView.findViewById(R.id.textView);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(listener != null){
+                        int position = getBindingAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION){
+                            listener.onItemClick(position);
+                        }
+                    }
+                }
+            });
 
         }
     }
@@ -42,7 +62,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
     @Override
     public RecipeViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.recipe_card, parent, false);
-        RecipeViewHolder rvh = new RecipeViewHolder(v);
+        RecipeViewHolder rvh = new RecipeViewHolder(v, mListener);
         return rvh;
     }
 
@@ -50,7 +70,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
     public void onBindViewHolder(@NonNull @NotNull RecipeViewHolder holder, int position) {
         RecipeCard currentCard = mRecipeCards.get(position);
         holder.mImageView.setImageResource(currentCard.getmImageResource());
-        holder.mTextView.setText(currentCard.getmText1());
+        holder.mTextView.setText(currentCard.getRecipeName());
     }
 
     @Override
