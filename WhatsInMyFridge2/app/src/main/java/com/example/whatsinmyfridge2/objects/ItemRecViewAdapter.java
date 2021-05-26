@@ -19,10 +19,12 @@ public class ItemRecViewAdapter extends RecyclerView.Adapter<ItemRecViewAdapter.
     private ArrayList<Item> items = new ArrayList<>();
     private Context context;
     private OnCardListener onCardListener;
+    private int layoutToUse;
 
-    public ItemRecViewAdapter(Context context, OnCardListener onCardListener) {
+    public ItemRecViewAdapter(Context context, OnCardListener onCardListener, int layoutToUse) {
         this.onCardListener = onCardListener;
         this.context = context;
+        this.layoutToUse = layoutToUse;
     }
 
     public ArrayList<Item> getItems() {
@@ -37,7 +39,7 @@ public class ItemRecViewAdapter extends RecyclerView.Adapter<ItemRecViewAdapter.
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_card, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(layoutToUse, parent, false);
         ViewHolder viewHolder = new ViewHolder(view, onCardListener);
         return viewHolder;
     }

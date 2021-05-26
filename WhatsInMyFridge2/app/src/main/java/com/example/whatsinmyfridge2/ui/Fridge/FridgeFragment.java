@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.example.whatsinmyfridge2.R;
 import com.example.whatsinmyfridge2.objects.Item;
 import com.example.whatsinmyfridge2.objects.ItemRecViewAdapter;
+import com.example.whatsinmyfridge2.objects.Type;
 
 import java.util.ArrayList;
 
@@ -27,6 +28,8 @@ public class FridgeFragment extends Fragment implements ItemRecViewAdapter.OnCar
     private RelativeLayout relativeLayout;
     private RecyclerView recyclerView;
     ArrayList<Item> items = new ArrayList<>();
+    // add a callback and check if Main implemented this intterfacae
+
 
     @Nullable
     @Override
@@ -36,15 +39,15 @@ public class FridgeFragment extends Fragment implements ItemRecViewAdapter.OnCar
         relativeLayout = root.findViewById(R.id.parentFridge);
         recyclerView = relativeLayout.findViewById(R.id.ItemRecycler);
 
-        items.add(new Item("Bife de Vaca", 1000, 2, 1, "Carne", getString(R.string.skyImg)));
-        items.add(new Item("Bife de Frango", 1001, 4, 1, "Carne", getString(R.string.skyImg)));
-        items.add(new Item("Arroz", 809, 5, 1, "Cereal", getString(R.string.skyImg)));
-        items.add(new Item("Massa", 1080, 9, 2, "Massa", getString(R.string.skyImg)));
-        items.add(new Item("Chocolate", 10, 1, 1, "Sobremesa", getString(R.string.skyImg)));
+        items.add(new Item("Bife de Vaca", 1000, 2, 1, Type.CARNE, getString(R.string.skyImg)));
+        items.add(new Item("Bife de Frango", 1001, 4, 1, Type.CARNE, getString(R.string.skyImg)));
+        items.add(new Item("Arroz", 809, 5, 1, Type.CARNE, getString(R.string.skyImg)));
+        //items.add(new Item("Massa", 1080, 9, 2, "Massa", getString(R.string.skyImg)));
+        // items.add(new Item("Chocolate", 10, 1, 1, "Sobremesa", getString(R.string.skyImg)));
+
 
         //
-
-        ItemRecViewAdapter itemRecViewAdapter = new ItemRecViewAdapter(root.getContext(), this);
+        ItemRecViewAdapter itemRecViewAdapter = new ItemRecViewAdapter(root.getContext(), this, R.layout.item_card);
         itemRecViewAdapter.setItems(items);
 
         recyclerView.setAdapter(itemRecViewAdapter);

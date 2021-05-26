@@ -12,10 +12,10 @@ import java.util.Objects;
 public class Item implements Parcelable {
     private String name;
     private int ID;
-    private int weight;
+    private double weight;
     private int weightJump;
-    private Type type;
-    private WeightMeasure weightMeasure;
+    private Type type;               // tyoe se é carne e assim
+    private WeightMeasure weightMeasure; // se e em gramas (Ricardo)
     private String Image;
 
     public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
@@ -28,6 +28,16 @@ public class Item implements Parcelable {
         }
     };
 
+    public Item(String name, int ID, double weight, int weightJump, Type type, String im) {
+        this.name = name;
+        this.ID = ID;
+        this.weight = weight;
+        this.weightJump = weightJump;
+        this.type = type;
+        this.Image = im;
+        this.weightMeasure = weightMeasure;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -37,7 +47,7 @@ public class Item implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(name);
         dest.writeInt(ID);
-        dest.writeInt(weight);
+        dest.writeDouble(weight);
         dest.writeInt(weightJump);
         dest.writeString(type.name());
         dest.writeString(weightMeasure.name());
@@ -108,11 +118,11 @@ public class Item implements Parcelable {
         this.ID = ID;
     }
 
-    public int getWeight() {
+    public double getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 
