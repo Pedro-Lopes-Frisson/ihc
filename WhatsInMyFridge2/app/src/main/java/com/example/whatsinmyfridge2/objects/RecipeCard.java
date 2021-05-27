@@ -11,9 +11,9 @@ public class RecipeCard implements Parcelable {
     private String timeToCook;
     private String difficulty;
     private int xPeople;
-    ArrayList<com.example.whatsinmyfridge2.objects.Item> ingredients;
+    private Item[] ingredients;
 
-    public RecipeCard(String image, String name, String time, String diff, int x, ArrayList<com.example.whatsinmyfridge2.objects.Item> ing){
+    public RecipeCard(String image, String name, String time, String diff, int x, Item[] ing) {
         mImageResource = image;
         recipeName = name;
         timeToCook = time;
@@ -29,11 +29,11 @@ public class RecipeCard implements Parcelable {
         timeToCook = in.readString();
         difficulty = in.readString();
         xPeople = in.readInt();
-        if (in.readByte() == 0x01) {
-            ingredients = in.readArrayList(Item.class.getClassLoader());
-        } else {
-            ingredients = null;
-        }
+        //if (in.readByte() == 0x01) {
+        ingredients = (Item[]) in.readParcelableArray(Item.class.getClassLoader());
+        //} else {
+        //ingredients = null;
+        //}
     }
 
     @Override
@@ -48,12 +48,12 @@ public class RecipeCard implements Parcelable {
         dest.writeString(timeToCook);
         dest.writeString(difficulty);
         dest.writeInt(xPeople);
-        if (ingredients == null) {
-            dest.writeByte((byte) (0x00));
-        } else {
-            dest.writeByte((byte) (0x01));
-            dest.writeList(ingredients);
-        }
+        //if (ingredients == null) {
+        //dest.writeByte((byte) (0x00));
+        //} else {
+        //dest.writeByte((byte) (0x01));
+        dest.writeParcelableArray(ingredients, flags);
+        //}
     }
 
     @SuppressWarnings("unused")
@@ -68,6 +68,7 @@ public class RecipeCard implements Parcelable {
             return new RecipeCard[size];
         }
     };
+
     public String getmImageResource() {
         return mImageResource;
     }
@@ -76,7 +77,7 @@ public class RecipeCard implements Parcelable {
         return recipeName;
     }
 
-    public ArrayList<com.example.whatsinmyfridge2.objects.Item> getIngredients() {
+    public Item[] getIngredients() {
         return ingredients;
     }
 

@@ -23,6 +23,7 @@ import com.example.whatsinmyfridge2.objects.Item;
 import com.example.whatsinmyfridge2.objects.RecipeCard;
 import  com.example.whatsinmyfridge2.ui.Recipe.RecipePage;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class RecipeFragment extends Fragment {
@@ -46,27 +47,27 @@ public class RecipeFragment extends Fragment {
         ingredients.add(new Item("Rice", 809, 1, 1, "CEREAL", getString(R.string.skyImg)));
         ingredients.add(new Item("Onion", 34, 0.5, 1, "VEGETAL", getString(R.string.skyImg)));
 
-        recipeCards.add(new RecipeCard(getString(R.string.skyImg), "Beef with Rice", "2h30", "Meddium", 4, ingredients));
+        recipeCards.add(new RecipeCard(getString(R.string.skyImg), "Beef with Rice", "2h30", "Meddium", 4, (Item[]) ingredients.toArray()));
         ingredients.clear();
         ingredients.add(new Item("Cod", 1000, 1.5, 1, "PEIXE", getString(R.string.skyImg)));
         ingredients.add(new Item("Potato", 809, 1, 1, "CEREAL", getString(R.string.skyImg)));
         ingredients.add(new Item("Olive Oil", 34, 0.5, 1, "VEGETAL", getString(R.string.skyImg)));
-        recipeCards.add(new RecipeCard(getString(R.string.baked_cod), "Baked Cod with Potato", "1h30", "Difficult", 4, ingredients));
+        recipeCards.add(new RecipeCard(getString(R.string.baked_cod), "Baked Cod with Potato", "1h30", "Difficult", 4, (Item[]) ingredients.toArray()));
         ingredients.clear();
         ingredients.add(new Item("Bream Fish", 1000, 1.5, 1, "PEIXE", getString(R.string.skyImg)));
         ingredients.add(new Item("Potato", 809, 1, 1, "CEREAL", getString(R.string.skyImg)));
         ingredients.add(new Item("Corn Oil", 34, 0.5, 1, "VEGETAL", getString(R.string.skyImg)));
-        recipeCards.add(new RecipeCard(getString(R.string.fish_and_chips), "Fish and Chips", "1h00", "Easy", 2, ingredients));
+        recipeCards.add(new RecipeCard(getString(R.string.fish_and_chips), "Fish and Chips", "1h00", "Easy", 2, (Item[]) ingredients.toArray()));
         ingredients.clear();
         ingredients.add(new Item("Minced Meat", 1000, 1.5, 1, "CARNE", getString(R.string.skyImg)));
         ingredients.add(new Item("Spaghetti", 809, 1, 1, "CEREAL", getString(R.string.skyImg)));
         ingredients.add(new Item("Salt", 34, 0.5, 1, "VEGETAL", getString(R.string.skyImg)));
-        recipeCards.add(new RecipeCard(getString(R.string.spaghetti_bolognese), "Spaghetti Bolognese", "2h", "Meddium", 2, ingredients));
+        recipeCards.add(new RecipeCard(getString(R.string.spaghetti_bolognese), "Spaghetti Bolognese", "2h", "Meddium", 2, (Item[]) ingredients.toArray()));
         ingredients.clear();
         ingredients.add(new Item("Lasagna Noodles", 1000, 1.5, 1, "CARNE", getString(R.string.skyImg)));
         ingredients.add(new Item("Minced Meat", 809, 1, 1, "CEREAL", getString(R.string.skyImg)));
         ingredients.add(new Item("Cheese", 34, 0.5, 1, "VEGETAL", getString(R.string.skyImg)));
-        recipeCards.add(new RecipeCard(getString(R.string.lasagna), "Lasagna", "3h00", "Hard", 6, (ArrayList<Item>) ingredients.clone()));
+        recipeCards.add(new RecipeCard(getString(R.string.lasagna), "Lasagna", "3h00", "Hard", 6, (Item[]) ingredients.toArray()));
 
         mRecyclerView = root.findViewById(R.id.recyclerView);
         mRecyclerView.setHasFixedSize(true);

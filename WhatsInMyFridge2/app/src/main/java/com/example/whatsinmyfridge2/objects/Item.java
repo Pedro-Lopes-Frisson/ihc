@@ -6,17 +6,19 @@ import android.os.Parcelable;
 
 import androidx.annotation.RequiresApi;
 
+import com.example.whatsinmyfridge2.R;
+
 import java.util.Objects;
 
 
 public class Item implements Parcelable {
-    private String name;
-    private int ID;
-    private double weight;
-    private int weightJump;
+    private String name = "ola";
+    private int ID = 100;
+    private double weight = 10.2;
+    private int weightJump = 10;
     private String type = "dasfas";               // tyoe se é carne e assim
     private String weightMeasure = "asdfasd"; // se e em gramas (Ricardo)
-    private String Image;
+    private String Image = "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg";
 
     public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
         public Item createFromParcel(Parcel in) {
@@ -48,6 +50,7 @@ public class Item implements Parcelable {
         dest.writeDouble(weight);
         dest.writeInt(weightJump);
         dest.writeString(type);
+        dest.writeString(weightMeasure);
         dest.writeString(Image);
     }
 

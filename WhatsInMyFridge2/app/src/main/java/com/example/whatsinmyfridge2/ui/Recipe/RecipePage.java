@@ -47,7 +47,7 @@ public class RecipePage extends AppCompatActivity {
         String dif = recipeCard.getDifficulty();
         String time = recipeCard.getTimeToCook();
         int xPeople = recipeCard.getxPeople();
-        ArrayList<Item> ing = recipeCard.getIngredients();
+        Item[] ing = recipeCard.getIngredients();
 
         ImageView imageView = findViewById(R.id.Recipe_Image);
         Glide.with(this).asBitmap().load(imageRes).into(imageView);
