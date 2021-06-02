@@ -7,7 +7,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:context=".ui.Fridge.FridgeFragment">
-   <include layout="@layout/modal_box" android:visibility="gone" />
+
+    <include
+        android:id="@+id/expandable_Layout"
+        layout="@layout/modal_box"/>
 
 
     <TextView

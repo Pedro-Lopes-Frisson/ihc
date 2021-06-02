@@ -7,6 +7,13 @@ public class Fridge {
     public static ArrayList<Item> items = new ArrayList<>();
     public static ArrayList<RecipeCard> recipes = new ArrayList<>();
 
+    public static ArrayList<Item> getItems() {
+        return items;
+    }
+
+    public static ArrayList<RecipeCard> getRecipes() {
+        return recipes;
+    }
     public static void addItem(Item i) {
         items.add(i);
     }
