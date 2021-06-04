@@ -48,7 +48,7 @@ public class RecipeFragment extends Fragment {
         ingredients.add(new Item("Steak", 1000, 1.5, 1, "CARNE", getString(R.string.skyImg)));
         ingredients.add(new Item("White Rice", 1002, 1, 1, "CEREAL", getString(R.string.skyImg)));
         ingredients.add(new Item("Onion", 1005, 0.5, 1, "VEGETAL", getString(R.string.skyImg)));
-        Fridge.addRecipe(new RecipeCard(getString(R.string.skyImg), "Beef with Rice", "2h30", "Meddium", 4, ingredients));
+        Fridge.addRecipe(new RecipeCard(getString(R.string.skyImg), "Beef with Rice", "2h30", "Medium", 4, ingredients));
 
         ingredients2.add(new Item("Cod", 1006, 1.5, 1, "PEIXE", getString(R.string.skyImg)));
         ingredients2.add(new Item("Potato", 1007, 1, 1, "CEREAL", getString(R.string.skyImg)));
@@ -63,7 +63,7 @@ public class RecipeFragment extends Fragment {
         ingredients4.add(new Item("Minced Meat", 1012, 1.5, 1, "CARNE", getString(R.string.skyImg)));
         ingredients4.add(new Item("Spaghetti", 1003, 1, 1, "CEREAL", getString(R.string.skyImg)));
         ingredients4.add(new Item("Salt", 1013, 0.5, 1, "VEGETAL", getString(R.string.skyImg)));
-        Fridge.addRecipe(new RecipeCard(getString(R.string.spaghetti_bolognese), "Spaghetti Bolognese", "2h", "Meddium", 2, ingredients4));
+        Fridge.addRecipe(new RecipeCard(getString(R.string.spaghetti_bolognese), "Spaghetti Bolognese", "2h", "Medium", 2, ingredients4));
 
         ingredients5.add(new Item("Lasagna Noodles", 1014, 1.5, 1, "CARNE", getString(R.string.skyImg)));
         ingredients5.add(new Item("Minced Meat", 1015, 1, 1, "CEREAL", getString(R.string.skyImg)));
