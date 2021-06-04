@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.recipe.RecipePage">
+    tools:context=".ui.Recipe.RecipePage">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -144,13 +144,96 @@
             app:layout_constraintTop_toBottomOf="@+id/clock_icon"
             android:gravity="start" />
 
-        <LinearLayout
+        <RelativeLayout
             android:id="@+id/available_ingredients_cards"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             app:layout_constraintTop_toBottomOf="@+id/available_ingredients_text"
-            tools:layout_editor_absoluteX="0dp"
-            android:orientation="horizontal" />
+            tools:layout_editor_absoluteX="0dp">
+
+            <TextView
+                android:id="@+id/ingredient_name2"
+                android:layout_width="343dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/ingredient_name1"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="-1dp"
+                android:layout_marginRight="-1dp"
+                android:layout_toEndOf="@+id/ingredient_image2"
+                android:layout_toRightOf="@+id/ingredient_image2"/>
+
+            <TextView
+                android:id="@+id/ingredient_name3"
+                android:layout_width="343dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/ingredient_name2"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_toEndOf="@+id/ingredient_image3"
+                android:layout_toRightOf="@+id/ingredient_image3" />
+
+            <ImageView
+                android:id="@+id/ingredient_image3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/ingredient_image2"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="0dp"
+                android:contentDescription="@string/image3" />
+
+            <ImageView
+                android:id="@+id/ingredient_image1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="0dp"
+                android:contentDescription="@string/image1" />
+
+            <TextView
+                android:id="@+id/ingredient_name1"
+                android:layout_width="343dp"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_toEndOf="@+id/ingredient_image2"
+                android:layout_toRightOf="@+id/ingredient_image2" />
+
+            <ImageView
+                android:id="@+id/ingredient_image2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/ingredient_image1"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="0dp"
+                android:contentDescription="@string/image2" />
+
+        </RelativeLayout>
 
         <TextView
             android:id="@+id/missing_ingredients_text"
@@ -165,14 +248,91 @@
             app:layout_constraintTop_toBottomOf="@+id/available_ingredients_cards"
             tools:layout_editor_absoluteX="0dp" />
 
-        <LinearLayout
+        <RelativeLayout
+            android:id="@+id/missing_ingredients_cards"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/missing_ingredients_cards"
+            android:orientation="horizontal"
             app:layout_constraintTop_toBottomOf="@+id/missing_ingredients_text"
-            tools:layout_editor_absoluteX="0dp"
-            android:orientation="horizontal">
-        </LinearLayout>
+            tools:layout_editor_absoluteX="0dp">
+
+            <TextView
+                android:id="@+id/ingredient_name6"
+                android:layout_width="343dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/ingredient_name5"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_toEndOf="@+id/ingredient_image6"
+                android:layout_toRightOf="@+id/ingredient_image6" />
+
+            <ImageView
+                android:id="@+id/ingredient_image6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/ingredient_image5"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="0dp"
+                android:contentDescription="@string/image6" />
+
+            <TextView
+                android:id="@+id/ingredient_name5"
+                android:layout_width="343dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/ingredient_name4"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_toEndOf="@+id/ingredient_image5"
+                android:layout_toRightOf="@+id/ingredient_image5" />
+
+            <ImageView
+                android:id="@+id/ingredient_image4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="0dp"
+                android:contentDescription="@string/image4" />
+
+            <TextView
+                android:id="@+id/ingredient_name4"
+                android:layout_width="343dp"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_toEndOf="@+id/ingredient_image4"
+                android:layout_toRightOf="@+id/ingredient_image4" />
+
+            <ImageView
+                android:id="@+id/ingredient_image5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/ingredient_image4"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="0dp"
+                android:contentDescription="@string/image5" />
+        </RelativeLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
