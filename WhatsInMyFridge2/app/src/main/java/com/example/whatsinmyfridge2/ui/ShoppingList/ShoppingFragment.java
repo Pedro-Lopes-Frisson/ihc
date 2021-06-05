@@ -18,6 +18,7 @@ import android.app.Fragment;
 import android.widget.Toast;
 
 import com.example.whatsinmyfridge2.R;
+import com.example.whatsinmyfridge2.objects.Fridge;
 import com.example.whatsinmyfridge2.objects.Item;
 import com.example.whatsinmyfridge2.objects.ItemRecViewAdapter;
 
@@ -36,15 +37,14 @@ public class ShoppingFragment extends Fragment  implements ItemRecViewAdapter.On
         View root = inflater.inflate(R.layout.fragment_list,container,false);
 
 
-        Bundle bundle = getArguments(); // PAra ver se ainda funciona
-        listCards = bundle.getParcelableArrayList("itemsInsideFridge"); //OI
+
         Log.i("SHOPPING", ""+ listCards);
 
         lRecyclerView = (RecyclerView) root.findViewById(R.id.recyclerView);
         //lLayoutManager = new LinearLayoutManager(getContext());
         lLayoutManager = new GridLayoutManager(getContext(), 1);
         ItemRecViewAdapter itemRecViewAdapter = new ItemRecViewAdapter(root.getContext(), this, R.layout.item_line);
-        itemRecViewAdapter.setItems(listCards); // Faltava isto
+        itemRecViewAdapter.setItems(Fridge.getItems());
 
         lRecyclerView.setLayoutManager(lLayoutManager);
         lRecyclerView.setAdapter(itemRecViewAdapter);

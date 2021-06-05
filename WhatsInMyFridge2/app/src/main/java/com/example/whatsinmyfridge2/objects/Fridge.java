@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Fridge {
+    public static ArrayList<Item> databaseOfItems = new ArrayList<>();
     public static ArrayList<Item> items = new ArrayList<>();
     public static ArrayList<RecipeCard> recipes = new ArrayList<>();
 
@@ -14,20 +15,14 @@ public class Fridge {
     public static ArrayList<RecipeCard> getRecipes() {
         return recipes;
     }
-    public static void addItem(Item i) {
-        items.add(i);
-    }
 
-    public static void addRecipe(RecipeCard r) {
-        recipes.add(r);
+    public static void addItem(Item i) {
+        if (!items.contains(i))
+            items.add(i);
     }
 
     public static Item getItem(int i) {
         return items.get(i);
-    }
-
-    public static RecipeCard addRecipe(int r) {
-        return recipes.get(r);
     }
 
     public static boolean deleteItem(Item i) {
@@ -37,9 +32,38 @@ public class Fridge {
     public static Item deleteItem(int i) {
         return items.remove(i);
     }
+
+    public static void addItemToDb(Item i) {
+        if (!databaseOfItems.contains(i))
+            databaseOfItems.add(i);
+    }
+
+    public static Item getItemToDb(int i) {
+        return databaseOfItems.get(i);
+    }
+
+    public static boolean deleteItemToDb(Item i) {
+        return databaseOfItems.remove(i);
+    }
+
+    public static Item deleteItemToDb(int i) {
+        return databaseOfItems.remove(i);
+    }
+
+    public static void addRecipe(RecipeCard r) {
+        if (!recipes.contains(r))
+            recipes.add(r);
+    }
+
+
+    public static RecipeCard addRecipe(int r) {
+        return recipes.get(r);
+    }
+
     public static boolean deleteRecipe(RecipeCard r) {
         return recipes.remove(r);
     }
+
     public static RecipeCard deleteRecipe(int i) {
         return recipes.remove(i);
     }

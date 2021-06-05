@@ -87,7 +87,6 @@ public class Item implements Parcelable {
         if (o == null || getClass() != o.getClass()) return false;
         Item item = (Item) o;
         return ID == item.ID &&
-                weight == item.weight &&
                 weightJump == item.weightJump &&
                 Objects.equals(name, item.name) &&
                 type == item.type &&
@@ -98,7 +97,7 @@ public class Item implements Parcelable {
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public int hashCode() {
-        return Objects.hash(name, ID, weight, weightJump, type, weightMeasure, Image);
+        return Objects.hash(name, ID,  weightJump, type, weightMeasure, Image);
     }
 
     // Getters e setters Obviously bad but who cares
