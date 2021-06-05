@@ -48,7 +48,9 @@ public class ItemRecViewAdapter extends RecyclerView.Adapter<ItemRecViewAdapter.
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.itemName.setText(items.get(position).getName());
         Glide.with(context).asBitmap().load(items.get(position).getImage()).into(holder.itemImage);
-        holder.itemQty.setText(Double.toString(items.get(position).getWeight()));
+        if (holder.itemQty != null) {
+            holder.itemQty.setText(Double.toString(items.get(position).getWeight()));
+        }
 
     }
 
@@ -68,7 +70,7 @@ public class ItemRecViewAdapter extends RecyclerView.Adapter<ItemRecViewAdapter.
         private TextView itemName;
         private ImageView itemImage;
         OnCardListener onCardListener;
-        private TextView itemQty;
+        private TextView itemQty = null;
 
         public ViewHolder(@NonNull View itemView, OnCardListener cardListener) {
             super(itemView);
@@ -76,7 +78,12 @@ public class ItemRecViewAdapter extends RecyclerView.Adapter<ItemRecViewAdapter.
             itemImage = itemView.findViewById(R.id.item_img);
             itemView.setOnClickListener(this);
             onCardListener = cardListener;
-            itemQty = itemView.findViewById(R.id.som).findViewById(R.id.item_qty_card);
+            try {
+                itemQty = itemView.findViewById(R.id.som).findViewById(R.id.item_qty_card);
+            } catch (Exception e) {
+
+            }
+
         }
 
         @Override
