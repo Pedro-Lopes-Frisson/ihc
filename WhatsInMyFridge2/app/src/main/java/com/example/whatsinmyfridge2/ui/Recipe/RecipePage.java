@@ -32,12 +32,12 @@ public class RecipePage extends AppCompatActivity {
         int pos = getIntent().getIntExtra("pos", 0);
 
 
-        String imageRes = Fridge.getRecipes().get(pos).getmImageResource();
-        String name = Fridge.getRecipes().get(pos).getRecipeName();
-        String dif = Fridge.getRecipes().get(pos).getDifficulty();
-        String time = Fridge.getRecipes().get(pos).getTimeToCook();
-        int xPeople = Fridge.getRecipes().get(pos).getxPeople();
-        ArrayList<Item> ing = Fridge.getRecipes().get(pos).getIngredients();
+        String imageRes = Fridge.getFilteredRecipes().get(pos).getmImageResource();
+        String name = Fridge.getFilteredRecipes().get(pos).getRecipeName();
+        String dif = Fridge.getFilteredRecipes().get(pos).getDifficulty();
+        String time = Fridge.getFilteredRecipes().get(pos).getTimeToCook();
+        int xPeople = Fridge.getFilteredRecipes().get(pos).getxPeople();
+        ArrayList<Item> ing = Fridge.getFilteredRecipes().get(pos).getIngredients();
 
         ImageView imageView = findViewById(R.id.Recipe_Image);
         Glide.with(this).asBitmap().load(imageRes).into(imageView);

@@ -7,6 +7,7 @@ public class Fridge {
     public static ArrayList<Item> databaseOfItems = new ArrayList<>();
     public static ArrayList<Item> items = new ArrayList<>();
     public static ArrayList<RecipeCard> recipes = new ArrayList<>();
+    public static ArrayList<RecipeCard> filteredRecipes = new ArrayList<>();
 
     public static ArrayList<Item> getDatabaseOfItems() {
         return (ArrayList<Item>) databaseOfItems.clone();
@@ -18,6 +19,14 @@ public class Fridge {
 
     public static ArrayList<RecipeCard> getRecipes() {
         return (ArrayList<RecipeCard>) recipes.clone();
+    }
+
+    public static void setFilteredRecipes(ArrayList<RecipeCard> filteredRecipes) {
+        Fridge.filteredRecipes = filteredRecipes;
+    }
+
+    public static ArrayList<RecipeCard> getFilteredRecipes() {
+        return filteredRecipes;
     }
 
     public static void addItem(Item i) {
@@ -57,6 +66,12 @@ public class Fridge {
     public static void addRecipe(RecipeCard r) {
         if (!recipes.contains(r))
             recipes.add(r);
+    }
+
+    public static void addFilteredRecipe(RecipeCard r){
+        if (!filteredRecipes.contains(r)){
+            filteredRecipes.add(r);
+        }
     }
 
 

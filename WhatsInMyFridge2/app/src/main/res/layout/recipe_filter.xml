@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/filterbox"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:visibility="visible"
+    android:focusable="true">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="50dp"
+        android:background="#8a3e3e3e"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="150dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/closeBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                android:src="@drawable/ic_baseline_close_24"
+                android:layout_alignParentEnd="true"
+                android:contentDescription="@string/closebutton_description" />
+
+            <TextView
+                android:id="@+id/item_title"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:text="@string/recipe_filter_head_text"
+                android:textSize="30sp" />
+
+
+            <Button
+                android:id="@+id/ApplyBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="40dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="Apply"/>
+
+            <TextView
+                android:id="@+id/difficultyText"
+                android:layout_width="122dp"
+                android:layout_height="56dp"
+                android:layout_below="@+id/item_title"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="95dp"
+                android:layout_marginLeft="95dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="95dp"
+                android:layout_marginRight="95dp"
+                android:gravity="center"
+                android:text="Difficulty"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/timeText"
+                android:layout_width="122dp"
+                android:layout_height="56dp"
+                android:layout_below="@+id/item_title"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="95dp"
+                android:layout_marginLeft="95dp"
+                android:layout_marginTop="181dp"
+                android:layout_marginEnd="95dp"
+                android:layout_marginRight="95dp"
+                android:gravity="center"
+                android:text="Time"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/easyDifficulty"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/difficultyText"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="19dp"
+                android:text="Easy" />
+
+            <CheckBox
+                android:id="@+id/mediumDifficulty"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/difficultyText"
+                android:layout_marginStart="9dp"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="19dp"
+                android:layout_toEndOf="@+id/easyDifficulty"
+                android:layout_toRightOf="@+id/easyDifficulty"
+                android:text="Medium" />
+
+            <CheckBox
+                android:id="@+id/hardDifficulty"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/difficultyText"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="11dp"
+                android:layout_marginLeft="11dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_toEndOf="@+id/mediumDifficulty"
+                android:layout_toRightOf="@+id/mediumDifficulty"
+                android:text="Hard" />
+
+            <CheckBox
+                android:id="@+id/timeBox2"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/timeText"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="19dp"
+                android:layout_toEndOf="@+id/easyDifficulty"
+                android:layout_toRightOf="@+id/easyDifficulty"
+                android:text="1h-2h30" />
+
+            <CheckBox
+                android:id="@+id/timeBox3"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/timeText"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginEnd="17dp"
+                android:layout_marginRight="17dp"
+                android:layout_toEndOf="@+id/mediumDifficulty"
+                android:layout_toRightOf="@+id/mediumDifficulty"
+                android:text="2h30+" />
+
+            <CheckBox
+                android:id="@+id/timeBox1"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/timeText"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="7dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="19dp"
+                android:text="0h-1h" />
+
+            <!--Might remove this-->
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

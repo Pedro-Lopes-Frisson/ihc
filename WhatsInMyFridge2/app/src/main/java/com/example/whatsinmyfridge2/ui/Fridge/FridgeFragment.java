@@ -2,7 +2,6 @@ package com.example.whatsinmyfridge2.ui.Fridge;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,14 +22,12 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.whatsinmyfridge2.R;
 import com.example.whatsinmyfridge2.objects.Fridge;
 import com.example.whatsinmyfridge2.objects.Item;
 import com.example.whatsinmyfridge2.objects.ItemRecViewAdapter;
-import com.example.whatsinmyfridge2.objects.Type;
 
 import java.util.ArrayList;
 
@@ -117,7 +114,7 @@ public class FridgeFragment extends Fragment implements ItemRecViewAdapter.OnCar
         });
 
         // SAVE Button
-        Button btn = (Button) constraintLayout.findViewById(R.id.SaveBtn);
+        Button btn = (Button) constraintLayout.findViewById(R.id.ApplyBtn);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

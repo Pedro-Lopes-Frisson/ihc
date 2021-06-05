@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Fragment;
+import android.widget.ImageButton;
 import android.widget.SearchView;
 
 import com.example.whatsinmyfridge2.objects.Fridge;
@@ -24,6 +25,7 @@ import com.example.whatsinmyfridge2.objects.Item;
 import com.example.whatsinmyfridge2.objects.RecipeCard;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class RecipeFragment extends Fragment {
     private ArrayList<Item> items;
@@ -31,6 +33,9 @@ public class RecipeFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private RecipeAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    private ImageButton filterButton;
+    private ArrayList<RecipeCard> recipes;
+    private ArrayList<RecipeCard> filteredRecipes = new ArrayList<>();
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Nullable
@@ -44,6 +49,7 @@ public class RecipeFragment extends Fragment {
         ArrayList<Item> ingredients3 = new ArrayList<>();
         ArrayList<Item> ingredients4 = new ArrayList<>();
         ArrayList<Item> ingredients5 = new ArrayList<>();
+        filterButton = root.findViewById(R.id.filterbutton);
 
         ingredients.add(new Item("Steak", 1000, 1.5, 1, "CARNE", getString(R.string.beefImg)));
         ingredients.add(new Item("White Rice", 1002, 1, 1, "CEREAL", getString(R.string.rice)));
@@ -52,6 +58,7 @@ public class RecipeFragment extends Fragment {
             ingredients.forEach((item -> Fridge.addItemToDb(item)));
         }
         Fridge.addRecipe(new RecipeCard(getString(R.string.beefWithRice), "Beef with Rice", "2h30", "Medium", 4, ingredients));
+        Fridge.addFilteredRecipe(new RecipeCard(getString(R.string.beefWithRice), "Beef with Rice", "2h30", "Medium", 4, ingredients));
 
         ingredients2.add(new Item("Cod", 1006, 1.5, 1, "PEIXE", getString(R.string.codImg)));
         ingredients2.add(new Item("Potato", 1007, 1, 1, "CEREAL", getString(R.string.potatoImg)));
@@ -59,7 +66,8 @@ public class RecipeFragment extends Fragment {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             ingredients2.forEach((item -> Fridge.addItemToDb(item)));
         }
-        Fridge.addRecipe(new RecipeCard(getString(R.string.baked_cod), "Baked Cod with Potato", "1h30", "Difficult", 4, ingredients2));
+        Fridge.addRecipe(new RecipeCard(getString(R.string.baked_cod), "Baked Cod with Potato", "1h30", "Hard", 4, ingredients2));
+        Fridge.addFilteredRecipe(new RecipeCard(getString(R.string.baked_cod), "Baked Cod with Potato", "1h30", "Hard", 4, ingredients2));
 
         ingredients3.add(new Item("Bream Fish", 1009, 1.5, 1, "PEIXE", getString(R.string.codImg)));
         ingredients3.add(new Item("Potato", 1010, 1, 1, "CEREAL", getString(R.string.potatoImg)));
@@ -68,6 +76,7 @@ public class RecipeFragment extends Fragment {
             ingredients3.forEach((item -> Fridge.addItemToDb(item)));
         }
         Fridge.addRecipe(new RecipeCard(getString(R.string.fish_and_chips), "Fish and Chips", "1h00", "Easy", 2, ingredients3));
+        Fridge.addFilteredRecipe(new RecipeCard(getString(R.string.fish_and_chips), "Fish and Chips", "1h00", "Easy", 2, ingredients3));
 
         ingredients4.add(new Item("Minced Meat", 1012, 1.5, 1, "CARNE", getString(R.string.mincedMeatImg)));
         ingredients4.add(new Item("Spaghetti", 1003, 1, 1, "CEREAL", getString(R.string.spaghetti)));
@@ -76,6 +85,7 @@ public class RecipeFragment extends Fragment {
             ingredients4.forEach((item -> Fridge.addItemToDb(item)));
         }
         Fridge.addRecipe(new RecipeCard(getString(R.string.spaghetti_bolognese), "Spaghetti Bolognese", "2h", "Medium", 2, ingredients4));
+        Fridge.addFilteredRecipe(new RecipeCard(getString(R.string.spaghetti_bolognese), "Spaghetti Bolognese", "2h", "Medium", 2, ingredients4));
 
         ingredients5.add(new Item("Lasagna Noodles", 1014, 1.5, 1, "CARNE", getString(R.string.lasagnaNoddleImg)));
         ingredients5.add(new Item("Minced Meat", 1015, 1, 1, "CEREAL", getString(R.string.mincedMeatImg)));
@@ -84,6 +94,7 @@ public class RecipeFragment extends Fragment {
             ingredients5.forEach((item -> Fridge.addItemToDb(item)));
         }
         Fridge.addRecipe(new RecipeCard(getString(R.string.lasagna), "Lasagna", "3h00", "Hard", 6, ingredients5));
+        Fridge.addFilteredRecipe(new RecipeCard(getString(R.string.lasagna), "Lasagna", "3h00", "Hard", 6, ingredients5));
 
         mRecyclerView = root.findViewById(R.id.recyclerView);
         mRecyclerView.setHasFixedSize(true);
@@ -96,12 +107,29 @@ public class RecipeFragment extends Fragment {
             @Override
             public void onItemClick(int position) {
                 Intent intent = new Intent(getActivity(), RecipePage.class);
-                //Bundle b = new Bundle();
-                //b.putParcelable("options", Fridge.getRecipes().get(position));
                 intent.putExtra("pos", position);
                 startActivity(intent);
             }
         });
+
+        recipes = Fridge.getRecipes();
+
+
+        /*filterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    filteredRecipes = (ArrayList<RecipeCard>) recipes.stream().filter(f -> {
+                        return f.getDifficulty().equals("Medium");
+                    }).collect(Collectors.toList());
+                }
+                //mAdapter = new RecipeAdapter(filteredRecipes, root.getContext());
+                Fridge.setFilteredRecipes(filteredRecipes);
+                mAdapter.setDataSet(filteredRecipes);
+                mAdapter.notifyDataSetChanged();
+                //mRecyclerView.notifyDataSetChanged();
+            }
+        });*/
 
         SearchView searchView = root.findViewById(R.id.search_bar);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {

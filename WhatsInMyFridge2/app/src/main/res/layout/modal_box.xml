@@ -49,7 +49,7 @@
                 android:id="@+id/SpinnerQuantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_above="@id/SaveBtn"
+                android:layout_above="@id/ApplyBtn"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="50dp"
                 android:clickable="true"/>
@@ -58,7 +58,7 @@
                 android:id="@+id/incBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_above="@id/SaveBtn"
+                android:layout_above="@id/ApplyBtn"
                 android:layout_margin="20dp"
                 android:layout_marginBottom="40dp"
                 android:layout_toRightOf="@id/SpinnerQuantity"
@@ -69,7 +69,7 @@
                 android:id="@+id/decBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_above="@id/SaveBtn"
+                android:layout_above="@id/ApplyBtn"
                 android:layout_centerHorizontal="true"
                 android:layout_margin="20dp"
                 android:layout_marginBottom="40dp"
@@ -79,7 +79,7 @@
 
 
             <Button
-                android:id="@+id/SaveBtn"
+                android:id="@+id/ApplyBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"

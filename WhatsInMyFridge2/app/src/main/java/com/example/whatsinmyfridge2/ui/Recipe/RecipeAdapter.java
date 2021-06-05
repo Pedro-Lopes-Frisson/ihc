@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.whatsinmyfridge2.R;
+import com.example.whatsinmyfridge2.objects.Fridge;
 import com.example.whatsinmyfridge2.objects.RecipeCard;
 
 import org.jetbrains.annotations.NotNull;
@@ -66,6 +67,11 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
         context = con;
     }
 
+    public void setDataSet(ArrayList<RecipeCard> filtered){
+        this.mRecipeCards = filtered;
+        this.mRecipeCardsFull = new ArrayList<>(filtered);
+    }
+
     @NonNull
     @NotNull
     @Override
@@ -108,7 +114,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
                     }
                 }
             }
-
+            Fridge.setFilteredRecipes((ArrayList<RecipeCard>) filteredList);
             FilterResults results = new FilterResults();
             results.values = filteredList;
             return results;

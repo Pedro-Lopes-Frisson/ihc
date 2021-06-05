@@ -130,4 +130,7 @@
     <string name="saltImg"><![CDATA[https://media.istockphoto.com/photos/crystals-of-shallow-salt-in-a-scoop-spoon-on-a-dark-gray-table-for-picture-id1051727580?k=6&m=1051727580&s=612x612&w=0&h=XSLaFLAsmNcA7_K4reNTDdoLpoBGF7JICuCzRcvq1EI=]]></string>
     <string name="lasagnaNoddleImg"><![CDATA[http://irepo.primecp.com/2016/03/257690/recipe-2713_Large500_ID-1440257.jpg?v=1440257]]></string>
     <string name="cheeseImg"><![CDATA[https://i1.wp.com/www.eatthis.com/wp-content/uploads/2020/06/shredded-cheese.jpg?resize=640%2C360&ssl=1]]></string>
+    <string name="filterbutton">filterButton</string>
+    <string name="recipe_filter_head_text">Recipe Filter</string>
+    <string name="closebutton_description">closeButton</string>
 </resources>
