@@ -8,12 +8,16 @@ public class Fridge {
     public static ArrayList<Item> items = new ArrayList<>();
     public static ArrayList<RecipeCard> recipes = new ArrayList<>();
 
+    public static ArrayList<Item> getDatabaseOfItems() {
+        return (ArrayList<Item>) databaseOfItems.clone();
+    }
+
     public static ArrayList<Item> getItems() {
-        return items;
+        return (ArrayList<Item>) items.clone();
     }
 
     public static ArrayList<RecipeCard> getRecipes() {
-        return recipes;
+        return (ArrayList<RecipeCard>) recipes.clone();
     }
 
     public static void addItem(Item i) {

@@ -1,6 +1,11 @@
 package com.example.whatsinmyfridge2.objects;
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class RecipeCard {
     private String mImageResource;
@@ -17,6 +22,20 @@ public class RecipeCard {
         difficulty = diff;
         xPeople = x;
         this.ingredients = ingredients;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        RecipeCard that = (RecipeCard) o;
+        return recipeName.equals(that.recipeName);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    @Override
+    public int hashCode() {
+        return Objects.hash(recipeName);
     }
 
     public String getmImageResource() {

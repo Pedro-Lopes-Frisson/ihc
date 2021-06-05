@@ -44,7 +44,8 @@ public class ShoppingFragment extends Fragment  implements ItemRecViewAdapter.On
         //lLayoutManager = new LinearLayoutManager(getContext());
         lLayoutManager = new GridLayoutManager(getContext(), 1);
         ItemRecViewAdapter itemRecViewAdapter = new ItemRecViewAdapter(root.getContext(), this, R.layout.item_line);
-        itemRecViewAdapter.setItems(Fridge.getItems());
+        listCards = Fridge.getItems();
+        itemRecViewAdapter.setItems(listCards);
 
         lRecyclerView.setLayoutManager(lLayoutManager);
         lRecyclerView.setAdapter(itemRecViewAdapter);
