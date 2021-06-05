@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Fragment;
+import android.widget.SearchView;
 
 import com.example.whatsinmyfridge2.objects.Fridge;
 
@@ -43,7 +44,6 @@ public class RecipeFragment extends Fragment {
         ArrayList<Item> ingredients3 = new ArrayList<>();
         ArrayList<Item> ingredients4 = new ArrayList<>();
         ArrayList<Item> ingredients5 = new ArrayList<>();
-        //ArrayList<RecipeCard> recipeCards = new ArrayList<>();
 
         ingredients.add(new Item("Steak", 1000, 1.5, 1, "CARNE", getString(R.string.beefImg)));
         ingredients.add(new Item("White Rice", 1002, 1, 1, "CEREAL", getString(R.string.rice)));
@@ -85,13 +85,6 @@ public class RecipeFragment extends Fragment {
         }
         Fridge.addRecipe(new RecipeCard(getString(R.string.lasagna), "Lasagna", "3h00", "Hard", 6, ingredients5));
 
-        /*for(int i  = 0; i < 5; i++){
-            ArrayList<Item> teste = Fridge.getRecipes().get(i).getIngredients();
-            Log.i("Total", Fridge.getRecipes().get(i).getRecipeName());
-            Log.i("Total", teste.get(0).getName());
-            Log.i("Total", teste.get(1).getName());
-            Log.i("Total", teste.get(2).getName());
-        }*/
         mRecyclerView = root.findViewById(R.id.recyclerView);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new GridLayoutManager(getContext(), 2);
@@ -107,6 +100,20 @@ public class RecipeFragment extends Fragment {
                 //b.putParcelable("options", Fridge.getRecipes().get(position));
                 intent.putExtra("pos", position);
                 startActivity(intent);
+            }
+        });
+
+        SearchView searchView = root.findViewById(R.id.search_bar);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                mAdapter.getFilter().filter(newText);
+                return false;
             }
         });
         return root;

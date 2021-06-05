@@ -6,11 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".ui.Recipe.RecipeFragment">
 
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:iconifiedByDefault="false"
+        android:id="@+id/search_bar"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/search_bar"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="0dp"
         android:padding="4dp"
-        android:scrollbars="vertical">
-    </androidx.recyclerview.widget.RecyclerView>
+        android:scrollbars="vertical" />
 </RelativeLayout>
