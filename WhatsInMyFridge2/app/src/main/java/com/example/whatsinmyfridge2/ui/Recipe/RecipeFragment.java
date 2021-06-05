@@ -45,29 +45,29 @@ public class RecipeFragment extends Fragment {
         ArrayList<Item> ingredients5 = new ArrayList<>();
         //ArrayList<RecipeCard> recipeCards = new ArrayList<>();
 
-        ingredients.add(new Item("Steak", 1000, 1.5, 1, "CARNE", getString(R.string.skyImg)));
-        ingredients.add(new Item("White Rice", 1002, 1, 1, "CEREAL", getString(R.string.skyImg)));
-        ingredients.add(new Item("Onion", 1005, 0.5, 1, "VEGETAL", getString(R.string.skyImg)));
-        Fridge.addRecipe(new RecipeCard(getString(R.string.skyImg), "Beef with Rice", "2h30", "Medium", 4, ingredients));
+        ingredients.add(new Item("Steak", 1000, 1.5, 1, "CARNE", getString(R.string.beefImg)));
+        ingredients.add(new Item("White Rice", 1002, 1, 1, "CEREAL", getString(R.string.rice)));
+        ingredients.add(new Item("Onion", 1005, 0.5, 1, "VEGETAL", getString(R.string.onion)));
+        Fridge.addRecipe(new RecipeCard(getString(R.string.beefWithRice), "Beef with Rice", "2h30", "Medium", 4, ingredients));
 
-        ingredients2.add(new Item("Cod", 1006, 1.5, 1, "PEIXE", getString(R.string.skyImg)));
-        ingredients2.add(new Item("Potato", 1007, 1, 1, "CEREAL", getString(R.string.skyImg)));
-        ingredients2.add(new Item("Olive Oil", 1008, 0.5, 1, "VEGETAL", getString(R.string.skyImg)));
+        ingredients2.add(new Item("Cod", 1006, 1.5, 1, "PEIXE", getString(R.string.codImg)));
+        ingredients2.add(new Item("Potato", 1007, 1, 1, "CEREAL", getString(R.string.potatoImg)));
+        ingredients2.add(new Item("Olive Oil", 1008, 0.5, 1, "VEGETAL", getString(R.string.oliveOilImg)));
         Fridge.addRecipe(new RecipeCard(getString(R.string.baked_cod), "Baked Cod with Potato", "1h30", "Difficult", 4, ingredients2));
 
-        ingredients3.add(new Item("Bream Fish", 1009, 1.5, 1, "PEIXE", getString(R.string.skyImg)));
-        ingredients3.add(new Item("Potato", 1010, 1, 1, "CEREAL", getString(R.string.skyImg)));
-        ingredients3.add(new Item("Corn Oil", 1011, 0.5, 1, "VEGETAL", getString(R.string.skyImg)));
+        ingredients3.add(new Item("Bream Fish", 1009, 1.5, 1, "PEIXE", getString(R.string.codImg)));
+        ingredients3.add(new Item("Potato", 1010, 1, 1, "CEREAL", getString(R.string.potatoImg)));
+        ingredients3.add(new Item("Corn Oil", 1011, 0.5, 1, "VEGETAL", getString(R.string.cornOilImg)));
         Fridge.addRecipe(new RecipeCard(getString(R.string.fish_and_chips), "Fish and Chips", "1h00", "Easy", 2, ingredients3));
 
-        ingredients4.add(new Item("Minced Meat", 1012, 1.5, 1, "CARNE", getString(R.string.skyImg)));
-        ingredients4.add(new Item("Spaghetti", 1003, 1, 1, "CEREAL", getString(R.string.skyImg)));
-        ingredients4.add(new Item("Salt", 1013, 0.5, 1, "VEGETAL", getString(R.string.skyImg)));
+        ingredients4.add(new Item("Minced Meat", 1012, 1.5, 1, "CARNE", getString(R.string.mincedMeatImg)));
+        ingredients4.add(new Item("Spaghetti", 1003, 1, 1, "CEREAL", getString(R.string.spaghetti)));
+        ingredients4.add(new Item("Salt", 1013, 0.5, 1, "VEGETAL", getString(R.string.saltImg)));
         Fridge.addRecipe(new RecipeCard(getString(R.string.spaghetti_bolognese), "Spaghetti Bolognese", "2h", "Medium", 2, ingredients4));
 
-        ingredients5.add(new Item("Lasagna Noodles", 1014, 1.5, 1, "CARNE", getString(R.string.skyImg)));
-        ingredients5.add(new Item("Minced Meat", 1015, 1, 1, "CEREAL", getString(R.string.skyImg)));
-        ingredients5.add(new Item("Cheese", 1016, 0.5, 1, "VEGETAL", getString(R.string.skyImg)));
+        ingredients5.add(new Item("Lasagna Noodles", 1014, 1.5, 1, "CARNE", getString(R.string.lasagnaNoddleImg)));
+        ingredients5.add(new Item("Minced Meat", 1015, 1, 1, "CEREAL", getString(R.string.mincedMeatImg)));
+        ingredients5.add(new Item("Cheese", 1016, 0.5, 1, "VEGETAL", getString(R.string.cheeseImg)));
         Fridge.addRecipe(new RecipeCard(getString(R.string.lasagna), "Lasagna", "3h00", "Hard", 6, ingredients5));
 
         /*for(int i  = 0; i < 5; i++){

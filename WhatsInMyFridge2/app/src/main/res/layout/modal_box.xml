@@ -62,8 +62,8 @@
                 android:layout_margin="20dp"
                 android:layout_marginBottom="40dp"
                 android:layout_toRightOf="@id/SpinnerQuantity"
-                android:clickable="true"/>
-                <!--android:src="@drawable/ic_baseline_add_circle_24"-->
+                android:clickable="true"
+                android:src="@drawable/ic_baseline_add_circle_24"/>
 
             <ImageButton
                 android:id="@+id/decBtn"
@@ -74,8 +74,8 @@
                 android:layout_margin="20dp"
                 android:layout_marginBottom="40dp"
                 android:layout_toLeftOf="@id/SpinnerQuantity"
-                android:clickable="true"/>
-                <!--android:src="@drawable/ic_baseline_indeterminate_check_box_24"-->
+                android:clickable="true"
+                android:src="@drawable/ic_baseline_indeterminate_check_box_24"/>
 
 
             <Button

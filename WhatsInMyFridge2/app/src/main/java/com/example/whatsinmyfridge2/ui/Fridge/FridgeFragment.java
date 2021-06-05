@@ -64,11 +64,11 @@ public class FridgeFragment extends Fragment implements ItemRecViewAdapter.OnCar
         });
 
 
-        Fridge.addItem(new Item("Steak", 1000, 2, 1, "Meat", getString(R.string.skyImg)));
-        Fridge.addItem(new Item("Chicken Breast", 1001, 4, 1, "Meat", getString(R.string.skyImg)));
-        Fridge.addItem(new Item("White Rice", 1002, 5, 1, "Cereal", getString(R.string.skyImg)));
-        Fridge.addItem(new Item("Spaghetti", 1003, 9, 2, "Pasta", getString(R.string.skyImg)));
-        Fridge.addItem(new Item("Chocolate", 1004, 1, 1, "Dessert", getString(R.string.skyImg)));
+        Fridge.addItem(new Item("Steak", 1000, 2, 1, "Meat", getString(R.string.chickenBreast)));
+        Fridge.addItem(new Item("Chicken Breast", 1001, 4, 1, "Meat", getString(R.string.beefImg)));
+        Fridge.addItem(new Item("White Rice", 1002, 5, 1, "Cereal", getString(R.string.rice)));
+        Fridge.addItem(new Item("Spaghetti", 1003, 9, 2, "Pasta", getString(R.string.spaghetti)));
+        Fridge.addItem(new Item("Chocolate", 1004, 1, 1, "Dessert", getString(R.string.chocolate)));
 
 
         //
