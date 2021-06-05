@@ -8,6 +8,7 @@ import androidx.annotation.RequiresApi;
 
 import com.example.whatsinmyfridge2.R;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 
@@ -71,7 +72,7 @@ public class Item implements Parcelable {
         weight = in.readInt();
         weightJump = in.readInt();
         type = in.readString();
-        weightMeasure= in.readString();
+        weightMeasure = in.readString();
         Image = in.readString();
     }
 
@@ -156,6 +157,22 @@ public class Item implements Parcelable {
                 ", type='" + type + '\'' +
                 ", Image='" + Image + '\'' +
                 '}';
+    }
+
+    public ArrayList<Double> getJumps() {
+        ArrayList<Double> jumps = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            jumps.add(this.weight + (this.weightJump * i));
+        }
+        return jumps;
+    }
+
+    public ArrayList<Double> getJumps(double d) {
+        ArrayList<Double> jumps = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            jumps.add(d + (this.weightJump * i));
+        }
+        return jumps;
     }
 
     public void setType(String type) {

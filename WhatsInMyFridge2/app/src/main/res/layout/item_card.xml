@@ -3,10 +3,10 @@
                                    xmlns:app="http://schemas.android.com/apk/res-auto"
                                    android:id="@+id/parent"
                                    android:layout_width="wrap_content"
-                                   android:clickable="true"
                                    android:layout_height="wrap_content"
                                    android:layout_margin="10dp"
                                    android:layout_marginTop="10dp"
+                                   android:clickable="true"
                                    android:padding="1dp"
                                    app:cardElevation="50dp">
 
@@ -25,13 +25,29 @@
             android:layout_marginTop="100dp"
             android:src="@drawable/ic_launcher_background"/>
 
-        <TextView
-            android:id="@+id/md_description"
+
+        <RelativeLayout
+            android:id="@+id/som"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/item_img"
-            android:text="ItemName"
-            android:layout_centerHorizontal="true"/>
+            android:layout_below="@id/item_img">
+
+            <TextView
+                android:id="@+id/md_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerHorizontal="true"
+                android:text="ItemName"/>
+
+            <TextView
+                android:id="@+id/item_qty_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:text="QTY"/>
+        </RelativeLayout>
 
 
     </RelativeLayout>
