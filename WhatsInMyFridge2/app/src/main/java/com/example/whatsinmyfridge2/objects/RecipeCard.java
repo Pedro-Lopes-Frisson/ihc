@@ -1,10 +1,12 @@
 package com.example.whatsinmyfridge2.objects;
 
 import android.os.Build;
+import android.text.format.Time;
 
 import androidx.annotation.RequiresApi;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Objects;
 
 public class RecipeCard {
@@ -60,6 +62,19 @@ public class RecipeCard {
 
     public String getTimeToCook() {
         return timeToCook;
+    }
+
+    public String getTimeForFilter() {
+        Date date;
+        String[] parse;
+        parse = timeToCook.split("h");
+        if(parse[0].equals("0")){
+            return "time1";
+        }else if(parse[0].equals("1") || (parse[0].equals("2") && Double.parseDouble(parse[1]) <= 30)){
+            return "time2";
+        }else{
+            return "time3";
+        }
     }
 
 }

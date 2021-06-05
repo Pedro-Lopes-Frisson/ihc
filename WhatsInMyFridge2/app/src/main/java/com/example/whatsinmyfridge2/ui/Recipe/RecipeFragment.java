@@ -11,11 +11,15 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Fragment;
+import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.SearchView;
 
 import com.example.whatsinmyfridge2.objects.Fridge;
@@ -36,6 +40,8 @@ public class RecipeFragment extends Fragment {
     private ImageButton filterButton;
     private ArrayList<RecipeCard> recipes;
     private ArrayList<RecipeCard> filteredRecipes = new ArrayList<>();
+    private ConstraintLayout constraintLayout;
+    private RelativeLayout relativeLayout;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Nullable
@@ -49,6 +55,7 @@ public class RecipeFragment extends Fragment {
         ArrayList<Item> ingredients3 = new ArrayList<>();
         ArrayList<Item> ingredients4 = new ArrayList<>();
         ArrayList<Item> ingredients5 = new ArrayList<>();
+        relativeLayout = root.findViewById(R.id.big_page);
         filterButton = root.findViewById(R.id.filterbutton);
 
         ingredients.add(new Item("Steak", 1000, 1.5, 1, "CARNE", getString(R.string.beefImg)));
@@ -75,8 +82,8 @@ public class RecipeFragment extends Fragment {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             ingredients3.forEach((item -> Fridge.addItemToDb(item)));
         }
-        Fridge.addRecipe(new RecipeCard(getString(R.string.fish_and_chips), "Fish and Chips", "1h00", "Easy", 2, ingredients3));
-        Fridge.addFilteredRecipe(new RecipeCard(getString(R.string.fish_and_chips), "Fish and Chips", "1h00", "Easy", 2, ingredients3));
+        Fridge.addRecipe(new RecipeCard(getString(R.string.fish_and_chips), "Fish and Chips", "0h45", "Easy", 2, ingredients3));
+        Fridge.addFilteredRecipe(new RecipeCard(getString(R.string.fish_and_chips), "Fish and Chips", "0h45", "Easy", 2, ingredients3));
 
         ingredients4.add(new Item("Minced Meat", 1012, 1.5, 1, "CARNE", getString(R.string.mincedMeatImg)));
         ingredients4.add(new Item("Spaghetti", 1003, 1, 1, "CEREAL", getString(R.string.spaghetti)));
@@ -84,8 +91,8 @@ public class RecipeFragment extends Fragment {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             ingredients4.forEach((item -> Fridge.addItemToDb(item)));
         }
-        Fridge.addRecipe(new RecipeCard(getString(R.string.spaghetti_bolognese), "Spaghetti Bolognese", "2h", "Medium", 2, ingredients4));
-        Fridge.addFilteredRecipe(new RecipeCard(getString(R.string.spaghetti_bolognese), "Spaghetti Bolognese", "2h", "Medium", 2, ingredients4));
+        Fridge.addRecipe(new RecipeCard(getString(R.string.spaghetti_bolognese), "Spaghetti Bolognese", "2h00", "Medium", 2, ingredients4));
+        Fridge.addFilteredRecipe(new RecipeCard(getString(R.string.spaghetti_bolognese), "Spaghetti Bolognese", "2h00", "Medium", 2, ingredients4));
 
         ingredients5.add(new Item("Lasagna Noodles", 1014, 1.5, 1, "CARNE", getString(R.string.lasagnaNoddleImg)));
         ingredients5.add(new Item("Minced Meat", 1015, 1, 1, "CEREAL", getString(R.string.mincedMeatImg)));
@@ -113,23 +120,124 @@ public class RecipeFragment extends Fragment {
         });
 
         recipes = Fridge.getRecipes();
+        constraintLayout = relativeLayout.findViewById(R.id.filter_layout);
 
-
-        /*filterButton.setOnClickListener(new View.OnClickListener() {
+        // Set on background click leave
+        constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                    filteredRecipes = (ArrayList<RecipeCard>) recipes.stream().filter(f -> {
-                        return f.getDifficulty().equals("Medium");
-                    }).collect(Collectors.toList());
-                }
-                //mAdapter = new RecipeAdapter(filteredRecipes, root.getContext());
-                Fridge.setFilteredRecipes(filteredRecipes);
-                mAdapter.setDataSet(filteredRecipes);
-                mAdapter.notifyDataSetChanged();
-                //mRecyclerView.notifyDataSetChanged();
+                constraintLayout.setVisibility(View.GONE);
             }
-        });*/
+        });
+
+        filterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                constraintLayout.setElevation(1234);
+                constraintLayout.setVisibility(View.VISIBLE);
+            }
+        });
+
+        // close Btn
+        ImageButton closeBttn = (ImageButton) constraintLayout.findViewById(R.id.closeBtn);
+        closeBttn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                constraintLayout.setVisibility(View.GONE);
+            }
+        });
+
+        Button btn = (Button) constraintLayout.findViewById(R.id.ApplyBtn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onClick(View v) {
+                CheckBox easyDif = constraintLayout.findViewById(R.id.easyDifficulty);
+                CheckBox medDif = constraintLayout.findViewById(R.id.mediumDifficulty);
+                CheckBox hardDif = constraintLayout.findViewById(R.id.hardDifficulty);
+                CheckBox time1 = constraintLayout.findViewById(R.id.timeBox1);
+                CheckBox time2 = constraintLayout.findViewById(R.id.timeBox2);
+                CheckBox time3 = constraintLayout.findViewById(R.id.timeBox3);
+                ArrayList<RecipeCard> easyRecipes = new ArrayList<>();
+                ArrayList<RecipeCard> medRecipes = new ArrayList<>();
+                ArrayList<RecipeCard> hardRecipes = new ArrayList<>();
+                ArrayList<RecipeCard> time1Recipes = new ArrayList<>();
+                ArrayList<RecipeCard> time2Recipes = new ArrayList<>();
+                ArrayList<RecipeCard> time3Recipes = new ArrayList<>();
+                ArrayList<RecipeCard> recipesFilter = new ArrayList<>();
+
+                if(!easyDif.isChecked() && !medDif.isChecked() && !hardDif.isChecked() && !time1.isChecked() && !time2.isChecked() && !time3.isChecked()){
+                    recipesFilter = recipes;
+                }else {
+
+                    if(easyDif.isChecked()){
+                        easyRecipes = (ArrayList<RecipeCard>) recipes.stream().filter(f -> {
+                            return f.getDifficulty().equals("Easy");
+                        }).collect(Collectors.toList());
+                    }
+                    if(medDif.isChecked()){
+                        medRecipes = (ArrayList<RecipeCard>) recipes.stream().filter(f -> {
+                            return f.getDifficulty().equals("Medium");
+                        }).collect(Collectors.toList());
+                    }
+                    if(hardDif.isChecked()){
+                        hardRecipes = (ArrayList<RecipeCard>) recipes.stream().filter(f -> {
+                            return f.getDifficulty().equals("Hard");
+                        }).collect(Collectors.toList());
+                    }
+                    if(time1.isChecked()){
+                        time1Recipes = (ArrayList<RecipeCard>) recipes.stream().filter(f -> {
+                            return f.getTimeForFilter().equals("time1");
+                        }).collect(Collectors.toList());
+                    }
+                    if(time2.isChecked()){
+                        time2Recipes = (ArrayList<RecipeCard>) recipes.stream().filter(f -> {
+                            return f.getTimeForFilter().equals("time2");
+                        }).collect(Collectors.toList());
+                    }
+                    if(time3.isChecked()){
+                        time3Recipes = (ArrayList<RecipeCard>) recipes.stream().filter(f -> {
+                            return f.getTimeForFilter().equals("time3");
+                        }).collect(Collectors.toList());
+                    }
+
+                    for (RecipeCard r: easyRecipes) {
+                        if(!recipesFilter.contains(r)){
+                            recipesFilter.add(r);
+                        }
+                    }
+                    for (RecipeCard r: medRecipes) {
+                        if(!recipesFilter.contains(r)){
+                            recipesFilter.add(r);
+                        }
+                    }
+                    for (RecipeCard r: hardRecipes) {
+                        if(!recipesFilter.contains(r)){
+                            recipesFilter.add(r);
+                        }
+                    }
+                    for (RecipeCard r: time1Recipes) {
+                        if(!recipesFilter.contains(r)){
+                            recipesFilter.add(r);
+                        }
+                    }
+                    for (RecipeCard r: time2Recipes) {
+                        if(!recipesFilter.contains(r)){
+                            recipesFilter.add(r);
+                        }
+                    }
+                    for (RecipeCard r: time3Recipes) {
+                        if(!recipesFilter.contains(r)){
+                            recipesFilter.add(r);
+                        }
+                    }
+                }
+                Fridge.setFilteredRecipes(recipesFilter);
+                mAdapter.setDataSet(recipesFilter);
+                mAdapter.notifyDataSetChanged();
+                constraintLayout.setVisibility(View.GONE);
+            }
+        });
 
         SearchView searchView = root.findViewById(R.id.search_bar);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
