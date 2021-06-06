@@ -21,6 +21,10 @@ public class Fridge {
         return (ArrayList<RecipeCard>) recipes.clone();
     }
 
+    public static void setRecipes(ArrayList<RecipeCard> r) {
+        Fridge.recipes = r;
+    }
+
     public static void setFilteredRecipes(ArrayList<RecipeCard> filteredRecipes) {
         Fridge.filteredRecipes = filteredRecipes;
     }

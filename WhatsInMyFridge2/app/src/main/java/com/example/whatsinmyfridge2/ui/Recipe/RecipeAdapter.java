@@ -31,6 +31,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
 
     public interface onItemClickListener {
         void onItemClick(int position);
+        void onFavoriteClick(int position);
     }
 
     public void setOnItemClickListener(onItemClickListener listener){
@@ -41,11 +42,13 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
 
         public ImageView mImageView;
         public TextView mTextView;
+        public ImageView mFavoriteView;
 
         public RecipeViewHolder(@NonNull @NotNull View itemView, onItemClickListener listener) {
             super(itemView);
             mImageView = itemView.findViewById(R.id.imageView);
             mTextView = itemView.findViewById(R.id.textView);
+            mFavoriteView = itemView.findViewById(R.id.favorite_button);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -53,6 +56,17 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
                         int position = getAdapterPosition();
                         if (position != RecyclerView.NO_POSITION){
                             listener.onItemClick(position);
+                        }
+                    }
+                }
+            });
+            mFavoriteView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(listener != null){
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION){
+                            listener.onFavoriteClick(position);
                         }
                     }
                 }
@@ -86,7 +100,12 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
         RecipeCard currentCard = mRecipeCards.get(position);
         Glide.with(context).asBitmap().load(currentCard.getmImageResource()).into(holder.mImageView);
         holder.mTextView.setText(currentCard.getRecipeName());
-    }
+        if(currentCard.getIsFavorite()){
+            holder.mFavoriteView.setImageResource(R.drawable.ic_favorite_selected);
+        }else{
+            holder.mFavoriteView.setImageResource(R.drawable.ic_favorite_not_selected);
+        }
+   }
 
     @Override
     public int getItemCount() {

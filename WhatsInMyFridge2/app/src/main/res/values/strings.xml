@@ -133,4 +133,5 @@
     <string name="filterbutton">filterButton</string>
     <string name="recipe_filter_head_text">Recipe Filter</string>
     <string name="closebutton_description">closeButton</string>
+    <string name="favoritebutton">favoriteButton</string>
 </resources>

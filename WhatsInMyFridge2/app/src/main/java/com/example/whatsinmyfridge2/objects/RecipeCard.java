@@ -16,6 +16,7 @@ public class RecipeCard {
     private String difficulty;
     private int xPeople;
     private ArrayList<Item> ingredients;
+    private boolean isFavorite;
 
     public RecipeCard(String image, String name, String time, String diff, int x, ArrayList<Item> ingredients) {
         mImageResource = image;
@@ -24,6 +25,7 @@ public class RecipeCard {
         difficulty = diff;
         xPeople = x;
         this.ingredients = ingredients;
+        isFavorite = false;
     }
 
     @Override
@@ -63,6 +65,10 @@ public class RecipeCard {
     public String getTimeToCook() {
         return timeToCook;
     }
+
+    public boolean getIsFavorite() { return isFavorite; }
+
+    public void setIsFavorite(boolean f){ isFavorite = f; }
 
     public String getTimeForFilter() {
         Date date;

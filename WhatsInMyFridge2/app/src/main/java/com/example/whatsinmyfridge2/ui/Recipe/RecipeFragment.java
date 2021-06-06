@@ -19,6 +19,7 @@ import android.app.Fragment;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.SearchView;
 
@@ -116,6 +117,23 @@ public class RecipeFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), RecipePage.class);
                 intent.putExtra("pos", position);
                 startActivity(intent);
+            }
+
+            @Override
+            public void onFavoriteClick(int position) {
+                ArrayList<RecipeCard> recipes = Fridge.getRecipes();
+                ArrayList<RecipeCard> filteredRecipes = Fridge.getFilteredRecipes();
+                if(recipes.get(position).getIsFavorite()){
+                    recipes.get(position).setIsFavorite(false);
+                    filteredRecipes.get(position).setIsFavorite(false);
+                }else{
+                    recipes.get(position).setIsFavorite(true);
+                    filteredRecipes.get(position).setIsFavorite(true);
+                }
+                Fridge.setRecipes(recipes);
+                Fridge.setFilteredRecipes(filteredRecipes);
+                mAdapter.setDataSet(filteredRecipes);
+                mAdapter.notifyDataSetChanged();
             }
         });
 
