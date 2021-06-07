@@ -39,6 +39,7 @@ public class RecipePage extends AppCompatActivity {
         int xPeople = Fridge.getFilteredRecipes().get(pos).getxPeople();
         ArrayList<Item> ing = Fridge.getFilteredRecipes().get(pos).getIngredients();
         boolean favorite = Fridge.getFilteredRecipes().get(pos).getIsFavorite();
+        String instructions = Fridge.getFilteredRecipes().get(pos).getInstructions();
 
         ImageView imageView = findViewById(R.id.Recipe_Image);
         Glide.with(this).asBitmap().load(imageRes).into(imageView);
@@ -55,12 +56,17 @@ public class RecipePage extends AppCompatActivity {
         TextView recipe_people = findViewById(R.id.person_per_recipe);
         recipe_people.setText(String.valueOf(xPeople));
 
+        TextView instructionsText = findViewById(R.id.instructionsText);
+        instructionsText.setText(instructions);
+
         ImageView favoriteStar = findViewById(R.id.favorite_button);
         if(favorite){
             favoriteStar.setImageResource(R.drawable.ic_favorite_selected);
         }else{
             favoriteStar.setImageResource(R.drawable.ic_favorite_not_selected);
         }
+
+
 
         TextView ing1 = findViewById(R.id.ingredient_name1);
         TextView ing2 = findViewById(R.id.ingredient_name2);

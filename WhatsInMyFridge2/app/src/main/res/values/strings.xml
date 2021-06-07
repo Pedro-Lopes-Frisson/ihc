@@ -6,6 +6,43 @@
     <string name="recipes">Recipes</string>
     <string name="skyImg">https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Ski_Famille_-_Family_Ski_Holidays.jpg/1200px-Ski_Famille_-_Family_Ski_Holidays.jpg</string>
 
+    <string name="SteakWithRice">
+        "   -Trim any fat from round steak and slice meat into thin 2 to 3 inch long strips. Remove the seeds and core from the green bell pepper, and slice into thin 3 inch long strips.\n\n"
+        "   -In a large frying pan over medium to high heat add oil and cook meat until medium rare, add peppers and continue cooking until meat is browned.\n\n"
+        "   -Reduce heat to simmer and add tomatoes, soy sauce, garlic powder, black pepper and ginger. Cover and simmer 10 minutes.\n\n"
+        "   -Dissolve bullion cube and corn starch in 2 cups water and stir well before adding to simmering beef. Cover and simmer 10 minutes, stirring occasionally, until sauce resembles the consistency of gravy. Remove from heat and serve over a bed of rice.\n\n"
+        "   -To cook rice: In a saucepan, bring 2 cups of water to a boil. Stir in 1 cup of rice. Cover and reduce heat to a simmer. Simmer for 20 minutes."
+    </string>
+
+    <string name="Lasagna">
+        "   -In a Dutch oven, cook sausage, ground beef, onion, and garlic over medium heat until well browned. Stir in crushed tomatoes, tomato paste, tomato sauce, and water. Season with sugar, basil, fennel seeds, Italian seasoning, 1 teaspoon salt, pepper, and 2 tablespoons parsley. Simmer, covered, for about 1 1/2 hours, stirring occasionally.\n\n"
+        "   -Bring a large pot of lightly salted water to a boil. Cook lasagna noodles in boiling water for 8 to 10 minutes. Drain noodles, and rinse with cold water. In a mixing bowl, combine ricotta cheese with egg, remaining parsley, and 1/2 teaspoon salt.\n\n"
+        "   -Preheat oven to 375 degrees F (190 degrees C).\n\n"
+        "   -To assemble, spread 1 1/2 cups of meat sauce in the bottom of a 9x13-inch baking dish. Arrange 6 noodles lengthwise over meat sauce. Spread with one half of the ricotta cheese mixture. Top with a third of mozzarella cheese slices. Spoon 1 1/2 cups meat sauce over mozzarella, and sprinkle with 1/4 cup Parmesan cheese. Repeat layers, and top with remaining mozzarella and Parmesan cheese. Cover with foil: to prevent sticking, either spray foil with cooking spray, or make sure the foil does not touch the cheese.\n\n"
+        "   -Bake in preheated oven for 25 minutes. Remove foil, and bake an additional 25 minutes. Cool for 15 minutes before serving."
+    </string>
+
+    <string name="SpaghettiBolognese">
+        "   -Bring a large pot of lightly salted water to a rolling boil. Cook the spaghetti in the boiling water until cooked through yet firm to the bite, about 12 minutes; drain.\n\n"
+        "   -Heat the olive oil in a large pot over medium heat. Cook the bacon in the oil until crisp, 8 to 10 minutes. Stir the onion, celery, carrot, and oregano into the bacon; continue cooking until the vegetables begin to soften, another 8 to 10 minutes. Add the garlic and cook until fragrant, about 2 minutes. Crumble the ground beef into the vegetable mixture; cook and stir until the beef is completely cooked and no longer pink, 8 to 10 minutes.\n\n"
+        "   -Pour the balsamic vinegar over the ground beef mixture; allow to simmer until the liquid evaporates, about 5 minutes. Stir the crushed tomatoes, tomato paste, and sugar into the ground beef mixture; bring the mixture to a boil, season with salt and black pepper, and remove from heat. Stir the fresh basil into the mixture.\n\n"
+        "   -Ladle the sauce over the cooked spaghetti. Top with Parmesan cheese to serve."
+    </string>
+
+    <string name="BakedCod">
+        "   -Preheat the oven to 350 degrees F (175 degrees C). Butter a large, rectangular baking dish.\n\n"
+        "   -Place the fish in the prepared dish. Arrange potato and onion slices around and on top. Pour enough milk over top to just barely cover. Season with a generous amount of salt and pepper. Dot butter over top.\n\n"
+        "   -Bake, uncovered, in the preheated oven until fish flakes easily with a fork and potatoes are tender, about 45 minutes, checking frequently and adding more milk if necessary. Serve in large bowls."
+    </string>
+
+    <string name="FishAndChips">
+        "   -Place potatoes in a medium-size bowl of cold water. In a separate medium-size mixing bowl, mix together flour, baking powder, salt, and pepper. Stir in the milk and egg; stir until the mixture is smooth. Let mixture stand for 20 minutes.\n\n"
+        "   -Preheat the oil in a large pot or electric skillet to 350 degrees F (175 degrees C).\n\n"
+        "   -Fry the potatoes in the hot oil until they are tender. Drain them on paper towels.\n\n"
+        "   -Dredge the fish in the batter, one piece at a time, and place them in the hot oil. Fry until the fish is golden brown. If necessary, increase the heat to maintain the 350 degrees F (175 degrees C) temperature. Drain well on paper towels.\n\n"
+        "   -Fry the potatoes again for 1 to 2 minutes for added crispness."
+    </string>
+
     <string name="large_text">
         "Material is the metaphor.\n\n"
         "A material metaphor is the unifying theory of a rationalized space and a system of motion."

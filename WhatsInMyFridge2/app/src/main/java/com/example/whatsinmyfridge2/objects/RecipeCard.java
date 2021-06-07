@@ -17,8 +17,9 @@ public class RecipeCard {
     private int xPeople;
     private ArrayList<Item> ingredients;
     private boolean isFavorite;
+    private String instructions;
 
-    public RecipeCard(String image, String name, String time, String diff, int x, ArrayList<Item> ingredients) {
+    public RecipeCard(String image, String name, String time, String diff, int x, ArrayList<Item> ingredients, String instructions) {
         mImageResource = image;
         recipeName = name;
         timeToCook = time;
@@ -26,6 +27,7 @@ public class RecipeCard {
         xPeople = x;
         this.ingredients = ingredients;
         isFavorite = false;
+        this.instructions = instructions;
     }
 
     @Override
@@ -65,6 +67,8 @@ public class RecipeCard {
     public String getTimeToCook() {
         return timeToCook;
     }
+
+    public String getInstructions() { return instructions; }
 
     public boolean getIsFavorite() {return isFavorite; }
 
