@@ -1,5 +1,6 @@
 package com.example.whatsinmyfridge2.ui.Recipe;
 
+import android.app.Activity;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.example.whatsinmyfridge2.R;
 import com.example.whatsinmyfridge2.objects.Fridge;
 import com.example.whatsinmyfridge2.objects.Item;
+import com.example.whatsinmyfridge2.objects.RecipeCard;
 
 import java.util.ArrayList;
 
@@ -58,6 +60,7 @@ public class RecipePage extends AppCompatActivity {
 
         TextView instructionsText = findViewById(R.id.instructionsText);
         instructionsText.setText(instructions);
+        instructionsText.setTypeface(Typeface.MONOSPACE);
 
         ImageView favoriteStar = findViewById(R.id.favorite_button);
         if(favorite){
@@ -66,6 +69,24 @@ public class RecipePage extends AppCompatActivity {
             favoriteStar.setImageResource(R.drawable.ic_favorite_not_selected);
         }
 
+        favoriteStar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrayList<RecipeCard> recipes = Fridge.getRecipes();
+                ArrayList<RecipeCard> filteredRecipes = Fridge.getFilteredRecipes();
+                if(recipes.get(pos).getIsFavorite()){
+                    recipes.get(pos).setIsFavorite(false);
+                    filteredRecipes.get(pos).setIsFavorite(false);
+                    favoriteStar.setImageResource(R.drawable.ic_favorite_not_selected);
+                }else{
+                    recipes.get(pos).setIsFavorite(true);
+                    filteredRecipes.get(pos).setIsFavorite(true);
+                    favoriteStar.setImageResource(R.drawable.ic_favorite_selected);
+                }
+                Fridge.setRecipes(recipes);
+                Fridge.setFilteredRecipes(filteredRecipes);
+            }
+        });
 
 
         TextView ing1 = findViewById(R.id.ingredient_name1);

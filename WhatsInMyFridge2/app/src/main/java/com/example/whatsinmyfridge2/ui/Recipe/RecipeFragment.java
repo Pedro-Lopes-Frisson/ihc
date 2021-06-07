@@ -1,5 +1,6 @@
 package com.example.whatsinmyfridge2.ui.Recipe;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -288,4 +289,9 @@ public class RecipeFragment extends Fragment {
         return root;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        mAdapter.notifyDataSetChanged();
+    }
 }
