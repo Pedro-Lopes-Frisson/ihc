@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clickable="true"
-    android:visibility="gone"
+    android:visibility="visible"
     android:focusable="true">
 
     <androidx.cardview.widget.CardView
@@ -20,15 +20,34 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <TextView
+                android:id="@+id/FavoriteText"
+                android:layout_width="122dp"
+                android:layout_height="56dp"
+                android:layout_below="@+id/item_title"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="11dp"
+                android:layout_marginLeft="11dp"
+                android:layout_marginTop="335dp"
+                android:layout_marginEnd="179dp"
+                android:layout_marginRight="179dp"
+                android:gravity="center"
+                android:text="Favorite"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
             <ImageButton
                 android:id="@+id/closeBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_margin="10dp"
-                android:src="@drawable/ic_baseline_close_24"
-                android:layout_alignParentEnd="true"
-                android:contentDescription="@string/closebutton_description" />
+                android:contentDescription="@string/closebutton_description"
+                android:src="@drawable/ic_baseline_close_24" />
 
             <TextView
                 android:id="@+id/item_title"
@@ -49,7 +68,7 @@
                 android:layout_marginBottom="40dp"
                 android:clickable="true"
                 android:focusable="true"
-                android:text="Apply"/>
+                android:text="Apply" />
 
             <TextView
                 android:id="@+id/difficultyText"
@@ -140,6 +159,21 @@
                 android:layout_toEndOf="@+id/easyDifficulty"
                 android:layout_toRightOf="@+id/easyDifficulty"
                 android:text="1h-2h30" />
+
+            <CheckBox
+                android:id="@+id/FavoriteBox"
+                android:layout_width="55dp"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:background="?android:attr/listChoiceIndicatorMultiple"
+                android:layout_below="@+id/timeText"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="99dp"
+                android:layout_marginEnd="92dp"
+                android:layout_marginRight="92dp"
+                android:scaleX="1.3"
+                android:scaleY="1.3" />
 
             <CheckBox
                 android:id="@+id/timeBox3"

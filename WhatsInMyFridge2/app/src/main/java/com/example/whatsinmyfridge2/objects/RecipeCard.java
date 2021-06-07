@@ -66,7 +66,16 @@ public class RecipeCard {
         return timeToCook;
     }
 
-    public boolean getIsFavorite() { return isFavorite; }
+    public boolean getIsFavorite() {return isFavorite; }
+
+    public String getIsFavoriteFilter() {
+        if(isFavorite){
+            return "true";
+        }
+        else{
+            return "false";
+        }
+    }
 
     public void setIsFavorite(boolean f){ isFavorite = f; }
 

@@ -19,7 +19,6 @@ import android.app.Fragment;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.SearchView;
 
@@ -176,15 +175,18 @@ public class RecipeFragment extends Fragment {
                 CheckBox time1 = constraintLayout.findViewById(R.id.timeBox1);
                 CheckBox time2 = constraintLayout.findViewById(R.id.timeBox2);
                 CheckBox time3 = constraintLayout.findViewById(R.id.timeBox3);
+                CheckBox favorite = constraintLayout.findViewById(R.id.FavoriteBox);
                 ArrayList<RecipeCard> easyRecipes = new ArrayList<>();
                 ArrayList<RecipeCard> medRecipes = new ArrayList<>();
                 ArrayList<RecipeCard> hardRecipes = new ArrayList<>();
                 ArrayList<RecipeCard> time1Recipes = new ArrayList<>();
                 ArrayList<RecipeCard> time2Recipes = new ArrayList<>();
                 ArrayList<RecipeCard> time3Recipes = new ArrayList<>();
+                ArrayList<RecipeCard> favoriteRecipes = new ArrayList<>();
                 ArrayList<RecipeCard> recipesFilter = new ArrayList<>();
 
-                if(!easyDif.isChecked() && !medDif.isChecked() && !hardDif.isChecked() && !time1.isChecked() && !time2.isChecked() && !time3.isChecked()){
+
+                if(!easyDif.isChecked() && !medDif.isChecked() && !hardDif.isChecked() && !time1.isChecked() && !time2.isChecked() && !time3.isChecked() && !favorite.isChecked()){
                     recipesFilter = recipes;
                 }else {
 
@@ -219,6 +221,12 @@ public class RecipeFragment extends Fragment {
                         }).collect(Collectors.toList());
                     }
 
+                    if(favorite.isChecked()){
+                        favoriteRecipes = (ArrayList<RecipeCard>) recipes.stream().filter(f -> {
+                            return f.getIsFavoriteFilter().equals("true");
+                        }).collect(Collectors.toList());
+                    }
+
                     for (RecipeCard r: easyRecipes) {
                         if(!recipesFilter.contains(r)){
                             recipesFilter.add(r);
@@ -244,7 +252,14 @@ public class RecipeFragment extends Fragment {
                             recipesFilter.add(r);
                         }
                     }
+
                     for (RecipeCard r: time3Recipes) {
+                        if(!recipesFilter.contains(r)){
+                            recipesFilter.add(r);
+                        }
+                    }
+
+                    for (RecipeCard r: favoriteRecipes){
                         if(!recipesFilter.contains(r)){
                             recipesFilter.add(r);
                         }
