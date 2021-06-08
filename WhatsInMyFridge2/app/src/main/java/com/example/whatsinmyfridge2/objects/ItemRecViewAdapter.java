@@ -4,8 +4,10 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.whatsinmyfridge2.R;
 
+import java.text.BreakIterator;
 import java.util.ArrayList;
 
 public class ItemRecViewAdapter extends RecyclerView.Adapter<ItemRecViewAdapter.ViewHolder> {
@@ -51,6 +54,16 @@ public class ItemRecViewAdapter extends RecyclerView.Adapter<ItemRecViewAdapter.
         if (holder.itemQty != null) {
             holder.itemQty.setText(Double.toString(items.get(position).getWeight()));
         }
+        if (holder.isChecked != null) {
+            if (items.get(position).isChecked() == true) {
+                Toast.makeText(context,"This is : " + items.get(position).getName() + "and ischecked is : true",Toast.LENGTH_SHORT).show();
+                holder.isChecked.setVisibility(View.VISIBLE);
+            } else {
+                holder.isChecked.setVisibility(View.GONE);
+                Toast.makeText(context,"This is : " + items.get(position).getName() + "and ischecked is : false",Toast.LENGTH_SHORT).show();
+            }
+            //holder.isChecked.setVisibility( (items.get(position).isChecked()) ? View.VISIBLE : View.GONE);
+        }
 
     }
 
@@ -67,6 +80,7 @@ public class ItemRecViewAdapter extends RecyclerView.Adapter<ItemRecViewAdapter.
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
+        public ImageButton isChecked = null;
         private TextView itemName;
         private ImageView itemImage;
         OnCardListener onCardListener;
@@ -80,6 +94,11 @@ public class ItemRecViewAdapter extends RecyclerView.Adapter<ItemRecViewAdapter.
             onCardListener = cardListener;
             try {
                 itemQty = itemView.findViewById(R.id.som).findViewById(R.id.item_qty_card);
+            } catch (Exception e) {
+
+            }
+            try {
+                isChecked = itemView.findViewById(R.id.checked);
             } catch (Exception e) {
 
             }

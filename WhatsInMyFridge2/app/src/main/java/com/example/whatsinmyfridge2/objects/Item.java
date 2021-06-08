@@ -20,6 +20,15 @@ public class Item implements Parcelable {
     private String type = "dasfas";               // tyoe se é carne e assim
     private String weightMeasure = "asdfasd"; // se e em gramas (Ricardo)
     private String Image = "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg";
+    private boolean isChecked=false;
+
+    public boolean isChecked() {
+        return isChecked;
+    }
+
+    public void setChecked(boolean checked) {
+        isChecked = checked;
+    }
 
     public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
         public Item createFromParcel(Parcel in) {

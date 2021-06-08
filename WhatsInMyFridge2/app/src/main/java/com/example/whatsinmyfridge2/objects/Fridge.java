@@ -8,6 +8,11 @@ public class Fridge {
     public static ArrayList<Item> items = new ArrayList<>();
     public static ArrayList<RecipeCard> recipes = new ArrayList<>();
     public static ArrayList<RecipeCard> filteredRecipes = new ArrayList<>();
+    public static ArrayList<Item> cartItems = new ArrayList<>();
+
+    public static ArrayList<Item> getCartItems() {
+        return (ArrayList<Item>) cartItems.clone();
+    }
 
     public static ArrayList<Item> getDatabaseOfItems() {
         return (ArrayList<Item>) databaseOfItems.clone();
@@ -38,6 +43,23 @@ public class Fridge {
             items.add(i);
     }
 
+    public static Item getCartItem(int i) {
+        return cartItems.get(i);
+    }
+
+    public static boolean deleteCartItem(Item i) {
+        return cartItems.remove(i);
+    }
+
+    public static Item deleteCartItem(int i) {
+        return cartItems.remove(i);
+    }
+
+    public static void addItemToDb(Item i) {
+        if (!databaseOfItems.contains(i))
+            databaseOfItems.add(i);
+    }
+
     public static Item getItem(int i) {
         return items.get(i);
     }
@@ -50,9 +72,9 @@ public class Fridge {
         return items.remove(i);
     }
 
-    public static void addItemToDb(Item i) {
-        if (!databaseOfItems.contains(i))
-            databaseOfItems.add(i);
+    public static void addItemToCart(Item i) {
+        if (!cartItems.contains(i))
+            cartItems.add(i);
     }
 
     public static Item getItemToDb(int i) {
@@ -72,8 +94,8 @@ public class Fridge {
             recipes.add(r);
     }
 
-    public static void addFilteredRecipe(RecipeCard r){
-        if (!filteredRecipes.contains(r)){
+    public static void addFilteredRecipe(RecipeCard r) {
+        if (!filteredRecipes.contains(r)) {
             filteredRecipes.add(r);
         }
     }
