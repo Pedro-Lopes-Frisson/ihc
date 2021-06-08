@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 
+import com.example.whatsinmyfridge2.objects.Fridge;
 import com.example.whatsinmyfridge2.objects.Item;
 import com.example.whatsinmyfridge2.objects.Type;
 import com.example.whatsinmyfridge2.ui.Cart.CartFragment;
@@ -60,16 +61,22 @@ public class MainActivity extends AppCompatActivity implements FridgeFragment.Tr
                     Log.e(TAG, "FDs que miséria!");
                     break;
             }
-            items.add(new Item("Bife de Vaca", 1000, 2, 1, "CARNE", getString(R.string.skyImg)));
-            items.add(new Item("Bife de Frango", 1001, 4, 1, "CARNE", getString(R.string.skyImg)));
-            items.add(new Item("Arroz", 809, 5, 1, "CEREAL", getString(R.string.skyImg)));
-            items.add(new Item("Massa", 1080, 9, 2, "CEREAL", getString(R.string.skyImg)));
-            items.add(new Item("Chocolate", 10, 1, 1, "SOBREMESA", getString(R.string.skyImg)));
+            Fridge.addItemToDb(new Item("Steak", 1000, 1.5, 1, "CARNE", getString(R.string.beefImg)));
+            Fridge.addItemToDb(new Item("White Rice", 1002, 1, 1, "CEREAL", getString(R.string.rice)));
+            Fridge.addItemToDb(new Item("Onion", 1005, 0.5, 1, "VEGETAL", getString(R.string.onion)));
+            Fridge.addItemToDb(new Item("Cod", 1006, 1.5, 1, "PEIXE", getString(R.string.codImg)));
+            Fridge.addItemToDb(new Item("Potato", 1007, 1, 1, "CEREAL", getString(R.string.potatoImg)));
+            Fridge.addItemToDb(new Item("Olive Oil", 1008, 0.5, 1, "VEGETAL", getString(R.string.oliveOilImg)));
+            Fridge.addItemToDb(new Item("Bream Fish", 1009, 1.5, 1, "PEIXE", getString(R.string.codImg)));
+            Fridge.addItemToDb(new Item("Potato", 1010, 1, 1, "CEREAL", getString(R.string.potatoImg)));
+            Fridge.addItemToDb(new Item("Corn Oil", 1011, 0.5, 1, "VEGETAL", getString(R.string.cornOilImg)));
+            Fridge.addItemToDb(new Item("Minced Meat", 1012, 1.5, 1, "CARNE", getString(R.string.mincedMeatImg)));
+            Fridge.addItemToDb(new Item("Spaghetti", 1003, 1, 1, "CEREAL", getString(R.string.spaghetti)));
+            Fridge.addItemToDb(new Item("Salt", 1013, 0.5, 1, "VEGETAL", getString(R.string.saltImg)));
+            Fridge.addItemToDb(new Item("Lasagna Noodles", 1014, 1.5, 1, "CARNE", getString(R.string.lasagnaNoddleImg)));
+            Fridge.addItemToDb(new Item("Minced Meat", 1015, 1, 1, "CEREAL", getString(R.string.mincedMeatImg)));
+            Fridge.addItemToDb(new Item("Cheese", 1016, 0.5, 1, "VEGETAL", getString(R.string.cheeseImg)));
 
-            Bundle bundle = new Bundle();
-            bundle.putParcelableArrayList("itemsInsideFridge", items);
-
-            selectedFrag.setArguments(bundle);
 
             getFragmentManager().beginTransaction().replace(R.id.frag_container, selectedFrag).commit();
             return true;

@@ -39,6 +39,7 @@ public class FridgeFragment extends Fragment implements ItemRecViewAdapter.OnCar
     private Double updatedWeight;
     private View root;
     private ItemRecViewAdapter itemRecViewAdapter;
+    private ImageButton btnAdd;
     // add a callback and check if Main implemented this intterfacae
 
 
@@ -80,6 +81,16 @@ public class FridgeFragment extends Fragment implements ItemRecViewAdapter.OnCar
         recyclerView.setAdapter(itemRecViewAdapter);
         GridLayoutManager a = new GridLayoutManager(root.getContext(), 2);
         recyclerView.setLayoutManager(a);
+        // Add a new item listener
+        btnAdd = (ImageButton) relativeLayout.findViewById(R.id.AddItem);
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+
 
         return root;
     }
