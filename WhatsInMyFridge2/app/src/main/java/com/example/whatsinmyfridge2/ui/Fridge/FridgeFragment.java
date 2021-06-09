@@ -130,7 +130,6 @@ public class FridgeFragment extends Fragment implements ItemRecViewAdapter.OnCar
         Item selected;
         if (!flagInsert) {
             // not adding
-            Toast.makeText(root.getContext(), "asdf ", Toast.LENGTH_SHORT).show();
             selected = Fridge.getItem(position);
 
         } else {
