@@ -2,6 +2,7 @@ package com.example.whatsinmyfridge2.ui.Fridge;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.os.FileObserver;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,8 +50,7 @@ public class FridgeFragment extends Fragment implements ItemRecViewAdapter.OnCar
     private ItemRecViewAdapter itemRecViewAdapterToinsert;
     private ImageButton btnAdd;
     private FridgeFragment self;
-    private boolean flagInsert = true; // true means that i am not trying to insert in the fridge items
-    // add a callback and check if Main implemented this intterfacae
+    private boolean flagInsert = false; // me not inserting new items
 
 
     @Nullable
@@ -80,11 +80,11 @@ public class FridgeFragment extends Fragment implements ItemRecViewAdapter.OnCar
             }
         });
 
-        Fridge.addItem(new Item("Steak", 1000, 2, 1, "Meat", getString(R.string.chickenBreast)));
-        Fridge.addItem(new Item("Chicken Breast", 1001, 4, 1, "Meat", getString(R.string.beefImg)));
-        Fridge.addItem(new Item("White Rice", 1002, 5, 1, "Cereal", getString(R.string.rice)));
-        Fridge.addItem(new Item("Spaghetti", 1003, 0.5, 2, "Pasta", getString(R.string.spaghetti)));
-        Fridge.addItem(new Item("Chocolate", 1004, 1, 1, "Dessert", getString(R.string.chocolate)));
+        Fridge.addItem(new Item("Steak", 1000, 2, 1, "Meat", getString(R.string.beefImg)));
+        Fridge.addItem(new Item("Chicken Breast", 1001, 4, 1, "Meat", getString(R.string.chickenBreast)));
+        //Fridge.addItem(new Item("White Rice", 1002, 5, 1, "Cereal", getString(R.string.rice)));
+        //Fridge.addItem(new Item("Spaghetti", 1003, 0.5, 2, "Pasta", getString(R.string.spaghetti)));
+        //Fridge.addItem(new Item("Chocolate", 1004, 1, 1, "Dessert", getString(R.string.chocolate)));
 
 
         //
@@ -95,29 +95,27 @@ public class FridgeFragment extends Fragment implements ItemRecViewAdapter.OnCar
         recyclerView.setAdapter(itemRecViewAdapter);
         GridLayoutManager a = new GridLayoutManager(root.getContext(), 2);
         recyclerView.setLayoutManager(a);
+
+
         // Add a new item listener
         btnAdd = (ImageButton) relativeLayout.findViewById(R.id.AddItem);
+
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View v) {
-                flagInsert = false;
                 itemRecViewAdapterToinsert = new ItemRecViewAdapter(root.getContext(), self, R.layout.item_line);
-                ArrayList<Item> itemsThatAreNotOnTheFridge = new ArrayList<>();
-                ArrayList<Item> itemsEvery = Fridge.getDatabaseOfItems();
+                ArrayList<Item> itemsThatAreNotOnTheFridge = Fridge.getDatabaseOfItems();
+                itemsThatAreNotOnTheFridge.removeAll(Fridge.getItems());
 
-                for (int i = 0; i < Fridge.getDatabaseOfItems().size(); i++) {
-                    if (!Fridge.getItems().contains(itemsEvery.get(i))) {
-                        itemsThatAreNotOnTheFridge.add(itemsEvery.get(i));
-                    }
-                }
-                itemRecViewAdapterToinsert.setItems(Fridge.getDatabaseOfItems());
-
+                itemRecViewAdapterToinsert.setItems(itemsThatAreNotOnTheFridge);
                 recyclerViewInsert.setAdapter(itemRecViewAdapterToinsert);
+                itemRecViewAdapterToinsert.notifyDataSetChanged();
                 LinearLayoutManager b = new LinearLayoutManager(root.getContext());
                 recyclerViewInsert.setLayoutManager(b);
                 constraintLayoutInsert.setElevation(1234);
                 constraintLayoutInsert.setVisibility(View.VISIBLE);
+                flagInsert = true; // I am inserting
             }
         });
 
@@ -130,15 +128,17 @@ public class FridgeFragment extends Fragment implements ItemRecViewAdapter.OnCar
     @Override
     public void onCardClick(int position) {
         Item selected;
-        if (flagInsert) {
+        if (!flagInsert) {
+            // not adding
+            Toast.makeText(root.getContext(), "asdf ", Toast.LENGTH_SHORT).show();
             selected = Fridge.getItem(position);
 
         } else {
             selected = itemRecViewAdapterToinsert.getItems().get(position);
-            Fridge.addItem(selected);
             itemRecViewAdapter.setItems(Fridge.getItems());
             itemRecViewAdapter.notifyDataSetChanged();
             constraintLayoutInsert.setVisibility(View.GONE);
+            flagInsert = false;
         }
 
         TextView tview = (TextView) constraintLayout.findViewById(R.id.item_title);
@@ -166,13 +166,18 @@ public class FridgeFragment extends Fragment implements ItemRecViewAdapter.OnCar
         });
 
         // SAVE Button
-        Button btn = (Button) constraintLayout.findViewById(R.id.ApplyBtn);
-        btn.setOnClickListener(new View.OnClickListener() {
+        Button applyBtn = (Button) constraintLayout.findViewById(R.id.ApplyBtn);
+        applyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 selected.setWeight(updatedWeight);
                 constraintLayout.setVisibility(View.GONE);
-                itemRecViewAdapter.notifyItemChanged(position);// Notify recycler view that ammount changed
+                if (selected.getWeight() != 0) {
+                    Fridge.addItem(selected);
+                    itemRecViewAdapter.setItems(Fridge.getItems());
+                    itemRecViewAdapter.notifyDataSetChanged();
+                    itemRecViewAdapter.notifyItemChanged(position);// Notify recycler view that ammount changed
+                }
             }
         });
         // close Btn
@@ -180,6 +185,7 @@ public class FridgeFragment extends Fragment implements ItemRecViewAdapter.OnCar
             @Override
             public void onClick(View v) {
                 constraintLayout.setVisibility(View.GONE);
+                flagInsert = false;
             }
         });
 

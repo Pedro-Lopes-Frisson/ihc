@@ -56,11 +56,9 @@ public class ItemRecViewAdapter extends RecyclerView.Adapter<ItemRecViewAdapter.
         }
         if (holder.isChecked != null) {
             if (items.get(position).isChecked() == true) {
-                Toast.makeText(context,"This is : " + items.get(position).getName() + "and ischecked is : true",Toast.LENGTH_SHORT).show();
                 holder.isChecked.setVisibility(View.VISIBLE);
             } else {
                 holder.isChecked.setVisibility(View.GONE);
-                Toast.makeText(context,"This is : " + items.get(position).getName() + "and ischecked is : false",Toast.LENGTH_SHORT).show();
             }
             //holder.isChecked.setVisibility( (items.get(position).isChecked()) ? View.VISIBLE : View.GONE);
         }
@@ -70,6 +68,10 @@ public class ItemRecViewAdapter extends RecyclerView.Adapter<ItemRecViewAdapter.
     @Override
     public int getItemCount() {
         return items.size();
+    }
+
+    public void deleteItem(int i) {
+        items.remove(i);
     }
 
     public interface OnCardListener {

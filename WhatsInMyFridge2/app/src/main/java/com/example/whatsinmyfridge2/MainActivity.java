@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity implements FridgeFragment.Tr
         Fridge.addItemToDb(new Item("Potato", 1007, 0, 1, "CEREAL", getString(R.string.potatoImg)));
         Fridge.addItemToDb(new Item("Olive Oil", 1008, 0.0, 1, "VEGETAL", getString(R.string.oliveOilImg)));
         Fridge.addItemToDb(new Item("Bream Fish", 1009, 000, 1, "PEIXE", getString(R.string.codImg)));
-        Fridge.addItemToDb(new Item("Potato", 1010, 0, 1, "CEREAL", getString(R.string.potatoImg)));
         Fridge.addItemToDb(new Item("Corn Oil", 1011, 0.0, 1, "VEGETAL", getString(R.string.cornOilImg)));
         Fridge.addItemToDb(new Item("Minced Meat", 1012, 0.0, 1, "CARNE", getString(R.string.mincedMeatImg)));
         Fridge.addItemToDb(new Item("Spaghetti", 1003, 0, 1, "CEREAL", getString(R.string.spaghetti)));
@@ -52,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements FridgeFragment.Tr
         Fridge.addItemToDb(new Item("Minced Meat", 1015, 0, 1, "CEREAL", getString(R.string.mincedMeatImg)));
         Fridge.addItemToDb(new Item("Cheese", 1016, 0.0, 1, "VEGETAL", getString(R.string.cheeseImg)));
 
-        Fridge.addItemToCart(new Item("Potato", 1010, 0, 1, "CEREAL", getString(R.string.potatoImg)));
+        Fridge.addItemToCart(new Item("Potato", 1007, 0, 1, "CEREAL", getString(R.string.potatoImg)));
         Fridge.addItemToCart(new Item("Corn Oil", 1011, 0.0, 1, "VEGETAL", getString(R.string.cornOilImg)));
     }
 
