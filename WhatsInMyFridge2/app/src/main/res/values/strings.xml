@@ -174,4 +174,14 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="update">Update</string>
+    <string name="favorite">Favorite</string>
+    <string name="_0h_1h">0h-1h</string>
+    <string name="_2h30">2h30+</string>
+    <string name="_1h_2h30">1h-2h30</string>
+    <string name="time">Time</string>
+    <string name="hard">Hard</string>
+    <string name="medium">Medium</string>
+    <string name="difficulty">Difficulty</string>
+    <string name="easy">Easy</string>
+    <string name="apply">Apply</string>
 </resources>
