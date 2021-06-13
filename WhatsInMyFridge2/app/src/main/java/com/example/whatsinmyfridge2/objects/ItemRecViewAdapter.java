@@ -1,5 +1,6 @@
 package com.example.whatsinmyfridge2.objects;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,8 +52,13 @@ public class ItemRecViewAdapter extends RecyclerView.Adapter<ItemRecViewAdapter.
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.itemName.setText(items.get(position).getName());
         Glide.with(context).asBitmap().load(items.get(position).getImage()).into(holder.itemImage);
+
         if (holder.itemQty != null) {
             holder.itemQty.setText(Double.toString(items.get(position).getWeight()));
+        }
+
+        if (holder.itemQtyType != null) {
+            holder.itemQtyType.setText(items.get(position).getWeightMeasure());
         }
         if (holder.isChecked != null) {
             if (items.get(position).isChecked() == true) {
@@ -87,17 +93,26 @@ public class ItemRecViewAdapter extends RecyclerView.Adapter<ItemRecViewAdapter.
         private ImageView itemImage;
         OnCardListener onCardListener;
         private TextView itemQty = null;
+        private TextView itemQtyType = null;
 
+        @SuppressLint("CutPasteId")
         public ViewHolder(@NonNull View itemView, OnCardListener cardListener) {
             super(itemView);
             itemName = itemView.findViewById(R.id.md_description);
             itemImage = itemView.findViewById(R.id.item_img);
             itemView.setOnClickListener(this);
             onCardListener = cardListener;
-            try {
-                itemQty = itemView.findViewById(R.id.som).findViewById(R.id.item_qty_card);
-            } catch (Exception e) {
 
+            try {
+                //itemQty = itemView.findViewById(R.id.som).findViewById(R.id.gridQtyGroup).findViewById(R.id.item_qty_card);
+                itemQty = itemView.findViewById(R.id.item_qty_card);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            try {
+                itemQtyType = itemView.findViewById(R.id.item_qty_type);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
             try {
                 isChecked = itemView.findViewById(R.id.checked);

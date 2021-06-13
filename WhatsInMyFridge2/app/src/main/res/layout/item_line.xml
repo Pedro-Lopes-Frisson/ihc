@@ -10,6 +10,7 @@
         android:layout_height="100dp"
         android:layout_centerInParent="true"
         android:layout_centerHorizontal="true"
+        android:layout_toStartOf="@+id/md_description"
         android:layout_toLeftOf="@+id/md_description"
         android:src="@drawable/ic_launcher_background"/>
 
@@ -19,9 +20,32 @@
         android:layout_height="50dp"
         android:layout_centerInParent="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
         android:text="ItemName"
         android:textSize="15sp"/>
 
+    <TextView
+        android:id="@+id/item_qty_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_margin="4dp"
+        android:layout_toStartOf="@id/item_qty_type"
+        android:layout_toLeftOf="@id/item_qty_type"
+        android:text="QTY"
+        android:textAllCaps="false"/>
+
+    <TextView
+        android:id="@+id/item_qty_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="4dp"
+        android:text="Ty"
+        android:textAllCaps="false"/>
 
 </RelativeLayout>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WhatsInMyFridge2</string>
+    <string name="app_name">WhatsInMyFridge</string>
     <string name="fridge">Fridge</string>
     <string name="cart">Cart</string>
     <string name="shopping_list">ShoppingList</string>
@@ -173,7 +173,7 @@
     <string name="favoritebutton">favoriteButton</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="update">Update</string>
+    <string name="update">Add to Fridge</string>
     <string name="favorite">Favorite</string>
     <string name="_0h_1h">0h-1h</string>
     <string name="_2h30">2h30+</string>
@@ -184,4 +184,5 @@
     <string name="difficulty">Difficulty</string>
     <string name="easy">Easy</string>
     <string name="apply">Apply</string>
+    <string name="add_a_new_item_to_the_fridge">Add a new item to the fridge</string>
 </resources>

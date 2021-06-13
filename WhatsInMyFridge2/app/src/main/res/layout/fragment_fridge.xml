@@ -11,13 +11,13 @@
     <include
         android:id="@+id/expandable_Layout"
         layout="@layout/modal_box"/>
+
     <include
+        android:id="@+id/expandable_Layout2"
+        layout="@layout/modal_box_item_insert"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerInParent="true"
-        android:id="@+id/expandable_Layout2"
-        layout="@layout/modal_box_item_insert"/>
-
+        android:layout_centerInParent="true"/>
 
 
     <TextView
@@ -39,16 +39,25 @@
         android:id="@+id/ItemRecycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-    <ImageButton
-        android:id="@+id/AddItem"
+
+    <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_baseline_add_circle_outline_24"
-        android:layout_margin="5dp"
-        android:clickable="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+        app:cardCornerRadius="35dp"
         android:layout_alignParentBottom="true"
-        />
+        android:layout_margin="35dp">
 
+        <ImageButton
+            android:id="@+id/AddItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#223e3e3e"
+            android:clickable="true"
+            android:contentDescription="@string/add_a_new_item_to_the_fridge"
+            android:focusable="true"
+            android:src="@drawable/ic_baseline_add_circle_outline_24"/>
+    </androidx.cardview.widget.CardView>
 
 </RelativeLayout>

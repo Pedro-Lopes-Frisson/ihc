@@ -63,7 +63,6 @@ public class CartFragment extends Fragment implements ItemRecViewAdapter.OnCardL
                 arrayListItem.removeAll(Fridge.getItems());
                 itemRecViewAdapter.setItems(arrayListItem);
                 itemRecViewAdapter.notifyDataSetChanged();
-                Toast.makeText(root.getContext(), " "+integerArrayList, Toast.LENGTH_SHORT).show();
                 itemRecViewAdapter.notifyDataSetChanged();
             }
         });

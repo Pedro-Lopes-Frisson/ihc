@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <style name="cardStyle" parent="CardView">
+        <item name="cardBackgroundColor">#C9E6E4</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/amaranth</item>
+        <item name="cardElevation">06dp</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="cardCornerRadius">8dp</item>
+        <item name="android:clickable">true</item>
+    </style>
+</resources>
