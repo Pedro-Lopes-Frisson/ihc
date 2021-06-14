@@ -106,6 +106,7 @@ public class RecipeFragment extends Fragment {
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new GridLayoutManager(getContext(), 2);
         mAdapter = new RecipeAdapter(Fridge.getRecipes(), root.getContext());
+        mAdapter.notifyDataSetChanged();
 
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
@@ -290,6 +291,22 @@ public class RecipeFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        CheckBox easyDif = constraintLayout.findViewById(R.id.easyDifficulty);
+        CheckBox medDif = constraintLayout.findViewById(R.id.mediumDifficulty);
+        CheckBox hardDif = constraintLayout.findViewById(R.id.hardDifficulty);
+        CheckBox time1 = constraintLayout.findViewById(R.id.timeBox1);
+        CheckBox time2 = constraintLayout.findViewById(R.id.timeBox2);
+        CheckBox time3 = constraintLayout.findViewById(R.id.timeBox3);
+        CheckBox favorite = constraintLayout.findViewById(R.id.FavoriteBox);
+        Button applyButton = constraintLayout.findViewById(R.id.ApplyBtn);
+        easyDif.setChecked(false);
+        medDif.setChecked(false);
+        hardDif.setChecked(false);
+        time1.setChecked(false);
+        time2.setChecked(false);
+        time3.setChecked(false);
+        favorite.setChecked(false);
+        applyButton.callOnClick();
         mAdapter.notifyDataSetChanged();
     }
 }
