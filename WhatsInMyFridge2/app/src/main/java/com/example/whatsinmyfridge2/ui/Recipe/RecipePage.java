@@ -1,5 +1,6 @@
 package com.example.whatsinmyfridge2.ui.Recipe;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -32,8 +33,6 @@ public class RecipePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recipe_page);
         int pos = getIntent().getIntExtra("pos", 0);
-
-
         String imageRes = Fridge.getFilteredRecipes().get(pos).getmImageResource();
         String name = Fridge.getFilteredRecipes().get(pos).getRecipeName();
         String dif = Fridge.getFilteredRecipes().get(pos).getDifficulty();
@@ -85,6 +84,14 @@ public class RecipePage extends AppCompatActivity {
                 }
                 Fridge.setRecipes(recipes);
                 Fridge.setFilteredRecipes(filteredRecipes);
+            }
+        });
+
+        ImageView backButton = findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
 
