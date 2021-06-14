@@ -20,6 +20,7 @@
         android:id="@+id/ingredient_name"
         android:layout_width="343dp"
         android:layout_height="50dp"
+        android:fontFamily="@font/amaranth"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
         android:text="teste"

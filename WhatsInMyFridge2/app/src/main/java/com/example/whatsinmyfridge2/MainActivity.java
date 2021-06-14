@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements FridgeFragment.Tr
         Fridge.addItemToDb(new Item("Minced Meat", 1015, 0, 1, "CEREAL", getString(R.string.mincedMeatImg),"kg"));
         Fridge.addItemToDb(new Item("Cheese", 1016, 0.0, 1, "VEGETAL", getString(R.string.cheeseImg),"g"));
         Fridge.addItemToCart(new Item("Potato", 1007, 0, 1, "CEREAL", getString(R.string.potatoImg),"kg"));
-        Fridge.addItemToCart(new Item("Corn Oil", 1011, 0.0, 1, "VEGETAL", getString(R.string.cornOilImg)));
+        Fridge.addItemToCart(new Item("Corn Oil", 1011, 0.0, 1, "VEGETAL", getString(R.string.cornOilImg),"l"));
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {

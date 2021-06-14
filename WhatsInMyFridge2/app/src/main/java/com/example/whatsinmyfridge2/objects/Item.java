@@ -103,14 +103,13 @@ public class Item implements Parcelable {
                 weightJump == item.weightJump &&
                 Objects.equals(name, item.name) &&
                 type == item.type &&
-                weightMeasure == item.weightMeasure &&
                 Objects.equals(Image, item.Image);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public int hashCode() {
-        return Objects.hash(name, ID, weightJump, type, weightMeasure, Image);
+        return Objects.hash(name, ID, weightJump, type, Image);
     }
 
     // Getters e setters Obviously bad but who cares

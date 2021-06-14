@@ -48,6 +48,7 @@
             android:layout_below="@+id/Recipe_Image"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
+            android:fontFamily="@font/amaranth"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_marginTop="24dp"
@@ -69,6 +70,7 @@
             android:textSize="25sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/recipe_dif"
+            android:fontFamily="@font/amaranth"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Recipe_Name" />
@@ -84,6 +86,7 @@
             android:layout_toStartOf="@+id/dif_text"
             android:layout_toLeftOf="@+id/dif_text"
             android:gravity="center"
+            android:fontFamily="@font/amaranth"
             android:textAlignment="center"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -98,6 +101,7 @@
             android:layout_marginTop="12dp"
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
+            android:fontFamily="@font/amaranth"
             android:gravity="center"
             android:textAlignment="center"
             android:textSize="20sp"
@@ -114,6 +118,7 @@
             android:layout_marginEnd="20dp"
             android:layout_marginRight="20dp"
             android:gravity="center"
+            android:fontFamily="@font/amaranth"
             android:textAlignment="center"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -168,6 +173,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
+            android:fontFamily="@font/amaranth"
             app:layout_constraintTop_toBottomOf="@+id/clock_icon"
             android:gravity="start" />
 
@@ -189,6 +195,7 @@
                 android:layout_marginStart="0dp"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="0dp"
+                android:fontFamily="@font/amaranth"
                 android:layout_marginEnd="-1dp"
                 android:layout_marginRight="-1dp"
                 android:layout_toEndOf="@+id/ingredient_image2"
@@ -205,6 +212,7 @@
                 android:layout_marginStart="0dp"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="0dp"
+                android:fontFamily="@font/amaranth"
                 android:layout_marginEnd="2dp"
                 android:layout_marginRight="2dp"
                 android:layout_toEndOf="@+id/ingredient_image3"
@@ -241,6 +249,7 @@
                 android:layout_height="50dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
+                android:fontFamily="@font/amaranth"
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="0dp"
                 android:layout_marginLeft="0dp"
@@ -271,6 +280,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:gravity="start"
+            android:fontFamily="@font/amaranth"
             android:text="@string/missing_ingredients"
             android:textAlignment="gravity"
             android:textSize="15sp"
@@ -300,6 +310,7 @@
                 android:layout_marginRight="0dp"
                 android:layout_toEndOf="@+id/ingredient_image6"
                 android:layout_toRightOf="@+id/ingredient_image6"
+                android:fontFamily="@font/amaranth"
                 android:gravity="center_vertical" />
 
             <ImageView
@@ -308,6 +319,7 @@
                 android:layout_height="50dp"
                 android:layout_below="@+id/ingredient_image5"
                 android:layout_alignParentStart="true"
+                android:fontFamily="@font/amaranth"
                 android:layout_alignParentLeft="true"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
@@ -322,6 +334,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="0dp"
+                android:fontFamily="@font/amaranth"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="0dp"
@@ -352,6 +365,7 @@
                 android:layout_marginTop="0dp"
                 android:layout_toEndOf="@+id/ingredient_image4"
                 android:layout_toRightOf="@+id/ingredient_image4"
+                android:fontFamily="@font/amaranth"
                 android:gravity="center_vertical" />
 
             <ImageView
@@ -375,6 +389,7 @@
             android:layout_marginTop="10dp"
             android:gravity="center_horizontal"
             android:text="Instructions"
+            android:fontFamily="@font/amaranth"
             android:textAlignment="center"
             android:textSize="25sp"
             android:textStyle="bold"
@@ -385,6 +400,7 @@
         <TextView
             android:id="@+id/instructionsText"
             android:layout_width="match_parent"
+            android:fontFamily="@font/amaranth"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@+id/instructionsTitle"

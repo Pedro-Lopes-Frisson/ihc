@@ -1,52 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp">
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                   android:layout_width="match_parent"
+                                   style="@style/cardStyleLine"
+                                   android:layout_height="wrap_content"
+                                   android:padding="5dp">
 
-    <ImageView
-        android:id="@+id/item_img"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_centerInParent="true"
-        android:layout_centerHorizontal="true"
-        android:layout_toStartOf="@+id/md_description"
-        android:layout_toLeftOf="@+id/md_description"
-        android:src="@drawable/ic_launcher_background"/>
-
-    <TextView
-        android:id="@+id/md_description"
-        android:layout_width="196dp"
-        android:layout_height="45dp"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:textColor="@color/black"
-        android:text="ItemName"
-        android:textSize="15sp" />
-
-    <TextView
-        android:id="@+id/item_qty_card"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_margin="4dp"
-        android:layout_toStartOf="@id/item_qty_type"
-        android:layout_toLeftOf="@id/item_qty_type"
-        android:text="QTY"
-        android:textColor="@color/black"
-        android:textAllCaps="false"/>
+        android:padding="5dp">
 
-    <TextView
-        android:id="@+id/item_qty_type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_margin="4dp"
-        android:text="Ty"
-        android:textAllCaps="false"/>
+        <ImageView
+            android:id="@+id/item_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_toStartOf="@+id/md_description"
+            android:layout_toLeftOf="@+id/md_description"
+            android:src="@drawable/ic_launcher_background"/>
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/md_description"
+            android:layout_width="196dp"
+            android:layout_height="45dp"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/amaranth"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:text="ItemName"
+            android:textColor="@color/black"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/item_qty_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="4dp"
+            android:fontFamily="@font/amaranth"
+            android:layout_toStartOf="@id/item_qty_type"
+            android:layout_toLeftOf="@id/item_qty_type"
+            android:text="QTY"
+            android:textAllCaps="false"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/item_qty_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/amaranth"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="4dp"
+            android:text="Ty"
+            android:textAllCaps="false"/>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

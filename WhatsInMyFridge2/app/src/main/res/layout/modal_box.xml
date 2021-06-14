@@ -33,6 +33,7 @@
                 android:layout_height="40dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
+                android:fontFamily="@font/amaranth"
                 android:text="Item Name"
                 android:textSize="20dp"/>
 
@@ -52,7 +53,14 @@
                 android:layout_above="@id/ApplyBtn"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="50dp"
-                android:clickable="true"/>
+                android:clickable="true"
+                android:fontFamily="@font/amaranth"/>
+
+            <TextView
+                android:id="@+id/item_qty_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/amaranth"/>
 
             <ImageButton
                 android:id="@+id/incBtn"
@@ -84,10 +92,11 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:textAllCaps="false"
                 android:layout_marginBottom="40dp"
                 android:clickable="true"
-                android:text="Save"/>
+                android:fontFamily="@font/amaranth"
+                android:text="Save"
+                android:textAllCaps="false"/>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 

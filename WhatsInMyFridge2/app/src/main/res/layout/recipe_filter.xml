@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/filterbox"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:clickable="true"
-                android:focusable="true"
-                android:visibility="gone">
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   android:id="@+id/filterbox"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   android:clickable="true"
+                                                   android:focusable="true"
+                                                   android:visibility="gone">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -37,6 +37,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="20dp"
+                android:fontFamily="@font/amaranth"
                 android:text="@string/recipe_filter_head_text"
                 android:textSize="30sp"/>
 
@@ -55,6 +56,7 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="95dp"
                 android:layout_marginRight="95dp"
+                android:fontFamily="@font/amaranth"
                 android:gravity="center"
                 android:text="@string/difficulty"
                 android:textSize="24sp"
@@ -72,18 +74,21 @@
                     android:id="@+id/easyDifficulty"
                     android:layout_width="90dp"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/amaranth"
                     android:text="@string/easy"/>
 
                 <CheckBox
                     android:id="@+id/mediumDifficulty"
                     android:layout_width="90dp"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/amaranth"
                     android:text="@string/medium"/>
 
                 <CheckBox
                     android:id="@+id/hardDifficulty"
                     android:layout_width="90dp"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/amaranth"
                     android:text="@string/hard"/>
             </GridLayout>
 
@@ -94,6 +99,7 @@
                 android:layout_below="@id/difficultyGroup"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="20dp"
+                android:fontFamily="@font/amaranth"
                 android:gravity="center"
                 android:text="@string/time"
                 android:textSize="24sp"
@@ -112,6 +118,7 @@
                     android:layout_width="90dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
+                    android:fontFamily="@font/amaranth"
                     android:text="@string/_0h_1h"
                     android:textSize="13sp"/>
 
@@ -120,6 +127,7 @@
                     android:layout_width="90dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
+                    android:fontFamily="@font/amaranth"
                     android:text="@string/_1h_2h30"
                     android:textSize="13sp"/>
 
@@ -128,24 +136,26 @@
                     android:layout_width="90dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
+                    android:fontFamily="@font/amaranth"
                     android:text="@string/_2h30"
                     android:textSize="13sp"/>
             </GridLayout>
 
             <GridLayout
-                android:layout_centerInParent="true"
-                android:layout_below="@+id/timeGroup"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/timeGroup"
+                android:layout_centerInParent="true">
 
                 <TextView
                     android:id="@+id/FavoriteText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
                     android:layout_marginTop="40dp"
+                    android:fontFamily="@font/amaranth"
                     android:text="@string/favorite"
                     android:textSize="24sp"
-                    android:layout_margin="20dp"
                     android:textStyle="bold"/>
 
                 <CheckBox
@@ -155,6 +165,7 @@
                     android:layout_marginTop="40dp"
                     android:background="?android:attr/listChoiceIndicatorMultiple"
                     android:button="@null"
+                    android:fontFamily="@font/amaranth"
                     android:scaleX="1.3"
                     android:scaleY="1.3"/>
             </GridLayout>
@@ -166,10 +177,11 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="40dp"
-                android:textAllCaps="false"
                 android:clickable="true"
                 android:focusable="true"
-                android:text="@string/apply"/>
+                android:fontFamily="@font/amaranth"
+                android:text="@string/apply"
+                android:textAllCaps="false"/>
             <!--Might remove this-->
         </RelativeLayout>
     </androidx.cardview.widget.CardView>

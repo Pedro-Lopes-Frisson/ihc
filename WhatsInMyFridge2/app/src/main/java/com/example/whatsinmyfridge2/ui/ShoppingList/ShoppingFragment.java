@@ -24,7 +24,7 @@ import com.example.whatsinmyfridge2.objects.ItemRecViewAdapter;
 
 import java.util.ArrayList;
 
-public class ShoppingFragment extends Fragment  implements ItemRecViewAdapter.OnCardListener  {
+public class ShoppingFragment extends Fragment implements ItemRecViewAdapter.OnCardListener {
     private RecyclerView lRecyclerView;
     private RecyclerView.Adapter lAdapter;
     private RecyclerView.LayoutManager lLayoutManager;
@@ -34,28 +34,26 @@ public class ShoppingFragment extends Fragment  implements ItemRecViewAdapter.On
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_list,container,false);
+        View root = inflater.inflate(R.layout.fragment_list, container, false);
 
 
-
-        Log.i("SHOPPING", ""+ listCards);
+        Log.i("SHOPPING", "" + listCards);
 
         lRecyclerView = (RecyclerView) root.findViewById(R.id.recyclerView);
-        //lLayoutManager = new LinearLayoutManager(getContext());
         lLayoutManager = new GridLayoutManager(getContext(), 1);
         ItemRecViewAdapter itemRecViewAdapter = new ItemRecViewAdapter(root.getContext(), this, R.layout.item_line);
         listCards = Fridge.getItems();
-        itemRecViewAdapter.setItems(listCards);
-
+        itemRecViewAdapter.setItems(Fridge.getDatabaseOfItems());
         lRecyclerView.setLayoutManager(lLayoutManager);
         lRecyclerView.setAdapter(itemRecViewAdapter);
 
         return root;
     }
+
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onCardClick(int position) {
         listCards.get(position);
-        Toast.makeText(this.getContext(), "Hello " + listCards, Toast.LENGTH_LONG).show();
+
     }
 }

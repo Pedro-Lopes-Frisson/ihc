@@ -4,16 +4,7 @@
                                    xmlns:tools="http://schemas.android.com/tools"
                                    android:layout_width="match_parent"
                                    android:layout_height="wrap_content"
-                                   android:layout_margin="5dp"
-                                   android:clickable="true"
-                                   android:elevation="120dp"
-                                   android:focusable="true"
-                                   android:outlineAmbientShadowColor="#f23e3e3e"
-                                   android:outlineProvider="none"
-                                   android:padding="8dp"
-                                   app:cardBackgroundColor="#88C9E6E4"
-                                   app:cardCornerRadius="8dp"
-                                   app:cardUseCompatPadding="true"
+                                   style="@style/cardStyleLine"
                                    tools:targetApi="p">
 
     <RelativeLayout
@@ -42,6 +33,7 @@
         <TextView
             android:id="@+id/md_description"
             android:layout_width="wrap_content"
+            android:fontFamily="@font/amaranth"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_centerHorizontal="true"
@@ -68,6 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:textColor="@color/black"
+                android:fontFamily="@font/amaranth"
                 android:text="QTY"
                 android:textAllCaps="false"/>
 
@@ -75,6 +68,7 @@
                 android:id="@+id/item_qty_type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/amaranth"
                 android:layout_margin="4dp"
                 android:textColor="@color/black"
                 android:text="Ty"

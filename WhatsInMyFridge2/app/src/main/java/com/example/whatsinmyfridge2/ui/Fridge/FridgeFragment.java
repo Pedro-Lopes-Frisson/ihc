@@ -80,8 +80,8 @@ public class FridgeFragment extends Fragment implements ItemRecViewAdapter.OnCar
             }
         });
 
-        Fridge.addItem(new Item("Steak", 1000, 2, 1, "Meat", getString(R.string.beefImg)));
-        Fridge.addItem(new Item("Chicken Breast", 1001, 4, 1, "Meat", getString(R.string.chickenBreast)));
+        Fridge.addItem(new Item("Steak", 1000, 2, 1, "CARNE", getString(R.string.beefImg), "kg"));
+        Fridge.addItem(new Item("Chicken Breast", 1001, 4, 1, "CARNE", getString(R.string.chickenBreast), "kg"));
         //Fridge.addItem(new Item("White Rice", 1002, 5, 1, "Cereal", getString(R.string.rice)));
         //Fridge.addItem(new Item("Spaghetti", 1003, 0.5, 2, "Pasta", getString(R.string.spaghetti)));
         //Fridge.addItem(new Item("Chocolate", 1004, 1, 1, "Dessert", getString(R.string.chocolate)));
@@ -105,7 +105,7 @@ public class FridgeFragment extends Fragment implements ItemRecViewAdapter.OnCar
             @Override
             public void onClick(View v) {
                 itemRecViewAdapterToinsert = new ItemRecViewAdapter(root.getContext(), self, R.layout.item_line);
-                ArrayList<Item> itemsThatAreNotOnTheFridge = Fridge.getDatabaseOfItems();
+                ArrayList<Item> itemsThatAreNotOnTheFridge = (ArrayList<Item>) Fridge.getDatabaseOfItems().clone();
                 itemsThatAreNotOnTheFridge.removeAll(Fridge.getItems());
 
                 itemRecViewAdapterToinsert.setItems(itemsThatAreNotOnTheFridge);

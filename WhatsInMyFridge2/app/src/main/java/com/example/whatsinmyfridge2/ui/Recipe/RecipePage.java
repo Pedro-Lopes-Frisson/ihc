@@ -2,7 +2,6 @@ package com.example.whatsinmyfridge2.ui.Recipe;
 
 import android.app.ActionBar;
 import android.app.Activity;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -59,7 +58,6 @@ public class RecipePage extends AppCompatActivity {
 
         TextView instructionsText = findViewById(R.id.instructionsText);
         instructionsText.setText(instructions);
-        instructionsText.setTypeface(Typeface.MONOSPACE);
 
         ImageView favoriteStar = findViewById(R.id.favorite_button);
         if(favorite){
@@ -102,12 +100,6 @@ public class RecipePage extends AppCompatActivity {
         TextView ing4 = findViewById(R.id.ingredient_name4);
         TextView ing5 = findViewById(R.id.ingredient_name5);
         TextView ing6 = findViewById(R.id.ingredient_name6);
-        ing1.setTypeface(Typeface.MONOSPACE);
-        ing2.setTypeface(Typeface.MONOSPACE);
-        ing3.setTypeface(Typeface.MONOSPACE);
-        ing4.setTypeface(Typeface.MONOSPACE);
-        ing5.setTypeface(Typeface.MONOSPACE);
-        ing6.setTypeface(Typeface.MONOSPACE);
         ImageView ing1Im = findViewById(R.id.ingredient_image1);
         ImageView ing2Im = findViewById(R.id.ingredient_image2);
         ImageView ing3Im = findViewById(R.id.ingredient_image3);
