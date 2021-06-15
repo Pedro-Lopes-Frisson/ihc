@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 
-public class Item implements Parcelable {
+public class Item implements Parcelable,Cloneable {
     private String name = "ola";
     private int ID = 100;
     private double weight = 10.2;
@@ -28,6 +28,11 @@ public class Item implements Parcelable {
 
     public void setChecked(boolean checked) {
         isChecked = checked;
+    }
+
+
+    public Object clone()throws CloneNotSupportedException{
+        return super.clone();
     }
 
     public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {

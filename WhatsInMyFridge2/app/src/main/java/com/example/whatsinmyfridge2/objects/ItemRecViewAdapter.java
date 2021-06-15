@@ -5,6 +5,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,8 +20,9 @@ import com.example.whatsinmyfridge2.R;
 
 import java.text.BreakIterator;
 import java.util.ArrayList;
+import java.util.List;
 
-public class ItemRecViewAdapter extends RecyclerView.Adapter<ItemRecViewAdapter.ViewHolder> {
+public class ItemRecViewAdapter extends RecyclerView.Adapter<ItemRecViewAdapter.ViewHolder> implements Filterable {
     private ArrayList<Item> items = new ArrayList<>();
     private Context context;
     private OnCardListener onCardListener;
@@ -79,6 +82,40 @@ public class ItemRecViewAdapter extends RecyclerView.Adapter<ItemRecViewAdapter.
     public void deleteItem(int i) {
         items.remove(i);
     }
+
+    @Override
+    public Filter getFilter() {
+        return exampleFilter;
+    }
+    private Filter exampleFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<Item> filteredList = new ArrayList<>();
+
+            if (constraint == null || constraint.length() == 0){
+                filteredList.addAll(Fridge.getDatabaseOfItems());
+            }else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+
+                for (Item recipe : items){
+                    if (recipe.getName().toLowerCase().contains(filterPattern)){
+                        filteredList.add(recipe);
+                    }
+                }
+            }
+            Fridge.setFilteredItemsCart((ArrayList<Item>) filteredList);
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            items.clear();
+            items.addAll((List) results.values);
+            notifyDataSetChanged();
+        }
+    };
 
     public interface OnCardListener {
         void onCardClick(int position);

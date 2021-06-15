@@ -41,11 +41,11 @@ public class FridgeFragment extends Fragment implements ItemRecViewAdapter.OnCar
 
     private RelativeLayout relativeLayout;
     private RecyclerView recyclerView;
-    private RecyclerView recyclerViewInsert;
-    private ConstraintLayout constraintLayout;
     private ConstraintLayout constraintLayoutInsert;
     private Double updatedWeight;
     private View root;
+    private RecyclerView recyclerViewInsert;
+    private ConstraintLayout constraintLayout;
     private ItemRecViewAdapter itemRecViewAdapter;
     private ItemRecViewAdapter itemRecViewAdapterToinsert;
     private ImageButton btnAdd;
@@ -141,6 +141,7 @@ public class FridgeFragment extends Fragment implements ItemRecViewAdapter.OnCar
         }
 
         TextView tview = (TextView) constraintLayout.findViewById(R.id.item_title);
+        TextView tviewQty = (TextView) constraintLayout.findViewById(R.id.item_qty_type);
         updatedWeight = selected.getWeight();
         ImageButton incButton = (ImageButton) constraintLayout.findViewById(R.id.incBtn);
         ImageButton decButton = (ImageButton) constraintLayout.findViewById(R.id.decBtn);
@@ -211,6 +212,7 @@ public class FridgeFragment extends Fragment implements ItemRecViewAdapter.OnCar
         Glide.with(getContext()).asBitmap().load(selected.getImage()).into((ImageView) constraintLayout.findViewById(R.id.item_img));
         //set title
         tview.setText(selected.getName());
+        tviewQty.setText(selected.getWeightMeasure());
         // elevate Card
         constraintLayout.setElevation(1234);
         // Show card

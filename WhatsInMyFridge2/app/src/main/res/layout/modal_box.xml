@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
                                                    android:id="@+id/modal_box"
                                                    android:layout_width="match_parent"
                                                    android:layout_height="match_parent"
                                                    android:clickable="true"
-                                                   android:visibility="gone">
+                                                   android:elevation="-120dp"
+                                                   android:focusable="true"
+                                                   android:visibility="gone"
+                                                   tools:targetApi="lollipop">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="50dp"
+        android:layout_margin="25dp"
         android:background="#8a3e3e3e"
         app:cardCornerRadius="10dp"
         app:cardElevation="150dp">
@@ -19,72 +23,102 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageButton
-                android:id="@+id/closeBtn"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:id="@+id/HeaderContainer"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_margin="10dp"
-                android:src="@drawable/ic_baseline_close_24"/>
+                android:layout_alignParentTop="true"
+                android:padding="20dp">
 
-            <TextView
-                android:id="@+id/item_title"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_centerHorizontal="true"
+                <TextView
+                    android:id="@+id/item_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:textSize="22sp"
+                    android:fontFamily="@font/amaranth"
+                    android:text="Item Name"
+                    />
+
+                <ImageButton
+                    android:id="@+id/closeBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="end"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_baseline_close_24"/>
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/itemCardImage"
+                android:layout_width="240dp"
+                android:layout_height="240dp"
                 android:layout_marginTop="20dp"
-                android:fontFamily="@font/amaranth"
-                android:text="Item Name"
-                android:textSize="20dp"/>
-
-            <ImageView
-                android:id="@+id/item_img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@id/SpinnerQuantity"
+                android:layout_below="@id/HeaderContainer"
                 android:layout_centerInParent="true"
-                android:maxWidth="200dp"
-                android:maxHeight="200dp"/>
-
-            <Spinner
-                android:id="@+id/SpinnerQuantity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@id/ApplyBtn"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="50dp"
-                android:clickable="true"
-                android:fontFamily="@font/amaranth"/>
-
-            <TextView
-                android:id="@+id/item_qty_type"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/amaranth"/>
-
-            <ImageButton
-                android:id="@+id/incBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@id/ApplyBtn"
-                android:layout_margin="20dp"
                 android:layout_marginBottom="40dp"
-                android:layout_toRightOf="@id/SpinnerQuantity"
-                android:clickable="true"
-                android:src="@drawable/ic_baseline_add_circle_24"/>
+                android:padding="4dp"
+                app:cardCornerRadius="12dp"
+                app:cardUseCompatPadding="true">
 
-            <ImageButton
-                android:id="@+id/decBtn"
+                <ImageView
+                    android:id="@+id/item_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/HeaderContainer"
+                    android:layout_gravity="center"
+                    android:maxWidth="170dp"
+                    android:maxHeight="170dp"/>
+            </androidx.cardview.widget.CardView>
+
+            <GridLayout
+                android:id="@+id/spinnerContainer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_above="@id/ApplyBtn"
-                android:layout_centerHorizontal="true"
-                android:layout_margin="20dp"
+                android:layout_below="@id/itemCardImage"
+                android:layout_centerInParent="true"
+                android:layout_margin="10dp"
                 android:layout_marginBottom="40dp"
-                android:layout_toLeftOf="@id/SpinnerQuantity"
-                android:clickable="true"
-                android:src="@drawable/ic_baseline_indeterminate_check_box_24"/>
+                android:padding="10dp">
 
+                <ImageButton
+                    android:id="@+id/decBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_baseline_indeterminate_check_box_24"/>
+
+                <Spinner
+                    android:id="@+id/SpinnerQuantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/amaranth"/>
+
+                <TextView
+                    android:id="@+id/item_qty_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/quantidade"
+                    android:fontFamily="@font/amaranth"
+                    android:labelFor="@id/SpinnerQuantity"
+                    android:textSize="22sp"
+                    />
+
+                <ImageButton
+                    android:id="@+id/incBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:contentDescription="Decrease quantity"
+                    android:src="@drawable/ic_baseline_add_circle_24"/>
+
+            </GridLayout>
 
             <Button
                 android:id="@+id/ApplyBtn"
@@ -94,6 +128,8 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="40dp"
                 android:clickable="true"
+                android:focusable="true"
+                android:textSize="22sp"
                 android:fontFamily="@font/amaranth"
                 android:text="Save"
                 android:textAllCaps="false"/>

@@ -9,6 +9,7 @@ public class Fridge {
     public static ArrayList<RecipeCard> recipes = new ArrayList<>();
     public static ArrayList<RecipeCard> filteredRecipes = new ArrayList<>();
     public static ArrayList<Item> cartItems = new ArrayList<>();
+    public static ArrayList<Item> filteredItems = new ArrayList<>();
 
     public static ArrayList<Item> getCartItems() {
         return (ArrayList<Item>) cartItems.clone();
@@ -111,6 +112,14 @@ public class Fridge {
 
     public static RecipeCard deleteRecipe(int i) {
         return recipes.remove(i);
+    }
+
+    public static void setFilteredItemsCart(ArrayList<Item> filteredList) {
+        filteredItems = filteredList;
+    }
+
+    public static ArrayList<Item> getFilteredItems() {
+        return (ArrayList<Item>) filteredItems.clone();
     }
     // Podes adicionar os filtros aqui : )
     // Porque static?

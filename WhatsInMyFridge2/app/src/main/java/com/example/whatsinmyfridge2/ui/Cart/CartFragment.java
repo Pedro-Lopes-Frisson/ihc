@@ -59,11 +59,10 @@ public class CartFragment extends Fragment implements ItemRecViewAdapter.OnCardL
                         // remover do adapter
                     }
                 }
-                ArrayList<Item> arrayListItem = Fridge.getCartItems();
+                for (int i = 0; i< integerArrayList.size(); i++){
+                    itemRecViewAdapter.notifyItemRemoved(integerArrayList.get(i));
+                }
                 arrayListItem.removeAll(Fridge.getItems());
-                itemRecViewAdapter.setItems(arrayListItem);
-                itemRecViewAdapter.notifyDataSetChanged();
-                itemRecViewAdapter.notifyDataSetChanged();
             }
         });
 
