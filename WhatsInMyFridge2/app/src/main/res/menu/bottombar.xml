@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/navigation_fridge"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@drawable/ic_fridge_svgrepo_com"
         android:title="@string/fridge"/>
 
     <item
