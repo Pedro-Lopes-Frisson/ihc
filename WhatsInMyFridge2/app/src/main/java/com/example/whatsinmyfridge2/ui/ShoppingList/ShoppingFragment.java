@@ -57,7 +57,7 @@ public class ShoppingFragment extends Fragment implements ItemRecViewAdapter.OnC
 
         lRecyclerView = (RecyclerView) root.findViewById(R.id.recyclerView);
         lLayoutManager = new GridLayoutManager(getContext(), 1);
-        ItemRecViewAdapter itemRecViewAdapter = new ItemRecViewAdapter(root.getContext(), this, R.layout.item_line);
+        ItemRecViewAdapter itemRecViewAdapter = new ItemRecViewAdapter(root.getContext(), this, R.layout.item_line_no_qty);
         listCards = Fridge.getDatabaseOfItems();
         itemRecViewAdapter.setItems(listCards);
         lRecyclerView.setLayoutManager(lLayoutManager);
@@ -162,7 +162,7 @@ public class ShoppingFragment extends Fragment implements ItemRecViewAdapter.OnC
         //set img
         Glide.with(root.getContext()).asBitmap().load(finalSelected.getImage()).into((ImageView) constraintLayout.findViewById(R.id.item_img));
         //set title
-        tview.setText(finalSelected.getName());
+        //tview.setText(finalSelected.getName());
         // elevate Card
         constraintLayout.setElevation(1234);
         // Show card
