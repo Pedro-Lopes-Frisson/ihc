@@ -45,7 +45,6 @@
             android:text="@string/recipe_name"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="@android:color/black"
             android:id="@+id/textView"/>
     </RelativeLayout>
 

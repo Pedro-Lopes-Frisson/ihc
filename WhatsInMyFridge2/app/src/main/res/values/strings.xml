@@ -1,0 +1,188 @@
+<resources>
+    <string name="app_name">WhatsInMyFridge</string>
+    <string name="fridge">Fridge</string>
+    <string name="cart">Cart</string>
+    <string name="shopping_list">ShoppingList</string>
+    <string name="recipes">Recipes</string>
+    <string name="skyImg">https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Ski_Famille_-_Family_Ski_Holidays.jpg/1200px-Ski_Famille_-_Family_Ski_Holidays.jpg</string>
+
+    <string name="SteakWithRice">
+        "   -Trim any fat from round steak and slice meat into thin 2 to 3 inch long strips. Remove the seeds and core from the green bell pepper, and slice into thin 3 inch long strips.\n\n"
+        "   -In a large frying pan over medium to high heat add oil and cook meat until medium rare, add peppers and continue cooking until meat is browned.\n\n"
+        "   -Reduce heat to simmer and add tomatoes, soy sauce, garlic powder, black pepper and ginger. Cover and simmer 10 minutes.\n\n"
+        "   -Dissolve bullion cube and corn starch in 2 cups water and stir well before adding to simmering beef. Cover and simmer 10 minutes, stirring occasionally, until sauce resembles the consistency of gravy. Remove from heat and serve over a bed of rice.\n\n"
+        "   -To cook rice: In a saucepan, bring 2 cups of water to a boil. Stir in 1 cup of rice. Cover and reduce heat to a simmer. Simmer for 20 minutes."
+    </string>
+
+    <string name="Lasagna">
+        "   -In a Dutch oven, cook sausage, ground beef, onion, and garlic over medium heat until well browned. Stir in crushed tomatoes, tomato paste, tomato sauce, and water. Season with sugar, basil, fennel seeds, Italian seasoning, 1 teaspoon salt, pepper, and 2 tablespoons parsley. Simmer, covered, for about 1 1/2 hours, stirring occasionally.\n\n"
+        "   -Bring a large pot of lightly salted water to a boil. Cook lasagna noodles in boiling water for 8 to 10 minutes. Drain noodles, and rinse with cold water. In a mixing bowl, combine ricotta cheese with egg, remaining parsley, and 1/2 teaspoon salt.\n\n"
+        "   -Preheat oven to 375 degrees F (190 degrees C).\n\n"
+        "   -To assemble, spread 1 1/2 cups of meat sauce in the bottom of a 9x13-inch baking dish. Arrange 6 noodles lengthwise over meat sauce. Spread with one half of the ricotta cheese mixture. Top with a third of mozzarella cheese slices. Spoon 1 1/2 cups meat sauce over mozzarella, and sprinkle with 1/4 cup Parmesan cheese. Repeat layers, and top with remaining mozzarella and Parmesan cheese. Cover with foil: to prevent sticking, either spray foil with cooking spray, or make sure the foil does not touch the cheese.\n\n"
+        "   -Bake in preheated oven for 25 minutes. Remove foil, and bake an additional 25 minutes. Cool for 15 minutes before serving."
+    </string>
+
+    <string name="SpaghettiBolognese">
+        "   -Bring a large pot of lightly salted water to a rolling boil. Cook the spaghetti in the boiling water until cooked through yet firm to the bite, about 12 minutes; drain.\n\n"
+        "   -Heat the olive oil in a large pot over medium heat. Cook the bacon in the oil until crisp, 8 to 10 minutes. Stir the onion, celery, carrot, and oregano into the bacon; continue cooking until the vegetables begin to soften, another 8 to 10 minutes. Add the garlic and cook until fragrant, about 2 minutes. Crumble the ground beef into the vegetable mixture; cook and stir until the beef is completely cooked and no longer pink, 8 to 10 minutes.\n\n"
+        "   -Pour the balsamic vinegar over the ground beef mixture; allow to simmer until the liquid evaporates, about 5 minutes. Stir the crushed tomatoes, tomato paste, and sugar into the ground beef mixture; bring the mixture to a boil, season with salt and black pepper, and remove from heat. Stir the fresh basil into the mixture.\n\n"
+        "   -Ladle the sauce over the cooked spaghetti. Top with Parmesan cheese to serve."
+    </string>
+
+    <string name="BakedCod">
+        "   -Preheat the oven to 350 degrees F (175 degrees C). Butter a large, rectangular baking dish.\n\n"
+        "   -Place the fish in the prepared dish. Arrange potato and onion slices around and on top. Pour enough milk over top to just barely cover. Season with a generous amount of salt and pepper. Dot butter over top.\n\n"
+        "   -Bake, uncovered, in the preheated oven until fish flakes easily with a fork and potatoes are tender, about 45 minutes, checking frequently and adding more milk if necessary. Serve in large bowls."
+    </string>
+
+    <string name="FishAndChips">
+        "   -Place potatoes in a medium-size bowl of cold water. In a separate medium-size mixing bowl, mix together flour, baking powder, salt, and pepper. Stir in the milk and egg; stir until the mixture is smooth. Let mixture stand for 20 minutes.\n\n"
+        "   -Preheat the oil in a large pot or electric skillet to 350 degrees F (175 degrees C).\n\n"
+        "   -Fry the potatoes in the hot oil until they are tender. Drain them on paper towels.\n\n"
+        "   -Dredge the fish in the batter, one piece at a time, and place them in the hot oil. Fry until the fish is golden brown. If necessary, increase the heat to maintain the 350 degrees F (175 degrees C) temperature. Drain well on paper towels.\n\n"
+        "   -Fry the potatoes again for 1 to 2 minutes for added crispness."
+    </string>
+
+    <string name="large_text">
+        "Material is the metaphor.\n\n"
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+
+        "Bold, graphic, intentional.\n\n"
+
+        "The foundational elements of print based design typography, grids, space, scale, color, "
+        "and use of imagery guide visual treatments. These elements do far more than please the "
+        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+        "imagery, large scale typography, and intentional white space create a bold and graphic "
+        "interface that immerse the user in the experience.\n"
+        "An emphasis on user actions makes core functionality immediately apparent and provides "
+        "waypoints for the user.\n\n"
+
+        "Motion provides meaning.\n\n"
+
+        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
+        "inflection points that initiate motion, transforming the whole design.\n"
+        "All action takes place in a single environment. Objects are presented to the user without "
+        "breaking the continuity of experience even as they transform and reorganize.\n"
+        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
+        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
+
+        "3D world.\n\n"
+
+        "The material environment is a 3D space, which means all objects have x, y, and z "
+        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
+        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
+        "position along the z-axis and has a standard 1dp thickness.\n"
+        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
+        "emulated by manipulating the y-axis.\n\n"
+
+        "Light and shadow.\n\n"
+
+        "Within the material environment, virtual lights illuminate the scene. Key lights create "
+        "directional shadows, while ambient light creates soft shadows from all angles.\n"
+        "Shadows in the material environment are cast by these two light sources. In Android "
+        "development, shadows occur when light sources are blocked by sheets of material at "
+        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
+        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
+
+        "Resting elevation.\n\n"
+
+        "All material objects, regardless of size, have a resting elevation, or default elevation "
+        "that does not change. If an object changes elevation, it should return to its resting "
+        "elevation as soon as possible.\n\n"
+
+        "Component elevations.\n\n"
+
+        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
+        "does not vary from 6dp in one app to 16dp in another app).\n"
+        "Components may have different resting elevations across platforms, depending on the depth "
+        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
+
+        "Responsive elevation and dynamic elevation offsets.\n\n"
+
+        "Some component types have responsive elevation, meaning they change elevation in response "
+        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
+        "changes are consistently implemented using dynamic elevation offsets.\n"
+        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
+        "to the component’s resting state. They ensure that elevation changes are consistent "
+        "across actions and component types. For example, all components that lift on press have "
+        "the same elevation change relative to their resting elevation.\n"
+        "Once the input event is completed or cancelled, the component will return to its resting "
+        "elevation.\n\n"
+
+        "Avoiding elevation interference.\n\n"
+
+        "Components with responsive elevations may encounter other components as they move between "
+        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
+        "through other material, components avoid interfering with one another any number of ways, "
+        "whether on a per component basis or using the entire app layout.\n"
+        "On a component level, components can move or be removed before they cause interference. "
+        "For example, a floating action button (FAB) can disappear or move off screen before a "
+        "user picks up a card, or it can move if a snackbar appears.\n"
+        "On the layout level, design your app layout to minimize opportunities for interference. "
+        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
+        "when a user tries to pick up one of cards.\n\n"
+    </string>
+    <string name="action_settings">Settings</string>
+    <string name="recipe_name">Recipe name</string>
+    <string name="title_activity_recipe_page">ScrollingActivity</string>
+    <string name="recipe_dif">Dif:</string>
+    <string name="clock_icon_description">clock_icon</string>
+    <string name="people_icon_description">people_icon</string>
+    <string name="recipe_image_description">recipe_image</string>
+    <string name="available_ingredients">Available Ingredients</string>
+    <string name="missing_ingredients">Missing Ingredients</string>
+    <string name="search_menu">Search</string>
+    <string name="ingredient_description">ingredient_description</string>
+    <string name="spaghetti_bolognese">https://www.kitchensanctuary.com/wp-content/uploads/2019/09/Spaghetti-Bolognese-square-FS-0204.jpg</string>
+    <string name="lasagna">https://www.jessicagavin.com/wp-content/uploads/2017/07/meat-lasagna-1200.jpg</string>
+    <string name="fish_and_chips">https://www.thespruceeats.com/thmb/-Hq2aVGdlH43SB1R-A7UK2dCb6k=/1500x844/smart/filters:no_upscale()/best-fish-and-chips-recipe-434856-Hero-5b61b89346e0fb00500f2141.jpg</string>
+    <string name="baked_cod">https://static01.nyt.com/images/2016/11/01/dining/01COOKING-EMMAS-COD1/01EMMAS-COD1-articleLarge.jpg</string>
+    <string name="image3">image3</string>
+    <string name="image1">image1</string>
+    <string name="image2">image2</string>
+    <string name="image6">image6</string>
+    <string name="image4">image4</string>
+    <string name="image5">image5</string>
+    <string name="beefImg"><![CDATA[https://media-cdn.tripadvisor.com/media/photo-s/08/1c/79/de/wakkoku-kitanosaka-honten.jpg]]></string>
+    <string name="chickenBreast"><![CDATA[https://5.imimg.com/data5/WB/OK/DT/SELLER-21998746/chicken-breast-boneless-500x500.jpg]]></string>
+    <string name="rice"><![CDATA[https://begnimbe.com/wp-content/uploads/2021/03/Buford-FrenchRice.jpg]]></string>
+    <string name="spaghetti"><![CDATA[https://media.istockphoto.com/vectors/raw-spaghetti-isolated-on-white-background-spaghetti-pasta-uncooked-vector-id1208579776?k=6&m=1208579776&s=170667a&w=0&h=62Nqo_kmQoB_xcgYhVxnR5bwoRp69FQmHxNMOt3Kl2M=]]></string>
+    <string name="chocolate"><![CDATA[data:image/jpeg;base64,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]]></string>
+    <string name="onion"><![CDATA[https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Onion_on_White.JPG/1200px-Onion_on_White.JPG]]></string>
+    <string name="beefWithRice"><![CDATA[https://www.curiouscuisiniere.com/wp-content/uploads/2020/05/Japanese-Hibachi-Steak-with-Rice-and-Grilled-Vegetables-8942-1200.jpg]]></string>
+    <string name="codImg"><![CDATA[https://image.shutterstock.com/image-photo/big-cod-fish-on-white-260nw-386883235.jpg]]></string>
+    <string name="potatoImg"><![CDATA[https://www.alimentarium.org/en/system/files/thumbnails/image/AL027-01_pomme_de_terre_0.jpg]]></string>
+    <string name="oliveOilImg"><![CDATA[https://i0.wp.com/cdn-prod.medicalnewstoday.com/content/images/articles/321/321246/olive-oil-in-a-bottle-which-may-be-used-on-the-face.jpg?w=1155&h=1541]]></string>
+    <string name="cornOilImg"><![CDATA[data:image/jpeg;base64,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]]></string>
+    <string name="mincedMeatImg"><![CDATA[https://image.shutterstock.com/image-photo/fresh-raw-mince-minced-beef-260nw-1340134259.jpg]]></string>
+    <string name="saltImg"><![CDATA[https://media.istockphoto.com/photos/crystals-of-shallow-salt-in-a-scoop-spoon-on-a-dark-gray-table-for-picture-id1051727580?k=6&m=1051727580&s=612x612&w=0&h=XSLaFLAsmNcA7_K4reNTDdoLpoBGF7JICuCzRcvq1EI=]]></string>
+    <string name="lasagnaNoddleImg"><![CDATA[http://irepo.primecp.com/2016/03/257690/recipe-2713_Large500_ID-1440257.jpg?v=1440257]]></string>
+    <string name="cheeseImg"><![CDATA[https://i1.wp.com/www.eatthis.com/wp-content/uploads/2020/06/shredded-cheese.jpg?resize=640%2C360&ssl=1]]></string>
+    <string name="filterbutton">filterButton</string>
+    <string name="recipe_filter_head_text">Recipe Filter</string>
+    <string name="closebutton_description">closeButton</string>
+    <string name="favoritebutton">favoriteButton</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="update">Add to Fridge</string>
+    <string name="favorite">Favorite</string>
+    <string name="_0h_1h">0h-1h</string>
+    <string name="_2h30">2h30+</string>
+    <string name="_1h_2h30">1h-2h30</string>
+    <string name="time">Time</string>
+    <string name="hard">Hard</string>
+    <string name="medium">Medium</string>
+    <string name="difficulty">Difficulty</string>
+    <string name="easy">Easy</string>
+    <string name="apply">Apply</string>
+    <string name="add_a_new_item_to_the_fridge">Add a new item to the fridge</string>
+</resources>

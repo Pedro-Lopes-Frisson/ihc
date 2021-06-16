@@ -4,18 +4,19 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Item {
+public class Item implements Serializable {
     private String name;
     private int ID;
-    private int weight;
+    private double weight;
     private int weightJump;
     private String type;
     private String Image;
 
 
-    public Item(String name, int ID, int weight, int weightJump, String type, String im) {
+    public Item(String name, int ID, double weight, int weightJump, String type, String im) {
         this.name = name;
         this.ID = ID;
         this.weight = weight;
@@ -67,7 +68,7 @@ public class Item {
         this.ID = ID;
     }
 
-    public int getWeight() {
+    public double getWeight() {
         return weight;
     }
 

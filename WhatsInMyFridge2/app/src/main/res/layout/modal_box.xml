@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   android:id="@+id/modal_box"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   android:clickable="true"
+                                                   android:visibility="gone">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="50dp"
+        android:background="#8a3e3e3e"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="150dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/closeBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                android:src="@drawable/ic_baseline_close_24"/>
+
+            <TextView
+                android:id="@+id/item_title"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:text="Item Name"
+                android:textSize="20dp"/>
+
+            <ImageView
+                android:id="@+id/item_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/SpinnerQuantity"
+                android:layout_centerInParent="true"
+                android:maxWidth="200dp"
+                android:maxHeight="200dp"/>
+
+            <Spinner
+                android:id="@+id/SpinnerQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/ApplyBtn"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="50dp"
+                android:clickable="true"/>
+
+            <ImageButton
+                android:id="@+id/incBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/ApplyBtn"
+                android:layout_margin="20dp"
+                android:layout_marginBottom="40dp"
+                android:layout_toRightOf="@id/SpinnerQuantity"
+                android:clickable="true"
+                android:src="@drawable/ic_baseline_add_circle_24"/>
+
+            <ImageButton
+                android:id="@+id/decBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/ApplyBtn"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="20dp"
+                android:layout_marginBottom="40dp"
+                android:layout_toLeftOf="@id/SpinnerQuantity"
+                android:clickable="true"
+                android:src="@drawable/ic_baseline_indeterminate_check_box_24"/>
+
+
+            <Button
+                android:id="@+id/ApplyBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:textAllCaps="false"
+                android:layout_marginBottom="40dp"
+                android:clickable="true"
+                android:text="Save"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
