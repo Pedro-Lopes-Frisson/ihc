@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements FridgeFragment.Tr
         Fridge.addItemToDb(new Item("Corn Oil", 1011, 0.0, 1, "VEGETAL", getString(R.string.cornOilImg),"kg"));
         Fridge.addItemToDb(new Item("Spaghetti", 1003, 0, 1, "CEREAL", getString(R.string.spaghetti),"g"));
         Fridge.addItemToDb(new Item("Salt", 1013, 0.0, 1, "VEGETAL", getString(R.string.saltImg),"g"));
-        Fridge.addItemToDb(new Item("Lasagna Noodles", 1014, 0.0, 1, "CARNE", getString(R.string.lasagnaNoddleImg),"g"));
+        Fridge.addItemToDb(new Item("Lasagna Noodles", 1014, 0.0, 1, "CARNE", getString(R.string.lasagnaNoddleImg),"kg"));
         Fridge.addItemToDb(new Item("Minced Meat", 1015, 0, 1, "CEREAL", getString(R.string.mincedMeatImg),"kg"));
         Fridge.addItemToDb(new Item("Cheese", 1016, 0.0, 1, "VEGETAL", getString(R.string.cheeseImg),"g"));
     }
